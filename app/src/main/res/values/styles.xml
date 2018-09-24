@@ -1,0 +1,315 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLight</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- This is the styling for action bar -->
+        <!--To change the text styling of options menu items</item>-->
+        <item name="android:itemTextAppearance">@style/NormalTextView</item>
+        <!--To change the background of options menu-->
+        <item name="android:itemBackground">@color/colorPrimaryLight</item>
+        <!--Styles to override-->
+        <item name="normalButton">@style/NormalButton</item>
+        <item name="normalActivity">@style/NormalActivity</item>
+        <item name="normalTextView">@style/NormalTextView</item>
+        <item name="normalScoreTextView">@style/NormalScoreTextView</item>
+        <item name="normalHeaderTextView">@style/NormalHeaderTextView</item>
+        <item name="normalLineDivider">@style/NormalLineDivider</item>
+        <item name="vectorPrimaryColor">@color/colorPrimary</item>
+        <item name="vectorAccentColor">@color/colorAccent</item>
+        <item name="vectorLightColor">@color/colorPrimaryLight</item>
+        <item name="preferenceTheme">@style/DefaultPreferenceTheme</item>
+        <item name="dialogTheme">@style/DefaultPreferenceTheme</item>
+        <item name="alertDialogTheme">@style/DefaultPreferenceTheme</item>
+
+
+    </style>
+
+    <!-- Base application theme dark. -->
+    <style name="DarkAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLightBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <!-- This is the styling for action bar -->
+        <!--To change the text styling of options menu items</item>-->
+        <item name="android:itemTextAppearance">@style/NormalTextViewDark</item>
+        <!--To change the background of options menu-->
+        <item name="android:itemBackground">@color/colorPrimaryLightBlack</item>
+        <!--Styles to override-->
+        <item name="normalButton">@style/NormalButtonDark</item>
+        <item name="normalActivity">@style/NormalActivityDark</item>
+        <item name="normalTextView">@style/NormalTextViewDark</item>
+        <item name="normalScoreTextView">@style/NormalScoreTextViewDark</item>
+        <item name="normalHeaderTextView">@style/NormalHeaderTextViewDark</item>
+        <item name="normalLineDivider">@style/NormalLineDividerDark</item>
+        <item name="vectorPrimaryColor">@color/colorPrimaryBlack</item>
+        <item name="vectorAccentColor">@color/colorAccentBlack</item>
+        <item name="vectorLightColor">@color/colorPrimaryLightBlack</item>
+        <item name="preferenceTheme">@style/DefaultPreferenceThemeDark</item>
+        <item name="dialogTheme">@style/DefaultPreferenceThemeDark</item>
+        <item name="alertDialogTheme">@style/DefaultPreferenceThemeDark</item>
+
+
+
+    </style>
+
+    <!-- Base application theme grey. -->
+    <style name="GreyAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryGrey</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGrey</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLightGrey</item>
+        <item name="colorAccent">@color/colorAccentGrey</item>
+        <!-- This is the styling for action bar -->
+        <!--To change the text styling of options menu items</item>-->
+        <item name="android:itemTextAppearance">@style/NormalTextViewGrey</item>
+        <!--To change the background of options menu-->
+        <item name="android:itemBackground">@color/colorPrimaryLightGrey</item>
+        <!--Styles to override-->
+        <item name="normalButton">@style/NormalButtonGrey</item>
+        <item name="normalActivity">@style/NormalActivityGrey</item>
+        <item name="normalTextView">@style/NormalTextViewGrey</item>
+        <item name="normalScoreTextView">@style/NormalScoreTextViewGrey</item>
+        <item name="normalHeaderTextView">@style/NormalHeaderTextViewGrey</item>
+        <item name="normalLineDivider">@style/NormalLineDividerGrey</item>
+        <item name="vectorPrimaryColor">@color/colorPrimaryGrey</item>
+        <item name="vectorAccentColor">@color/colorAccentGrey</item>
+        <item name="vectorLightColor">@color/colorPrimaryLightGrey</item>
+        <item name="preferenceTheme">@style/DefaultPreferenceThemeGrey</item>
+        <item name="dialogTheme">@style/DefaultPreferenceThemeGrey</item>
+        <item name="alertDialogTheme">@style/DefaultPreferenceThemeGrey</item>
+    </style>
+
+    <!-- Base application theme purple. -->
+    <style name="PurpleAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryPurple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkPurple</item>
+        <item name="colorPrimaryLight">@color/colorPrimaryLightPurple</item>
+        <item name="colorAccent">@color/colorAccentPurple</item>
+        <!-- This is the styling for action bar -->
+        <!--To change the text styling of options menu items</item>-->
+        <item name="android:itemTextAppearance">@style/NormalTextViewPurple</item>
+        <!--To change the background of options menu-->
+        <item name="android:itemBackground">@color/colorPrimaryLightPurple</item>
+        <!--Styles to override-->
+        <item name="normalButton">@style/NormalButtonPurple</item>
+        <item name="normalActivity">@style/NormalActivityPurple</item>
+        <item name="normalTextView">@style/NormalTextViewPurple</item>
+        <item name="normalScoreTextView">@style/NormalScoreTextViewPurple</item>
+        <item name="normalHeaderTextView">@style/NormalHeaderTextViewPurple</item>
+        <item name="normalLineDivider">@style/NormalLineDividerPurple</item>
+        <item name="vectorPrimaryColor">@color/colorPrimaryPurple</item>
+        <item name="vectorAccentColor">@color/colorAccentPurple</item>
+        <item name="vectorLightColor">@color/colorPrimaryLightPurple</item>
+        <item name="preferenceTheme">@style/DefaultPreferenceThemePurple</item>
+        <item name="dialogTheme">@style/DefaultPreferenceThemePurple</item>
+        <item name="alertDialogTheme">@style/DefaultPreferenceThemePurple</item>
+    </style>
+
+
+    <!-- Button -->
+
+    <style name="NormalButton" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/selector_normal_button_border</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+
+    <style name="NormalButtonDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/selector_normal_button_border</item>
+        <item name="android:textColor">@color/colorPrimaryLightBlack</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+
+
+    </style>
+
+    <style name="NormalButtonGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/selector_normal_button_border</item>
+        <item name="android:textColor">@color/colorPrimaryLightGrey</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGrey</item>
+        <item name="colorAccent">@color/colorAccentGrey</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalButtonPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@drawable/selector_normal_button_border</item>
+        <item name="android:textColor">@color/colorPrimaryLightPurple</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkPurple</item>
+        <item name="colorAccent">@color/colorAccentPurple</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <!-- Activity -->
+
+    <style name="NormalActivity" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalActivityDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryBlack</item>
+        <item name="android:textColor">@color/colorPrimaryTextBlack</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalActivityGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryGrey</item>
+        <item name="android:textColor">@color/colorPrimaryTextGrey</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalActivityPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryPurple</item>
+        <item name="android:textColor">@color/colorPrimaryTextPurple</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <!-- TextViews -->
+
+    <style name="NormalTextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalTextViewDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryTextBlack</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalTextViewGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightGrey</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalTextViewPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightPurple</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalScoreTextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalScoreTextViewDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryTextBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalScoreTextViewGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightGrey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalScoreTextViewPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightPurple</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalHeaderTextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalHeaderTextViewDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryTextBlack</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalHeaderTextViewGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightGrey</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalHeaderTextViewPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorPrimaryLightPurple</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="NormalLineDivider" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="NormalLineDividerDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryLightBlack</item>
+    </style>
+
+    <style name="NormalLineDividerGrey" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryLightGrey</item>
+    </style>
+
+    <style name="NormalLineDividerPurple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorPrimaryLightPurple</item>
+    </style>
+
+    <!-- Override and set preference themes depending on user selected Theme. -->
+    <style name="DefaultPreferenceTheme" parent ="AppTheme">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+        <!-- Color used for preference dialog text color-->
+        <item name="textColorAlertDialogListItem">@color/colorPrimaryLight</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Color used for preference selected text color and radio button color -->
+        <item name="android:textColorSecondary">@color/colorPrimaryLight</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="DefaultPreferenceThemeDark" parent ="AppTheme">
+        <item name="android:background">@color/colorPrimaryBlack</item>
+        <item name="android:textColor">@color/colorPrimaryTextBlack</item>
+        <item name="textColorAlertDialogListItem">@color/colorPrimaryTextBlack</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryTextBlack</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="DefaultPreferenceThemeGrey" parent ="AppTheme">
+        <item name="android:background">@color/colorPrimaryGrey</item>
+        <item name="android:textColor">@color/colorPrimaryLightGrey</item>
+        <item name="textColorAlertDialogListItem">@color/colorPrimaryLightGrey</item>
+        <item name="colorAccent">@color/colorAccentGrey</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryLightGrey</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="DefaultPreferenceThemePurple" parent ="AppTheme">
+        <item name="android:background">@color/colorPrimaryPurple</item>
+        <item name="android:textColor">@color/colorPrimaryLightPurple</item>
+        <item name="textColorAlertDialogListItem">@color/colorPrimaryLightPurple</item>
+        <item name="colorAccent">@color/colorAccentPurple</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryLightPurple</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+
+
+
+
+
+
+</resources>

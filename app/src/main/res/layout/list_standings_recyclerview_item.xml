@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    style="?normalActivity">
+
+    <TextView
+        android:id="@+id/standings_recycler_header"
+        style="?normalScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Header String" />
+
+    <ImageView
+        android:id="@+id/standings_recycler_team_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:src="@drawable/atlantafalcons"
+        app:layout_constraintStart_toStartOf="@+id/standings_recycler_header"
+        app:layout_constraintTop_toBottomOf="@+id/standings_recycler_header" />
+
+    <TextView
+        android:id="@+id/standings_details_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?normalScoreTextView"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/standings_recycler_team_logo"
+        app:layout_constraintTop_toTopOf="@+id/standings_recycler_team_logo"
+        tools:text="10 - 6" />
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

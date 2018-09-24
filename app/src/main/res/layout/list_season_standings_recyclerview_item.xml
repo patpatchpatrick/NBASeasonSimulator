@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    style="?normalActivity">
+
+    <TextView
+        android:id="@+id/season_standings_recycler_header"
+        style="?normalScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Header String" />
+
+    <ImageView
+        android:id="@+id/season_standings_recycler_team_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        tools:src="@drawable/atlantafalcons"
+        app:layout_constraintStart_toStartOf="@+id/season_standings_recycler_header"
+        app:layout_constraintTop_toBottomOf="@+id/season_standings_recycler_header" />
+
+    <TextView
+        android:id="@+id/season_standings_details_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?normalScoreTextView"
+        android:paddingLeft="8dp"
+        app:layout_constraintStart_toEndOf="@+id/season_standings_recycler_team_logo"
+        app:layout_constraintTop_toTopOf="@+id/season_standings_recycler_team_logo"
+        tools:text="10 - 6" />
+
+    <TextView
+        android:id="@+id/season_playoff_odds_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="8dp"
+        tools:text="50%"
+        style="?normalScoreTextView"
+        app:layout_constraintEnd_toStartOf="@+id/odds_vertical_divider"
+        app:layout_constraintTop_toTopOf="@+id/season_standings_details_text_view"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/season_playoff_odds_header_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/standings_playoff_odds_header"
+        style="?normalScoreTextView"
+        app:layout_constraintStart_toStartOf="@+id/season_playoff_odds_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/season_playoff_odds_text_view"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/season_division_odds_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="90%"
+        style="?normalScoreTextView"
+        app:layout_constraintStart_toEndOf="@+id/odds_vertical_divider"
+        app:layout_constraintTop_toTopOf="@+id/season_playoff_odds_text_view"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/season_division_odds_header_text_view"
+        style="?normalScoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:text="@string/standings_division_odds_header"
+        app:layout_constraintStart_toEndOf="@id/season_playoff_odds_header_text_view"
+        app:layout_constraintTop_toTopOf="@+id/season_playoff_odds_header_text_view"/>
+
+    <TextView
+        android:id="@+id/season_conference_odds_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="90%"
+        style="?normalScoreTextView"
+        app:layout_constraintEnd_toStartOf="@+id/odds_vertical_divider"
+        app:layout_constraintTop_toBottomOf="@+id/season_playoff_odds_text_view"
+        android:paddingTop="0dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"/>
+
+    <TextView
+        android:id="@+id/season_conference_odds_header_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/standings_conference_odds_header"
+        style="?normalScoreTextView"
+        app:layout_constraintStart_toStartOf="@+id/season_conference_odds_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/season_conference_odds_text_view"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"/>
+
+    <ImageView
+        android:id="@+id/odds_horizontal_divider"
+        android:layout_marginLeft="16dp"
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:background="?vectorLightColor"
+        app:layout_constraintTop_toBottomOf="@id/season_playoff_odds_text_view"
+        app:layout_constraintStart_toEndOf="@id/season_standings_details_text_view" />
+
+    <ImageView
+        android:id="@+id/odds_vertical_divider"
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="?vectorLightColor"
+        app:layout_constraintStart_toStartOf="@id/odds_horizontal_divider"
+        app:layout_constraintTop_toTopOf="@id/season_playoff_odds_text_view"
+        app:layout_constraintBottom_toBottomOf="@id/season_superbowl_odds_text_view"/>
+
+    <TextView
+        android:id="@+id/season_superbowl_odds_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="90%"
+        style="?normalScoreTextView"
+        app:layout_constraintStart_toEndOf="@+id/odds_vertical_divider"
+        app:layout_constraintTop_toTopOf="@+id/season_conference_odds_text_view"
+        android:paddingTop="0dp"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/season_superbowl_odds_header_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/standings_superbowl_odds_header"
+        style="?normalScoreTextView"
+        app:layout_constraintStart_toStartOf="@+id/season_superbowl_odds_text_view"
+        app:layout_constraintBottom_toTopOf="@+id/season_superbowl_odds_text_view"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"/>
+
+</android.support.constraint.ConstraintLayout>

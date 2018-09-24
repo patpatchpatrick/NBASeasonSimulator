@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="settings_value_week_one">1</integer>
+    <integer name="settings_value_week_two">2</integer>
+    <integer name="settings_value_week_three">3</integer>
+    <integer name="settings_value_week_four">4</integer>
+    <integer name="settings_value_week_five">5</integer>
+    <integer name="settings_value_week_six">6</integer>
+    <integer name="settings_value_week_seven">7</integer>
+    <integer name="settings_value_week_eight">8</integer>
+    <integer name="settings_value_week_nine">9</integer>
+    <integer name="settings_value_week_ten">10</integer>
+    <integer name="settings_value_week_eleven">11</integer>
+    <integer name="settings_value_week_twelve">12</integer>
+    <integer name="settings_value_week_thirteen">13</integer>
+    <integer name="settings_value_week_fourteen">14</integer>
+    <integer name="settings_value_week_fifteen">15</integer>
+    <integer name="settings_value_week_sixteen">16</integer>
+    <integer name="settings_value_week_seventeen">17</integer>
+
+    <integer name="settings_elo_type_last_season">1</integer>
+    <integer name="settings_elo_type_current_season">2</integer>
+    <integer name="settings_elo_type_user">3</integer>
+
+
+</resources>

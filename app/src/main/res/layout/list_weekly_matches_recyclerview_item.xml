@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?normalActivity">
+
+    <TextView
+        style="?normalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weekly_matches_date_time_string"
+        app:layout_constraintStart_toStartOf="@+id/weekly_matches_recycler_team_one_name"
+        tools:text="THU SEP 6 - 5:20PM"/>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccentBlack"
+        android:id="@+id/weekly_matches_middle_divider"
+        app:layout_constraintBottom_toBottomOf="@+id/weekly_matches_recycler_team_two_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/weekly_matches_recycler_team_one_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weekly_matches_date_time_string" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="?normalTextView"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/weekly_matches_recycler_team_one_name"
+        android:layout_height="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/weekly_matches_recycler_team_one_logo"
+        app:layout_constraintTop_toTopOf="@+id/weekly_matches_recycler_team_one_logo"
+        tools:text="Team One Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/weekly_matches_recycler_team_one_score"
+        style="?normalScoreTextView"
+        android:text="\@"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/weekly_matches_recycler_team_one_name"
+        app:layout_constraintTop_toTopOf="@+id/weekly_matches_recycler_team_one_name"/>
+
+    <ImageView
+        android:id="@+id/weekly_matches_recycler_team_two_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="@+id/weekly_matches_recycler_team_one_logo"
+        app:layout_constraintTop_toBottomOf="@+id/weekly_matches_recycler_team_one_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="?normalTextView"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/weekly_matches_recycler_team_two_name"
+        android:layout_height="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/weekly_matches_recycler_team_two_logo"
+        app:layout_constraintTop_toTopOf="@+id/weekly_matches_recycler_team_two_logo"
+        tools:text="Team Two Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weekly_matches_recycler_team_two_score"
+        android:fontFamily="@font/montserrat"
+        style="?normalScoreTextView"
+        tools:text=""
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/weekly_matches_recycler_team_two_name"
+        app:layout_constraintTop_toTopOf="@+id/weekly_matches_recycler_team_two_name"/>
+
+    <View
+        android:layout_width="180dp"
+        android:layout_height="1dp"
+        style="?normalLineDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/weekly_matches_recycler_team_two_score"
+        app:layout_constraintStart_toStartOf="@+id/weekly_matches_recycler_team_two_logo" />
+
+    <TextView
+        style="?normalTextView"
+        android:id="@+id/weekly_matches_vegas_line_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="@string/weekly_matches_vegas_odds_header"
+        app:layout_constraintTop_toTopOf="@id/weekly_matches_recycler_team_one_name"
+        app:layout_constraintStart_toStartOf="@id/weekly_matches_middle_divider"/>
+
+    <TextView
+        style="?normalTextView"
+        android:id="@+id/weekly_matches_vegas_line_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        tools:text="PHI -3.0"
+        app:layout_constraintTop_toTopOf="@id/weekly_matches_vegas_line_header"
+        app:layout_constraintStart_toEndOf="@id/weekly_matches_vegas_line_header"/>
+
+    <TextView
+        style="?normalTextView"
+        android:id="@+id/weekly_matches_elo_odds_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weekly_matches_elo_odds_header"
+        app:layout_constraintTop_toTopOf="@id/weekly_matches_recycler_team_two_name"
+        app:layout_constraintStart_toStartOf="@id/weekly_matches_vegas_line_header"/>
+
+    <TextView
+        style="?normalTextView"
+        android:id="@+id/weekly_matches_elo_odds_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        tools:text="PHI 50%"
+        app:layout_constraintTop_toTopOf="@id/weekly_matches_elo_odds_header"
+        app:layout_constraintStart_toEndOf="@id/weekly_matches_elo_odds_header"/>
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

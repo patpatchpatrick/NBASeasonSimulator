@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/primary_settings"
+        android:orderInCategory="100"
+        android:title="@string/menu_elo_values"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_set_elos_icon">
+    </item>
+
+    <item
+        android:id="@+id/reset_menu_button"
+        android:orderInCategory="100"
+        android:title="@string/menu_reset_button"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_reset_icon">
+    </item>
+
+
+</menu>

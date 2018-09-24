@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Reference attributes to override styles based on whatever theme is selected by user -->
+    <declare-styleable name="HeaderText">
+        <attr name="normalButton" format="reference"> </attr>
+        <attr name="normalActivity" format="reference"> </attr>
+        <attr name="normalTextView" format="reference"> </attr>
+        <attr name="normalScoreTextView" format="reference"> </attr>
+        <attr name="normalHeaderTextView" format="reference"> </attr>
+        <attr name="normalLineDivider" format="reference"> </attr>
+        <attr name="vectorPrimaryColor" format="reference"></attr>
+        <attr name="vectorAccentColor" format="reference"></attr>
+        <attr name="vectorLightColor" format="reference"></attr>
+        <attr name="colorPrimaryLight" format="reference"></attr>
+    </declare-styleable>
+
+
+
+</resources>

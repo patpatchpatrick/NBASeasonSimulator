@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    style="?normalActivity">
+
+    <ImageView
+        android:id="@+id/elo_list_item_team_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical"
+        tools:src="@drawable/atlantafalcons"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/team_name_textview"
+        style="?normalTextView"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        tools:text="Team Name: " />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:id="@+id/team_elo_edittext"
+        style="?normalTextView"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        tools:text="ELO Rating"
+        android:inputType="numberDecimal"/>
+
+</LinearLayout>

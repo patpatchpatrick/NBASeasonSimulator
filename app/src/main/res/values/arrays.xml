@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Week number settings arrays -->
+    <array name="settings_week_number_labels">
+        <item>@string/settings_label_week_one</item>
+        <item>@string/settings_label_week_two</item>
+        <item>@string/settings_label_week_three</item>
+        <item>@string/settings_label_week_four</item>
+        <item>@string/settings_label_week_five</item>
+        <item>@string/settings_label_week_six</item>
+        <item>@string/settings_label_week_seven</item>
+        <item>@string/settings_label_week_eight</item>
+        <item>@string/settings_label_week_nine</item>
+        <item>@string/settings_label_week_ten</item>
+        <item>@string/settings_label_week_eleven</item>
+        <item>@string/settings_label_week_twelve</item>
+        <item>@string/settings_label_week_thirteen</item>
+        <item>@string/settings_label_week_fourteen</item>
+        <item>@string/settings_label_week_fifteen</item>
+        <item>@string/settings_label_week_sixteen</item>
+        <item>@string/settings_label_week_seventeen</item>
+    </array>
+
+    <array name="settings_week_number_values">
+        <item>@integer/settings_value_week_one</item>
+        <item>@integer/settings_value_week_two</item>
+        <item>@integer/settings_value_week_three</item>
+        <item>@integer/settings_value_week_four</item>
+        <item>@integer/settings_value_week_five</item>
+        <item>@integer/settings_value_week_six</item>
+        <item>@integer/settings_value_week_seven</item>
+        <item>@integer/settings_value_week_eight</item>
+        <item>@integer/settings_value_week_nine</item>
+        <item>@integer/settings_value_week_ten</item>
+        <item>@integer/settings_value_week_eleven</item>
+        <item>@integer/settings_value_week_twelve</item>
+        <item>@integer/settings_value_week_thirteen</item>
+        <item>@integer/settings_value_week_fourteen</item>
+        <item>@integer/settings_value_week_fifteen</item>
+        <item>@integer/settings_value_week_sixteen</item>
+        <item>@integer/settings_value_week_seventeen</item>
+
+    </array>
+
+    <!-- Theme selection settings arrays -->
+    <array name="settings_theme_labels">
+        <item>@string/settings_theme_label_default</item>
+        <item>@string/settings_theme_label_blue</item>
+        <item>@string/settings_theme_label_grey</item>
+        <item>@string/settings_theme_label_purple</item>
+    </array>
+
+    <array name="settings_theme_values">
+        <item>@string/settings_theme_value_default</item>
+        <item>@string/settings_theme_value_blue</item>
+        <item>@string/settings_theme_value_grey</item>
+        <item>@string/settings_theme_value_purple</item>
+    </array>
+
+</resources>

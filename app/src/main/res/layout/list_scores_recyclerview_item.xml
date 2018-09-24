@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?normalActivity">
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/score_recycler_team_one_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="?normalTextView"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/score_recycler_team_one_name"
+        android:layout_height="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/score_recycler_team_one_logo"
+        app:layout_constraintTop_toTopOf="@+id/score_recycler_team_one_logo"
+        tools:text="Team One Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/score_recycler_team_one_score"
+        style="?normalScoreTextView"
+        tools:text="42"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/score_recycler_team_one_name"
+        app:layout_constraintTop_toTopOf="@+id/score_recycler_team_one_name"/>
+
+    <ImageView
+        android:id="@+id/score_recycler_team_two_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="@+id/score_recycler_team_one_logo"
+        app:layout_constraintTop_toBottomOf="@+id/score_recycler_team_one_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        style="?normalTextView"
+        android:fontFamily="@font/montserrat"
+        android:id="@+id/score_recycler_team_two_name"
+        android:layout_height="15dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/score_recycler_team_two_logo"
+        app:layout_constraintTop_toTopOf="@+id/score_recycler_team_two_logo"
+        tools:text="Team Two Name" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score_recycler_team_two_score"
+        android:fontFamily="@font/montserrat"
+        style="?normalScoreTextView"
+        tools:text="42"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/score_recycler_team_two_name"
+        app:layout_constraintTop_toTopOf="@+id/score_recycler_team_two_name"/>
+
+    <View
+        android:layout_width="180dp"
+        android:layout_height="1dp"
+        style="?normalLineDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/score_recycler_team_two_score"
+        app:layout_constraintStart_toStartOf="@+id/score_recycler_team_two_logo" />
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

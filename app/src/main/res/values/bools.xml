@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="pref_season_initialized_default">false</bool>
+    <bool name="pref_playoffs_started_default">false</bool>
+    <bool name="settings_season_loaded_default">false</bool>
+</resources>

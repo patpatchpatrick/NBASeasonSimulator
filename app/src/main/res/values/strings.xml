@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">NBASeasonSim</string>
+
+    <!-- Main Activity Strings  -->
+    <string name="loading">Loading...</string>
+    <string name="ready_to_simulate">Ready to Simulate</string>
+    <string name="regular_season_complete">Regular Season Complete</string>
+
+    <!-- Simulate Activity Strings  -->
+    <string name="simulate_activity_simulate_season">SIMULATE SEASON</string>
+    <string name="simulate_activity_simulate_week">SIMULATE WEEK</string>
+    <string name="simulate_activity_reset">RESET</string>
+    <string name="simulate_activity_start_playoffs">START PLAYOFFS</string>
+
+    <!-- Shared Preferences  Keys, Labels and Values [CHAR LIMIT=TBD] -->
+    <string name="settings_season_initialized_key">season initialized</string>
+    <string name="settings_season_intialized_title">Season Initialized</string>
+    <string name="settings_playoffs_started_key">playoffs started</string>
+    <string name="settings_playoffs_started_title">Playoffs Started</string>
+    <string name="settings_simulator_week_num_key">simulator week number</string>
+    <string name="settings_season_week_num_key">simulator week number</string>
+    <string name="settings_week_number_title">Week Number</string>
+    <string name="settings_score_string_key">score string</string>
+    <string name="settings_elo_type_key">elo type key</string>
+    <string name="settings_label_week_one">Week One</string>
+    <string name="settings_label_week_two">Week Two</string>
+    <string name="settings_label_week_three">Week Three</string>
+    <string name="settings_label_week_four">Week Four</string>
+    <string name="settings_label_week_five">Week Five</string>
+    <string name="settings_label_week_six">Week Six</string>
+    <string name="settings_label_week_seven">Week Seven</string>
+    <string name="settings_label_week_eight">Week Eight</string>
+    <string name="settings_label_week_nine">Week Nine</string>
+    <string name="settings_label_week_ten">Week Ten</string>
+    <string name="settings_label_week_eleven">Week Eleven</string>
+    <string name="settings_label_week_twelve">Week Twelve</string>
+    <string name="settings_label_week_thirteen">Week thirteen</string>
+    <string name="settings_label_week_fourteen">Week Fourteen</string>
+    <string name="settings_label_week_fifteen">Week Fifteen</string>
+    <string name="settings_label_week_sixteen">Week Sixteen</string>
+    <string name="settings_label_week_seventeen">Week Seventeen</string>
+    <string name="settings_theme_title">Select Theme</string>
+    <string name="settings_theme_key">app theme</string>
+    <string name="settings_theme_value_default">default theme</string>
+    <string name="settings_theme_label_default">Default</string>
+    <string name="settings_theme_value_blue">blue theme</string>
+    <string name="settings_theme_label_blue">Blue</string>
+    <string name="settings_theme_value_grey">grey theme</string>
+    <string name="settings_theme_label_grey">Grey</string>
+    <string name="settings_theme_value_purple">purple theme</string>
+    <string name="settings_theme_label_purple">Purple</string>
+    <string name="settings_season_loaded_key">season loaded</string>
+
+    <!-- Primary Menu Strings -->
+    <string name="menu_elo_values">SET\nELOS</string>
+    <string name="menu_reset_button">RESET</string>
+    <string name="menu_theme_button">THEME</string>
+    <string name="menu_theme_default">Default (Dark)</string>
+    <string name="menu_theme_blue">Blue</string>
+    <string name="menu_theme_grey">Grey</string>
+    <string name="menu_theme_purple">Purple</string>
+
+    <!-- ELO Values Activity Strings -->
+    <string name="use_default_values">Last Season Elos</string>
+    <string name="use_offseason_prediction_elos">Predicted Future Elos</string>
+    <string name="elo_values_set_simulator_elo_header">Set Simulator Elo Values</string>
+
+    <!-- Home Screen Strings -->
+    <string name="main_menu_sim_season">SIMULATE SEASON</string>
+    <string name="main_menu_predict_matchup">PREDICT MATCHUP</string>
+    <string name="main_menu_season_schedule">SEASON SCHEDULE / SCORES</string>
+    <string name="main_menu_season_standings">SEASON ELO STANDINGS / PLAYOFF ODDS</string>
+    <string name="main_menu_settings">SETTINGS</string>
+    <string name="main_menu_loading">LOADING</string>
+
+    <!-- Settings Activity Strings -->
+    <string name="settings_activity_elo_values">Set Team Elo Values</string>
+
+    <!-- Matchup Predictor Activity Strings -->
+    <string name="match_predict_team_one">Select Away Team</string>
+    <string name="match_predict_team_two">Select Home Team</string>
+    <string name="match_predict_elo_header">Elo: </string>
+    <string name="match_predict_odds_to_win_header">Odds To Win: </string>
+    <string name="match_predict_simulate_match">SIMULATE MATCH</string>
+    <string name="match_predict_score_header">Score</string>
+
+    <!-- Weekly Matches Activity Strings -->
+    <string name="weekly_matches_vegas_odds_header">Line: </string>
+    <string name="weekly_matches_elo_odds_header">Elo Odds: </string>
+
+    <!-- Standings Activity Strings -->
+    <string name="standings_header">Season Standings</string>
+    <string name="standings_details_header">*Playoff odds are \ncalculated by simulating \nthe season 10,000 times</string>
+    <string name="standings_playoff_odds_header">Playoff %</string>
+    <string name="standings_division_odds_header">Division %</string>
+    <string name="standings_conference_odds_header">Conf %</string>
+    <string name="standings_superbowl_odds_header">SuperBowl %</string>
+
+    <!-- Library Activity Strings -->
+    <string name="pref_libraries">Libraries/Licenses</string>
+    <string name="libraries_used">Libraries Used</string>
+    <string name="rate_this_app_message">If you enjoy using this app, would you mind rating it? A lot of hard work goes into keeping this app free, and good ratings really help improve the app store presence. Thank you!</string>
+    <string name="rate_this_app_header">RateThisApp</string>
+    <string name="app_rater_license">Copyright 2013-2017 Keisuke Kobayashi\n\n
+
+Licensed under the Apache License, Version 2.0 (the "License");\n
+you may not use this file except in compliance with the License.\n
+You may obtain a copy of the License at\n\n
+
+    http://www.apache.org/licenses/LICENSE-2.0\n\n
+
+Unless required by applicable law or agreed to in writing, software\n
+distributed under the License is distributed on an "AS IS" BASIS,\n
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
+See the License for the specific language governing permissions and\n
+limitations under the License.</string>
+
+    <!-- Advertising Strings -->
+    <string name="home_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/6683750394</string>
+    <string name="simulator_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/4069883701</string>
+    <string name="standings_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/7216590090</string>
+    <string name="scores_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/3959871363</string>
+    <string name="predictor_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/7707544689</string>
+
+</resources>

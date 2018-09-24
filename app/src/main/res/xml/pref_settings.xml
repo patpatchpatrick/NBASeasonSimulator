@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="@string/settings_theme_value_default"
+        android:entries="@array/settings_theme_labels"
+        android:entryValues="@array/settings_theme_values"
+        android:key="@string/settings_theme_key"
+        android:title="@string/settings_theme_title">
+    </ListPreference>
+
+    <Preference android:title="@string/settings_activity_elo_values"
+        android:key="@string/settings_activity_elo_values">
+    </Preference>
+
+    <Preference android:title="@string/pref_libraries" >
+        <intent android:action="libraries.intent.action"
+            />
+    </Preference>
+
+
+
+</PreferenceScreen>
