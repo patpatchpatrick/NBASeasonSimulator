@@ -57,14 +57,8 @@ public class SeasonSimContract {
         public static final String COLUMN_TEAM_CURRENT_SEASON = "currentSeason";
 
         //Define input variables for team divisions
-        public static final int DIVISION_AFC_NORTH = 1;
-        public static final int DIVISION_AFC_EAST = 2;
-        public static final int DIVISION_AFC_SOUTH = 3;
-        public static final int DIVISION_AFC_WEST = 4;
-        public static final int DIVISION_NFC_NORTH = 5;
-        public static final int DIVISION_NFC_EAST = 6;
-        public static final int DIVISION_NFC_SOUTH = 7;
-        public static final int DIVISION_NFC_WEST = 8;
+        public static final int DIVISION_WESTERN_CONFERENCE = 1;
+        public static final int DIVISION_EASTERN_CONFERENCE = 2;
 
         public static final String getDivisionString(int divisionInt){
             if (divisionInt == DIVISION_AFC_NORTH){

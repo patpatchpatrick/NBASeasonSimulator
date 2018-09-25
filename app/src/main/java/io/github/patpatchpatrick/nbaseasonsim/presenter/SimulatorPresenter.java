@@ -261,154 +261,6 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     public void loadCurrentSeasonMatches() {
         //Load all the current  season matches
         //If they are complete, they have already been completed/loaded so no need to complete them again
-        Week weekOne = mModel.getSeasonSchedule().getWeek(1);
-        ArrayList<Match> weekOneMatches = weekOne.getMatches();
-        Week weekTwo = mModel.getSeasonSchedule().getWeek(2);
-        ArrayList<Match> weekTwoMatches = weekTwo.getMatches();
-        Week weekThree = mModel.getSeasonSchedule().getWeek(3);
-        ArrayList<Match> weekThreeMatches = weekThree.getMatches();
-        if (!weekOneMatches.get(0).getComplete()) {
-            weekOneMatches.get(0).complete(12, 18);
-        }
-        if (!weekOneMatches.get(1).getComplete()) {
-            weekOneMatches.get(1).complete(34, 23);
-        }
-        if (!weekOneMatches.get(2).getComplete()) {
-            weekOneMatches.get(2).complete(3, 47);
-        }
-        if (!weekOneMatches.get(3).getComplete()) {
-            weekOneMatches.get(3).complete(48, 40);
-        }
-        if (!weekOneMatches.get(4).getComplete()) {
-            weekOneMatches.get(4).complete(20, 27);
-        }
-        if (!weekOneMatches.get(5).getComplete()) {
-            weekOneMatches.get(5).complete(16, 24);
-        }
-        if (!weekOneMatches.get(6).getComplete()) {
-            weekOneMatches.get(6).complete(20, 27);
-        }
-        if (!weekOneMatches.get(7).getComplete()) {
-            weekOneMatches.get(7).complete(20, 15);
-        }
-        if (!weekOneMatches.get(8).getComplete()) {
-            weekOneMatches.get(8).complete(21, 21);
-        }
-        if (!weekOneMatches.get(9).getComplete()) {
-            weekOneMatches.get(9).complete(38, 28);
-        }
-        if (!weekOneMatches.get(10).getComplete()) {
-            weekOneMatches.get(10).complete(8, 16);
-        }
-        if (!weekOneMatches.get(11).getComplete()) {
-            weekOneMatches.get(11).complete(24, 6);
-        }
-        if (!weekOneMatches.get(12).getComplete()) {
-            weekOneMatches.get(12).complete(24, 27);
-        }
-        if (!weekOneMatches.get(13).getComplete()) {
-            weekOneMatches.get(13).complete(23, 24);
-        }
-        if (!weekOneMatches.get(14).getComplete()) {
-            weekOneMatches.get(14).complete(48, 17);
-        }
-        if (!weekOneMatches.get(15).getComplete()) {
-            weekOneMatches.get(15).complete(33, 13);
-        }
-        if (!weekTwoMatches.get(0).getComplete()) {
-            weekTwoMatches.get(0).complete(23, 34);
-        }
-        if (!weekTwoMatches.get(1).getComplete()) {
-            weekTwoMatches.get(1).complete(42, 37);
-
-        }
-        if (!weekTwoMatches.get(2).getComplete()) {
-            weekTwoMatches.get(2).complete(20, 12);
-        }
-        if (!weekTwoMatches.get(3).getComplete()) {
-            weekTwoMatches.get(3).complete(21, 27);
-        }
-        if (!weekTwoMatches.get(4).getComplete()) {
-            weekTwoMatches.get(4).complete(18, 21);
-        }
-        if (!weekTwoMatches.get(5).getComplete()) {
-            weekTwoMatches.get(5).complete(21, 9);
-        }
-        if (!weekTwoMatches.get(6).getComplete()) {
-            weekTwoMatches.get(6).complete(31, 20);
-        }
-        if (!weekTwoMatches.get(7).getComplete()) {
-            weekTwoMatches.get(7).complete(29, 29);
-        }
-        if (!weekTwoMatches.get(8).getComplete()) {
-            weekTwoMatches.get(8).complete(24, 31);
-        }
-        if (!weekTwoMatches.get(9).getComplete()) {
-            weekTwoMatches.get(9).complete(17, 20);
-        }
-        if (!weekTwoMatches.get(10).getComplete()) {
-            weekTwoMatches.get(10).complete(0, 34);
-        }
-        if (!weekTwoMatches.get(11).getComplete()) {
-            weekTwoMatches.get(11).complete(27, 30);
-        }
-        if (!weekTwoMatches.get(12).getComplete()) {
-            weekTwoMatches.get(12).complete(19, 20);
-        }
-        if (!weekTwoMatches.get(13).getComplete()) {
-            weekTwoMatches.get(13).complete(20, 31);
-        }
-        if (!weekTwoMatches.get(14).getComplete()) {
-            weekTwoMatches.get(14).complete(13, 20);
-        }
-        if (!weekTwoMatches.get(15).getComplete()) {
-            weekTwoMatches.get(15).complete(17, 24);
-        }
-        if (!weekThreeMatches.get(0).getComplete()) {
-            weekThreeMatches.get(0).complete(17, 21);
-        }
-        if (!weekThreeMatches.get(1).getComplete()) {
-            weekThreeMatches.get(1).complete(27, 6);
-        }
-        if (!weekThreeMatches.get(2).getComplete()) {
-            weekThreeMatches.get(2).complete(27, 22);
-        }
-        if (!weekThreeMatches.get(3).getComplete()) {
-            weekThreeMatches.get(3).complete(17, 31);
-        }
-        if (!weekThreeMatches.get(4).getComplete()) {
-            weekThreeMatches.get(4).complete(27, 38);
-        }
-        if (!weekThreeMatches.get(5).getComplete()) {
-            weekThreeMatches.get(5).complete(20, 28);
-        }
-        if (!weekThreeMatches.get(6).getComplete()) {
-            weekThreeMatches.get(6).complete(16, 20);
-        }
-        if (!weekThreeMatches.get(7).getComplete()) {
-            weekThreeMatches.get(7).complete(9, 6);
-        }
-        if (!weekThreeMatches.get(8).getComplete()) {
-            weekThreeMatches.get(8).complete(21, 31);
-        }
-        if (!weekThreeMatches.get(9).getComplete()) {
-            weekThreeMatches.get(9).complete(14, 27);
-        }
-        if (!weekThreeMatches.get(10).getComplete()) {
-            weekThreeMatches.get(10).complete(43, 37);
-        }
-        if (!weekThreeMatches.get(11).getComplete()) {
-            weekThreeMatches.get(11).complete(23, 35);
-        }
-        if (!weekThreeMatches.get(12).getComplete()) {
-            weekThreeMatches.get(12).complete(16, 14);
-        }
-        if (!weekThreeMatches.get(13).getComplete()) {
-            weekThreeMatches.get(13).complete(13, 24);
-        }
-        if (!weekThreeMatches.get(14).getComplete()) {
-            weekThreeMatches.get(14).complete(10, 26);
-        }
 
 
     }
@@ -1314,94 +1166,94 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         HashMap<String, Team> simulatorTeamList = new HashMap();
         simulatorTeamList.put(NBAConstants.TEAM_ATLANTA_HAWKS_STRING,
                 new Team(NBAConstants.TEAM_ATLANTA_HAWKS_STRING, NBAConstants.TEAM_ATLANTA_HAWKS_SHORT_STRING, NBAConstants.TEAM_ATLANTA_HAWKS_ELO, NBAConstants.TEAM_ATLANTA_HAWKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_ATLANTA_HAWKS_OFFRAT, NBAConstants.TEAM_ATLANTA_HAWKS_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this));
+                        NBAConstants.TEAM_ATLANTA_HAWKS_OFFRAT, NBAConstants.TEAM_ATLANTA_HAWKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_BOSTON_CELTICS_STRING,
                 new Team(NBAConstants.TEAM_BOSTON_CELTICS_STRING, NBAConstants.TEAM_BOSTON_CELTICS_SHORT_STRING, NBAConstants.TEAM_BOSTON_CELTICS_ELO, NBAConstants.TEAM_BOSTON_CELTICS_FUTURE_RANKING,
-                        NBAConstants.TEAM_BOSTON_CELTICS_OFFRAT, NBAConstants.TEAM_BOSTON_CELTICS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this));
+                        NBAConstants.TEAM_BOSTON_CELTICS_OFFRAT, NBAConstants.TEAM_BOSTON_CELTICS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_BROOKLYN_NETS_STRING,
                 new Team(NBAConstants.TEAM_BROOKLYN_NETS_STRING, NBAConstants.TEAM_BROOKLYN_NETS_SHORT_STRING, NBAConstants.TEAM_BROOKLYN_NETS_ELO, NBAConstants.TEAM_BROOKLYN_NETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_BROOKLYN_NETS_OFFRAT, NBAConstants.TEAM_BROOKLYN_NETS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this));
+                        NBAConstants.TEAM_BROOKLYN_NETS_OFFRAT, NBAConstants.TEAM_BROOKLYN_NETS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING,
                 new Team(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING, NBAConstants.TEAM_CHARLOTTE_HORNETS_SHORT_STRING, NBAConstants.TEAM_CHARLOTTE_HORNETS_ELO, NBAConstants.TEAM_CHARLOTTE_HORNETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CHARLOTTE_HORNETS_OFFRAT, NBAConstants.TEAM_CHARLOTTE_HORNETS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this));
+                        NBAConstants.TEAM_CHARLOTTE_HORNETS_OFFRAT, NBAConstants.TEAM_CHARLOTTE_HORNETS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_CHICAGO_BULLS_STRING,
                 new Team(NBAConstants.TEAM_CHICAGO_BULLS_STRING, NBAConstants.TEAM_CHICAGO_BULLS_SHORT_STRING, NBAConstants.TEAM_CHICAGO_BULLS_ELO, NBAConstants.TEAM_CHICAGO_BULLS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CHICAGO_BULLS_OFFRAT, NBAConstants.TEAM_CHICAGO_BULLS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this));
+                        NBAConstants.TEAM_CHICAGO_BULLS_OFFRAT, NBAConstants.TEAM_CHICAGO_BULLS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING,
                 new Team(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING, NBAConstants.TEAM_CLEVELAND_CAVALIERS_SHORT_STRING, NBAConstants.TEAM_CLEVELAND_CAVALIERS_ELO, NBAConstants.TEAM_CLEVELAND_CAVALIERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CLEVELAND_CAVALIERS_OFFRAT, NBAConstants.TEAM_CLEVELAND_CAVALIERS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this));
+                        NBAConstants.TEAM_CLEVELAND_CAVALIERS_OFFRAT, NBAConstants.TEAM_CLEVELAND_CAVALIERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING,
                 new Team(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING, NBAConstants.TEAM_DALLAS_MAVERICKS_SHORT_STRING, NBAConstants.TEAM_DALLAS_MAVERICKS_ELO, NBAConstants.TEAM_DALLAS_MAVERICKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DALLAS_MAVERICKS_OFFRAT, NBAConstants.TEAM_DALLAS_MAVERICKS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this));
+                        NBAConstants.TEAM_DALLAS_MAVERICKS_OFFRAT, NBAConstants.TEAM_DALLAS_MAVERICKS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_DENVER_NUGGETS_STRING,
                 new Team(NBAConstants.TEAM_DENVER_NUGGETS_STRING, NBAConstants.TEAM_DENVER_NUGGETS_SHORT_STRING, NBAConstants.TEAM_DENVER_NUGGETS_ELO, NBAConstants.TEAM_DENVER_NUGGETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DENVER_NUGGETS_OFFRAT, NBAConstants.TEAM_DENVER_NUGGETS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this));
+                        NBAConstants.TEAM_DENVER_NUGGETS_OFFRAT, NBAConstants.TEAM_DENVER_NUGGETS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_DETROIT_PISTONS_STRING,
                 new Team(NBAConstants.TEAM_DETROIT_PISTONS_STRING, NBAConstants.TEAM_DETROIT_PISTONS_SHORT_STRING, NBAConstants.TEAM_DETROIT_PISTONS_ELO, NBAConstants.TEAM_DETROIT_PISTONS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DETROIT_PISTONS_OFFRAT, NBAConstants.TEAM_DETROIT_PISTONS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this));
+                        NBAConstants.TEAM_DETROIT_PISTONS_OFFRAT, NBAConstants.TEAM_DETROIT_PISTONS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING,
                 new Team(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_SHORT_STRING, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_ELO, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_FUTURE_RANKING,
-                        NBAConstants.TEAM_GOLDENSTATE_WARRIORS_OFFRAT, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this));
+                        NBAConstants.TEAM_GOLDENSTATE_WARRIORS_OFFRAT, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING,
                 new Team(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING, NBAConstants.TEAM_HOUSTON_ROCKETS_SHORT_STRING, NBAConstants.TEAM_HOUSTON_ROCKETS_ELO, NBAConstants.TEAM_HOUSTON_ROCKETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_HOUSTON_ROCKETS_OFFRAT, NBAConstants.TEAM_HOUSTON_ROCKETS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this));
+                        NBAConstants.TEAM_HOUSTON_ROCKETS_OFFRAT, NBAConstants.TEAM_HOUSTON_ROCKETS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_INDIANA_PACERS_STRING,
                 new Team(NBAConstants.TEAM_INDIANA_PACERS_STRING, NBAConstants.TEAM_INDIANA_PACERS_SHORT_STRING, NBAConstants.TEAM_INDIANA_PACERS_ELO, NBAConstants.TEAM_INDIANA_PACERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_INDIANA_PACERS_OFFRAT, NBAConstants.TEAM_INDIANA_PACERS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this));
+                        NBAConstants.TEAM_INDIANA_PACERS_OFFRAT, NBAConstants.TEAM_INDIANA_PACERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING,
                 new Team(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING, NBAConstants.TEAM_LOSANGELES_CLIPPERS_SHORT_STRING, NBAConstants.TEAM_LOSANGELES_CLIPPERS_ELO, NBAConstants.TEAM_LOSANGELES_CLIPPERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_LOSANGELES_CLIPPERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_CLIPPERS_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this));
+                        NBAConstants.TEAM_LOSANGELES_CLIPPERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_CLIPPERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING,
                 new Team(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING, NBAConstants.TEAM_LOSANGELES_LAKERS_SHORT_STRING, NBAConstants.TEAM_LOSANGELES_LAKERS_ELO, NBAConstants.TEAM_LOSANGELES_LAKERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_LOSANGELES_LAKERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_LAKERS_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this));
+                        NBAConstants.TEAM_LOSANGELES_LAKERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_LAKERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING,
                 new Team(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_SHORT_STRING, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_ELO, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_FUTURE_RANKING,
-                        NBAConstants.TEAM_MEMPHIS_GRIZZLIES_OFFRAT, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this));
+                        NBAConstants.TEAM_MEMPHIS_GRIZZLIES_OFFRAT, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_MIAMI_HEAT_STRING,
                 new Team(NBAConstants.TEAM_MIAMI_HEAT_STRING, NBAConstants.TEAM_MIAMI_HEAT_SHORT_STRING, NBAConstants.TEAM_MIAMI_HEAT_ELO, NBAConstants.TEAM_MIAMI_HEAT_FUTURE_RANKING,
-                        NBAConstants.TEAM_MIAMI_HEAT_OFFRAT, NBAConstants.TEAM_MIAMI_HEAT_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this));
+                        NBAConstants.TEAM_MIAMI_HEAT_OFFRAT, NBAConstants.TEAM_MIAMI_HEAT_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING,
                 new Team(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING, NBAConstants.TEAM_MILWAUKEE_BUCKS_SHORT_STRING, NBAConstants.TEAM_MILWAUKEE_BUCKS_ELO, NBAConstants.TEAM_MILWAUKEE_BUCKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_MILWAUKEE_BUCKS_OFFRAT, NBAConstants.TEAM_MILWAUKEE_BUCKS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this));
+                        NBAConstants.TEAM_MILWAUKEE_BUCKS_OFFRAT, NBAConstants.TEAM_MILWAUKEE_BUCKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING,
                 new Team(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_SHORT_STRING, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_ELO, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_FUTURE_RANKING,
-                        NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_OFFRAT, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this));
+                        NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_OFFRAT, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING,
                 new Team(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING, NBAConstants.TEAM_NEWORLEANS_PELICANS_SHORT_STRING, NBAConstants.TEAM_NEWORLEANS_PELICANS_ELO, NBAConstants.TEAM_NEWORLEANS_PELICANS_FUTURE_RANKING,
-                        NBAConstants.TEAM_NEWORLEANS_PELICANS_OFFRAT, NBAConstants.TEAM_NEWORLEANS_PELICANS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this));
+                        NBAConstants.TEAM_NEWORLEANS_PELICANS_OFFRAT, NBAConstants.TEAM_NEWORLEANS_PELICANS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_NEWYORK_KNICKS_STRING,
                 new Team(NBAConstants.TEAM_NEWYORK_KNICKS_STRING, NBAConstants.TEAM_NEWYORK_KNICKS_SHORT_STRING, NBAConstants.TEAM_NEWYORK_KNICKS_ELO, NBAConstants.TEAM_NEWYORK_KNICKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_NEWYORK_KNICKS_OFFRAT, NBAConstants.TEAM_NEWYORK_KNICKS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this));
+                        NBAConstants.TEAM_NEWYORK_KNICKS_OFFRAT, NBAConstants.TEAM_NEWYORK_KNICKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING,
                 new Team(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_SHORT_STRING, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_ELO, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_FUTURE_RANKING,
-                        NBAConstants.TEAM_OKLAHOMACITY_THUNDER_OFFRAT, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this));
+                        NBAConstants.TEAM_OKLAHOMACITY_THUNDER_OFFRAT, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_ORLANDO_MAGIC_STRING,
                 new Team(NBAConstants.TEAM_ORLANDO_MAGIC_STRING, NBAConstants.TEAM_ORLANDO_MAGIC_SHORT_STRING, NBAConstants.TEAM_ORLANDO_MAGIC_ELO, NBAConstants.TEAM_ORLANDO_MAGIC_FUTURE_RANKING,
-                        NBAConstants.TEAM_ORLANDO_MAGIC_OFFRAT, NBAConstants.TEAM_ORLANDO_MAGIC_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this));
+                        NBAConstants.TEAM_ORLANDO_MAGIC_OFFRAT, NBAConstants.TEAM_ORLANDO_MAGIC_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING,
                 new Team(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING, NBAConstants.TEAM_PHILADELPHIA_76ERS_SHORT_STRING, NBAConstants.TEAM_PHILADELPHIA_76ERS_ELO, NBAConstants.TEAM_PHILADELPHIA_76ERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PHILADELPHIA_76ERS_OFFRAT, NBAConstants.TEAM_PHILADELPHIA_76ERS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this));
+                        NBAConstants.TEAM_PHILADELPHIA_76ERS_OFFRAT, NBAConstants.TEAM_PHILADELPHIA_76ERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_PHOENIX_SUNS_STRING,
                 new Team(NBAConstants.TEAM_PHOENIX_SUNS_STRING, NBAConstants.TEAM_PHOENIX_SUNS_SHORT_STRING, NBAConstants.TEAM_PHOENIX_SUNS_ELO, NBAConstants.TEAM_PHOENIX_SUNS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PHOENIX_SUNS_OFFRAT, NBAConstants.TEAM_PHOENIX_SUNS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this));
+                        NBAConstants.TEAM_PHOENIX_SUNS_OFFRAT, NBAConstants.TEAM_PHOENIX_SUNS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING,
                 new Team(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_SHORT_STRING, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_ELO, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_OFFRAT, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this));
+                        NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_OFFRAT, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING,
                 new Team(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING, NBAConstants.TEAM_SACRAMENTO_KINGS_SHORT_STRING, NBAConstants.TEAM_SACRAMENTO_KINGS_ELO, NBAConstants.TEAM_SACRAMENTO_KINGS_FUTURE_RANKING,
-                        NBAConstants.TEAM_SACRAMENTO_KINGS_OFFRAT, NBAConstants.TEAM_SACRAMENTO_KINGS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this));
+                        NBAConstants.TEAM_SACRAMENTO_KINGS_OFFRAT, NBAConstants.TEAM_SACRAMENTO_KINGS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_SANANTONIO_SPURS_STRING,
                 new Team(NBAConstants.TEAM_SANANTONIO_SPURS_STRING, NBAConstants.TEAM_SANANTONIO_SPURS_SHORT_STRING, NBAConstants.TEAM_SANANTONIO_SPURS_ELO, NBAConstants.TEAM_SANANTONIO_SPURS_FUTURE_RANKING,
-                        NBAConstants.TEAM_SANANTONIO_SPURS_OFFRAT, NBAConstants.TEAM_SANANTONIO_SPURS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this));
+                        NBAConstants.TEAM_SANANTONIO_SPURS_OFFRAT, NBAConstants.TEAM_SANANTONIO_SPURS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_TORONTO_RAPTORS_STRING,
                 new Team(NBAConstants.TEAM_TORONTO_RAPTORS_STRING, NBAConstants.TEAM_TORONTO_RAPTORS_SHORT_STRING, NBAConstants.TEAM_TORONTO_RAPTORS_ELO, NBAConstants.TEAM_TORONTO_RAPTORS_FUTURE_RANKING,
-                        NBAConstants.TEAM_TORONTO_RAPTORS_OFFRAT, NBAConstants.TEAM_TORONTO_RAPTORS_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this));
+                        NBAConstants.TEAM_TORONTO_RAPTORS_OFFRAT, NBAConstants.TEAM_TORONTO_RAPTORS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_UTAH_JAZZ_STRING,
                 new Team(NBAConstants.TEAM_UTAH_JAZZ_STRING, NBAConstants.TEAM_UTAH_JAZZ_SHORT_STRING, NBAConstants.TEAM_UTAH_JAZZ_ELO, NBAConstants.TEAM_UTAH_JAZZ_FUTURE_RANKING,
-                        NBAConstants.TEAM_UTAH_JAZZ_OFFRAT, NBAConstants.TEAM_UTAH_JAZZ_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this));
+                        NBAConstants.TEAM_UTAH_JAZZ_OFFRAT, NBAConstants.TEAM_UTAH_JAZZ_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this));
         simulatorTeamList.put(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING,
                 new Team(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING, NBAConstants.TEAM_WASHINGTON_WIZARDS_SHORT_STRING, NBAConstants.TEAM_WASHINGTON_WIZARDS_ELO, NBAConstants.TEAM_WASHINGTON_WIZARDS_FUTURE_RANKING,
-                        NBAConstants.TEAM_WASHINGTON_WIZARDS_OFFRAT, NBAConstants.TEAM_WASHINGTON_WIZARDS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this));
+                        NBAConstants.TEAM_WASHINGTON_WIZARDS_OFFRAT, NBAConstants.TEAM_WASHINGTON_WIZARDS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this));
         mModel.setSimulatorTeamList(simulatorTeamList);
 
         mModel.createTeamLogoMap();
@@ -1414,94 +1266,94 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         HashMap<String, Team> seasonTeamList = new HashMap();
         seasonTeamList.put(NBAConstants.TEAM_ATLANTA_HAWKS_STRING,
                 new Team(NBAConstants.TEAM_ATLANTA_HAWKS_STRING, NBAConstants.TEAM_ATLANTA_HAWKS_SHORT_STRING, NBAConstants.TEAM_ATLANTA_HAWKS_ELO, NBAConstants.TEAM_ATLANTA_HAWKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_ATLANTA_HAWKS_OFFRAT, NBAConstants.TEAM_ATLANTA_HAWKS_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_ATLANTA_HAWKS_OFFRAT, NBAConstants.TEAM_ATLANTA_HAWKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_BOSTON_CELTICS_STRING,
                 new Team(NBAConstants.TEAM_BOSTON_CELTICS_STRING, NBAConstants.TEAM_BOSTON_CELTICS_SHORT_STRING, NBAConstants.TEAM_BOSTON_CELTICS_ELO, NBAConstants.TEAM_BOSTON_CELTICS_FUTURE_RANKING,
-                        NBAConstants.TEAM_BOSTON_CELTICS_OFFRAT, NBAConstants.TEAM_BOSTON_CELTICS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_BOSTON_CELTICS_OFFRAT, NBAConstants.TEAM_BOSTON_CELTICS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_BROOKLYN_NETS_STRING,
                 new Team(NBAConstants.TEAM_BROOKLYN_NETS_STRING, NBAConstants.TEAM_BROOKLYN_NETS_SHORT_STRING, NBAConstants.TEAM_BROOKLYN_NETS_ELO, NBAConstants.TEAM_BROOKLYN_NETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_BROOKLYN_NETS_OFFRAT, NBAConstants.TEAM_BROOKLYN_NETS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_BROOKLYN_NETS_OFFRAT, NBAConstants.TEAM_BROOKLYN_NETS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING,
                 new Team(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING, NBAConstants.TEAM_CHARLOTTE_HORNETS_SHORT_STRING, NBAConstants.TEAM_CHARLOTTE_HORNETS_ELO, NBAConstants.TEAM_CHARLOTTE_HORNETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CHARLOTTE_HORNETS_OFFRAT, NBAConstants.TEAM_CHARLOTTE_HORNETS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_CHARLOTTE_HORNETS_OFFRAT, NBAConstants.TEAM_CHARLOTTE_HORNETS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_CHICAGO_BULLS_STRING,
                 new Team(NBAConstants.TEAM_CHICAGO_BULLS_STRING, NBAConstants.TEAM_CHICAGO_BULLS_SHORT_STRING, NBAConstants.TEAM_CHICAGO_BULLS_ELO, NBAConstants.TEAM_CHICAGO_BULLS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CHICAGO_BULLS_OFFRAT, NBAConstants.TEAM_CHICAGO_BULLS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_CHICAGO_BULLS_OFFRAT, NBAConstants.TEAM_CHICAGO_BULLS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING,
                 new Team(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING, NBAConstants.TEAM_CLEVELAND_CAVALIERS_SHORT_STRING, NBAConstants.TEAM_CLEVELAND_CAVALIERS_ELO, NBAConstants.TEAM_CLEVELAND_CAVALIERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_CLEVELAND_CAVALIERS_OFFRAT, NBAConstants.TEAM_CLEVELAND_CAVALIERS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_CLEVELAND_CAVALIERS_OFFRAT, NBAConstants.TEAM_CLEVELAND_CAVALIERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING,
                 new Team(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING, NBAConstants.TEAM_DALLAS_MAVERICKS_SHORT_STRING, NBAConstants.TEAM_DALLAS_MAVERICKS_ELO, NBAConstants.TEAM_DALLAS_MAVERICKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DALLAS_MAVERICKS_OFFRAT, NBAConstants.TEAM_DALLAS_MAVERICKS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_DALLAS_MAVERICKS_OFFRAT, NBAConstants.TEAM_DALLAS_MAVERICKS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_DENVER_NUGGETS_STRING,
                 new Team(NBAConstants.TEAM_DENVER_NUGGETS_STRING, NBAConstants.TEAM_DENVER_NUGGETS_SHORT_STRING, NBAConstants.TEAM_DENVER_NUGGETS_ELO, NBAConstants.TEAM_DENVER_NUGGETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DENVER_NUGGETS_OFFRAT, NBAConstants.TEAM_DENVER_NUGGETS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_DENVER_NUGGETS_OFFRAT, NBAConstants.TEAM_DENVER_NUGGETS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_DETROIT_PISTONS_STRING,
                 new Team(NBAConstants.TEAM_DETROIT_PISTONS_STRING, NBAConstants.TEAM_DETROIT_PISTONS_SHORT_STRING, NBAConstants.TEAM_DETROIT_PISTONS_ELO, NBAConstants.TEAM_DETROIT_PISTONS_FUTURE_RANKING,
-                        NBAConstants.TEAM_DETROIT_PISTONS_OFFRAT, NBAConstants.TEAM_DETROIT_PISTONS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_DETROIT_PISTONS_OFFRAT, NBAConstants.TEAM_DETROIT_PISTONS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING,
                 new Team(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_SHORT_STRING, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_ELO, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_FUTURE_RANKING,
-                        NBAConstants.TEAM_GOLDENSTATE_WARRIORS_OFFRAT, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_GOLDENSTATE_WARRIORS_OFFRAT, NBAConstants.TEAM_GOLDENSTATE_WARRIORS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING,
                 new Team(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING, NBAConstants.TEAM_HOUSTON_ROCKETS_SHORT_STRING, NBAConstants.TEAM_HOUSTON_ROCKETS_ELO, NBAConstants.TEAM_HOUSTON_ROCKETS_FUTURE_RANKING,
-                        NBAConstants.TEAM_HOUSTON_ROCKETS_OFFRAT, NBAConstants.TEAM_HOUSTON_ROCKETS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_HOUSTON_ROCKETS_OFFRAT, NBAConstants.TEAM_HOUSTON_ROCKETS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_INDIANA_PACERS_STRING,
                 new Team(NBAConstants.TEAM_INDIANA_PACERS_STRING, NBAConstants.TEAM_INDIANA_PACERS_SHORT_STRING, NBAConstants.TEAM_INDIANA_PACERS_ELO, NBAConstants.TEAM_INDIANA_PACERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_INDIANA_PACERS_OFFRAT, NBAConstants.TEAM_INDIANA_PACERS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_INDIANA_PACERS_OFFRAT, NBAConstants.TEAM_INDIANA_PACERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING,
                 new Team(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING, NBAConstants.TEAM_LOSANGELES_CLIPPERS_SHORT_STRING, NBAConstants.TEAM_LOSANGELES_CLIPPERS_ELO, NBAConstants.TEAM_LOSANGELES_CLIPPERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_LOSANGELES_CLIPPERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_CLIPPERS_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_LOSANGELES_CLIPPERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_CLIPPERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING,
                 new Team(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING, NBAConstants.TEAM_LOSANGELES_LAKERS_SHORT_STRING, NBAConstants.TEAM_LOSANGELES_LAKERS_ELO, NBAConstants.TEAM_LOSANGELES_LAKERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_LOSANGELES_LAKERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_LAKERS_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_LOSANGELES_LAKERS_OFFRAT, NBAConstants.TEAM_LOSANGELES_LAKERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING,
                 new Team(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_SHORT_STRING, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_ELO, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_FUTURE_RANKING,
-                        NBAConstants.TEAM_MEMPHIS_GRIZZLIES_OFFRAT, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_DEFRAT, TeamEntry.DIVISION_AFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_MEMPHIS_GRIZZLIES_OFFRAT, NBAConstants.TEAM_MEMPHIS_GRIZZLIES_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_MIAMI_HEAT_STRING,
                 new Team(NBAConstants.TEAM_MIAMI_HEAT_STRING, NBAConstants.TEAM_MIAMI_HEAT_SHORT_STRING, NBAConstants.TEAM_MIAMI_HEAT_ELO, NBAConstants.TEAM_MIAMI_HEAT_FUTURE_RANKING,
-                        NBAConstants.TEAM_MIAMI_HEAT_OFFRAT, NBAConstants.TEAM_MIAMI_HEAT_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_MIAMI_HEAT_OFFRAT, NBAConstants.TEAM_MIAMI_HEAT_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING,
                 new Team(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING, NBAConstants.TEAM_MILWAUKEE_BUCKS_SHORT_STRING, NBAConstants.TEAM_MILWAUKEE_BUCKS_ELO, NBAConstants.TEAM_MILWAUKEE_BUCKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_MILWAUKEE_BUCKS_OFFRAT, NBAConstants.TEAM_MILWAUKEE_BUCKS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_MILWAUKEE_BUCKS_OFFRAT, NBAConstants.TEAM_MILWAUKEE_BUCKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING,
                 new Team(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_SHORT_STRING, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_ELO, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_FUTURE_RANKING,
-                        NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_OFFRAT, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_OFFRAT, NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING,
                 new Team(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING, NBAConstants.TEAM_NEWORLEANS_PELICANS_SHORT_STRING, NBAConstants.TEAM_NEWORLEANS_PELICANS_ELO, NBAConstants.TEAM_NEWORLEANS_PELICANS_FUTURE_RANKING,
-                        NBAConstants.TEAM_NEWORLEANS_PELICANS_OFFRAT, NBAConstants.TEAM_NEWORLEANS_PELICANS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_NEWORLEANS_PELICANS_OFFRAT, NBAConstants.TEAM_NEWORLEANS_PELICANS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_NEWYORK_KNICKS_STRING,
                 new Team(NBAConstants.TEAM_NEWYORK_KNICKS_STRING, NBAConstants.TEAM_NEWYORK_KNICKS_SHORT_STRING, NBAConstants.TEAM_NEWYORK_KNICKS_ELO, NBAConstants.TEAM_NEWYORK_KNICKS_FUTURE_RANKING,
-                        NBAConstants.TEAM_NEWYORK_KNICKS_OFFRAT, NBAConstants.TEAM_NEWYORK_KNICKS_DEFRAT, TeamEntry.DIVISION_NFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_NEWYORK_KNICKS_OFFRAT, NBAConstants.TEAM_NEWYORK_KNICKS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING,
                 new Team(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_SHORT_STRING, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_ELO, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_FUTURE_RANKING,
-                        NBAConstants.TEAM_OKLAHOMACITY_THUNDER_OFFRAT, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_OKLAHOMACITY_THUNDER_OFFRAT, NBAConstants.TEAM_OKLAHOMACITY_THUNDER_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_ORLANDO_MAGIC_STRING,
                 new Team(NBAConstants.TEAM_ORLANDO_MAGIC_STRING, NBAConstants.TEAM_ORLANDO_MAGIC_SHORT_STRING, NBAConstants.TEAM_ORLANDO_MAGIC_ELO, NBAConstants.TEAM_ORLANDO_MAGIC_FUTURE_RANKING,
-                        NBAConstants.TEAM_ORLANDO_MAGIC_OFFRAT, NBAConstants.TEAM_ORLANDO_MAGIC_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_ORLANDO_MAGIC_OFFRAT, NBAConstants.TEAM_ORLANDO_MAGIC_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING,
                 new Team(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING, NBAConstants.TEAM_PHILADELPHIA_76ERS_SHORT_STRING, NBAConstants.TEAM_PHILADELPHIA_76ERS_ELO, NBAConstants.TEAM_PHILADELPHIA_76ERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PHILADELPHIA_76ERS_OFFRAT, NBAConstants.TEAM_PHILADELPHIA_76ERS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_PHILADELPHIA_76ERS_OFFRAT, NBAConstants.TEAM_PHILADELPHIA_76ERS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_PHOENIX_SUNS_STRING,
                 new Team(NBAConstants.TEAM_PHOENIX_SUNS_STRING, NBAConstants.TEAM_PHOENIX_SUNS_SHORT_STRING, NBAConstants.TEAM_PHOENIX_SUNS_ELO, NBAConstants.TEAM_PHOENIX_SUNS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PHOENIX_SUNS_OFFRAT, NBAConstants.TEAM_PHOENIX_SUNS_DEFRAT, TeamEntry.DIVISION_AFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_PHOENIX_SUNS_OFFRAT, NBAConstants.TEAM_PHOENIX_SUNS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING,
                 new Team(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_SHORT_STRING, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_ELO, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_FUTURE_RANKING,
-                        NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_OFFRAT, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_DEFRAT, TeamEntry.DIVISION_AFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_OFFRAT, NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING,
                 new Team(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING, NBAConstants.TEAM_SACRAMENTO_KINGS_SHORT_STRING, NBAConstants.TEAM_SACRAMENTO_KINGS_ELO, NBAConstants.TEAM_SACRAMENTO_KINGS_FUTURE_RANKING,
-                        NBAConstants.TEAM_SACRAMENTO_KINGS_OFFRAT, NBAConstants.TEAM_SACRAMENTO_KINGS_DEFRAT, TeamEntry.DIVISION_NFC_EAST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_SACRAMENTO_KINGS_OFFRAT, NBAConstants.TEAM_SACRAMENTO_KINGS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_SANANTONIO_SPURS_STRING,
                 new Team(NBAConstants.TEAM_SANANTONIO_SPURS_STRING, NBAConstants.TEAM_SANANTONIO_SPURS_SHORT_STRING, NBAConstants.TEAM_SANANTONIO_SPURS_ELO, NBAConstants.TEAM_SANANTONIO_SPURS_FUTURE_RANKING,
-                        NBAConstants.TEAM_SANANTONIO_SPURS_OFFRAT, NBAConstants.TEAM_SANANTONIO_SPURS_DEFRAT, TeamEntry.DIVISION_AFC_NORTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_SANANTONIO_SPURS_OFFRAT, NBAConstants.TEAM_SANANTONIO_SPURS_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_TORONTO_RAPTORS_STRING,
                 new Team(NBAConstants.TEAM_TORONTO_RAPTORS_STRING, NBAConstants.TEAM_TORONTO_RAPTORS_SHORT_STRING, NBAConstants.TEAM_TORONTO_RAPTORS_ELO, NBAConstants.TEAM_TORONTO_RAPTORS_FUTURE_RANKING,
-                        NBAConstants.TEAM_TORONTO_RAPTORS_OFFRAT, NBAConstants.TEAM_TORONTO_RAPTORS_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_TORONTO_RAPTORS_OFFRAT, NBAConstants.TEAM_TORONTO_RAPTORS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_UTAH_JAZZ_STRING,
                 new Team(NBAConstants.TEAM_UTAH_JAZZ_STRING, NBAConstants.TEAM_UTAH_JAZZ_SHORT_STRING, NBAConstants.TEAM_UTAH_JAZZ_ELO, NBAConstants.TEAM_UTAH_JAZZ_FUTURE_RANKING,
-                        NBAConstants.TEAM_UTAH_JAZZ_OFFRAT, NBAConstants.TEAM_UTAH_JAZZ_DEFRAT, TeamEntry.DIVISION_NFC_WEST, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_UTAH_JAZZ_OFFRAT, NBAConstants.TEAM_UTAH_JAZZ_DEFRAT, TeamEntry.DIVISION_WESTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         seasonTeamList.put(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING,
                 new Team(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING, NBAConstants.TEAM_WASHINGTON_WIZARDS_SHORT_STRING, NBAConstants.TEAM_WASHINGTON_WIZARDS_ELO, NBAConstants.TEAM_WASHINGTON_WIZARDS_FUTURE_RANKING,
-                        NBAConstants.TEAM_WASHINGTON_WIZARDS_OFFRAT, NBAConstants.TEAM_WASHINGTON_WIZARDS_DEFRAT, TeamEntry.DIVISION_NFC_SOUTH, this, TeamEntry.CURRENT_SEASON_YES));
+                        NBAConstants.TEAM_WASHINGTON_WIZARDS_OFFRAT, NBAConstants.TEAM_WASHINGTON_WIZARDS_DEFRAT, TeamEntry.DIVISION_EASTERN_CONFERENCE, this, TeamEntry.CURRENT_SEASON_YES));
         mModel.setSeasonTeamList(seasonTeamList);
 
     }
