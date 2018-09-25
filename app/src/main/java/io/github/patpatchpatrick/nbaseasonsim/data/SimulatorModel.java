@@ -143,8 +143,6 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
         teamLogos.put(NBAConstants.TEAM_TORONTO_RAPTORS_STRING, R.drawable.torontoraptors);
         teamLogos.put(NBAConstants.TEAM_UTAH_JAZZ_STRING, R.drawable.utahjazz);
         teamLogos.put(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING, R.drawable.washingtonwizards);
-        teamLogos.put(NBAConstants.TEAM_TENNESSEE_TITANS_STRING, R.drawable.phoenixsuns);
-        teamLogos.put(NBAConstants.TEAM_WASHINGTON_REDSKINS_STRING, R.drawable.phoenixsuns);
 
         mTeamLogoMap = teamLogos;
     }

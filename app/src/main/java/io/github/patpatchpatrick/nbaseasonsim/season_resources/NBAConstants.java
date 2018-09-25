@@ -32,8 +32,6 @@ public class NBAConstants {
     public static final String TEAM_TORONTO_RAPTORS_STRING = "Toronto Raptors";
     public static final String TEAM_UTAH_JAZZ_STRING = "Utah Jazz";
     public static final String TEAM_WASHINGTON_WIZARDS_STRING = "Washington Wizards";
-    public static final String TEAM_TENNESSEE_TITANS_STRING = "Tennessee Titans";
-    public static final String TEAM_WASHINGTON_REDSKINS_STRING = "Washington Redskins";
 
     public static final String TEAM_ATLANTA_HAWKS_SHORT_STRING = "ATL";
     public static final String TEAM_BOSTON_CELTICS_SHORT_STRING = "BOS";
@@ -65,8 +63,6 @@ public class NBAConstants {
     public static final String TEAM_TORONTO_RAPTORS_SHORT_STRING = "TOR";
     public static final String TEAM_UTAH_JAZZ_SHORT_STRING = "UTA";
     public static final String TEAM_WASHINGTON_WIZARDS_SHORT_STRING = "WAS";
-    public static final String TEAM_TENNESSEE_TITANS_SHORT_STRING = "TEN";
-    public static final String TEAM_WASHINGTON_REDSKINS_SHORT_STRING = "WAS";
 
     public static final int TEAM_ATLANTA_HAWKS_ELO = 1319;
     public static final int TEAM_BOSTON_CELTICS_ELO = 1592;
@@ -98,8 +94,6 @@ public class NBAConstants {
     public static final int TEAM_TORONTO_RAPTORS_ELO = 1614;
     public static final int TEAM_UTAH_JAZZ_ELO = 1652;
     public static final int TEAM_WASHINGTON_WIZARDS_ELO = 1452;
-    public static final int TEAM_TENNESSEE_TITANS_ELO = 1491;
-    public static final int TEAM_WASHINGTON_REDSKINS_ELO = 1504;
 
     //Next season's team rankings
     public static final int TEAM_ATLANTA_HAWKS_FUTURE_RANKING = 31;
@@ -132,8 +126,6 @@ public class NBAConstants {
     public static final int TEAM_TORONTO_RAPTORS_FUTURE_RANKING = 20;
     public static final int TEAM_UTAH_JAZZ_FUTURE_RANKING = 25;
     public static final int TEAM_WASHINGTON_WIZARDS_FUTURE_RANKING = 18;
-    public static final int TEAM_TENNESSEE_TITANS_FUTURE_RANKING = 26;
-    public static final int TEAM_WASHINGTON_REDSKINS_FUTURE_RANKING = 15;
 
     public static final double TEAM_ATLANTA_HAWKS_OFFRAT = 0.25;
     public static final double TEAM_BOSTON_CELTICS_OFFRAT = 0.49;
@@ -165,8 +157,6 @@ public class NBAConstants {
     public static final double TEAM_TORONTO_RAPTORS_OFFRAT = 0.40;
     public static final double TEAM_UTAH_JAZZ_OFFRAT = 0.54;
     public static final double TEAM_WASHINGTON_WIZARDS_OFFRAT = 0.41;
-    public static final double TEAM_TENNESSEE_TITANS_OFFRAT = 0.41;
-    public static final double TEAM_WASHINGTON_REDSKINS_OFFRAT = 0.44;
 
     public static final double TEAM_ATLANTA_HAWKS_DEFRAT = 0.66;
     public static final double TEAM_BOSTON_CELTICS_DEFRAT = 0.58;
@@ -198,8 +188,6 @@ public class NBAConstants {
     public static final double TEAM_TORONTO_RAPTORS_DEFRAT = 0.26;
     public static final double TEAM_UTAH_JAZZ_DEFRAT = 0.54;
     public static final double TEAM_WASHINGTON_WIZARDS_DEFRAT = 0.00;
-    public static final double TEAM_TENNESSEE_TITANS_DEFRAT = 0.49;
-    public static final double TEAM_WASHINGTON_REDSKINS_DEFRAT = 0.30;
 
 
 }
