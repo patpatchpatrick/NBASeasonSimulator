@@ -52,14 +52,14 @@ public class StandingsRecyclerViewAdapter extends RecyclerView.Adapter<Standings
             //Display regular season standings
 
             //For every 4th team, the header should show the division
-            if (position % 4 == 0) {
-                int teamDivision = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DIVISION));
+            if (position % 15 == 0) {
+                int teamConference = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DIVISION));
                 holder.standingsHeader.setVisibility(View.VISIBLE);
                 if (position == 0) {
                     //For the first division, don't include a line break in header
-                    holder.standingsHeader.setText("" + TeamEntry.getDivisionString(teamDivision));
+                    holder.standingsHeader.setText("" + TeamEntry.getDivisionString(teamConference));
                 } else {
-                    holder.standingsHeader.setText("\n" + TeamEntry.getDivisionString(teamDivision));
+                    holder.standingsHeader.setText("\n" + TeamEntry.getDivisionString(teamConference));
                 }
             } else {
                 holder.standingsHeader.setVisibility(View.GONE);
@@ -71,14 +71,12 @@ public class StandingsRecyclerViewAdapter extends RecyclerView.Adapter<Standings
             String teamShortName = dataCursor.getString(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_SHORT_NAME));
             Integer teamWinsInt = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_CURRENT_WINS));
             Integer teamLossesInt = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_CURRENT_LOSSES));
-            Integer teamDrawsInt = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_CURRENT_DRAWS));
             String teamWins = Integer.toString(teamWinsInt);
             String teamLosses = Integer.toString(teamLossesInt);
-            String teamDraws = Integer.toString(teamDrawsInt);
             int playoffSeed = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE));
             String playoffSeedString = Integer.toString(playoffSeed);
 
-            standingsDetails += teamShortName + "  " + teamWins + " - " + teamLosses + " - " + teamDraws;
+            standingsDetails += teamShortName + "  " + teamWins + " - " + teamLosses;
 
             //Check if it is the first week of the season by determining if a team has losses or wins
             Boolean firstWeekOfSeason = true;

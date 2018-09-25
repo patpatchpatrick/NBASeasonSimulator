@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 
 import javax.inject.Inject;
@@ -25,7 +27,6 @@ import io.github.patpatchpatrick.nbaseasonsim.season_resources.ELORatingSystem;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.Match;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.NBAConstants;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.Schedule;
-import io.github.patpatchpatrick.nbaseasonsim.season_resources.Standings;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.Team;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.Week;
 
@@ -85,10 +86,6 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
         ArrayList<Match> currentWeekMatches = currentWeek.getMatches();
 
-        Log.d("PresenterCurrentWeek", "" + mCurrentSimulatorWeek);
-        Log.d("Current Week Matches", "" + currentWeekMatches.size());
-        Log.d("Num Matches Updated", "" + currentWeek.getNumberMatchesUpdated());
-
         //After the week is complete, generate the playoff teams and query the standings (and display them)
         generateAndSetPlayoffSeeds(SimulatorPresenter.SEASON_TYPE_SIMULATOR);
         mModel.querySimulatorStandings(SimulatorModel.QUERY_STANDINGS_PLAYOFF);
@@ -106,7 +103,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         //Simulate a single playoff week
         //If you are simulating the superbowl, don't use home field advantage in the simulation
         //Otherwise, include home field advantage in the simulation
-        if (mCurrentSimulatorWeek == MatchEntry.MATCH_WEEK_SUPERBOWL) {
+        if (mCurrentSimulatorWeek == MatchEntry.MATCH_WEEK_NBA_FINALS) {
             mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulate(false);
         } else {
             mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulate(true);
@@ -128,8 +125,8 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         } else {
             allPlayoffTeams = generateSimulatorPlayoffTeams(SimulatorPresenter.SEASON_TYPE_SIMULATOR);
         }
-        ArrayList<Team> afcPlayoffTeams = allPlayoffTeams.get(0);
-        ArrayList<Team> nfcPlayoffTeams = allPlayoffTeams.get(1);
+        ArrayList<Team> westernConferencePlayoffTeams = allPlayoffTeams.get(0);
+        ArrayList<Team> easternConferencePlayoffTeams = allPlayoffTeams.get(1);
         ArrayList<Team> seasonTeams;
 
         if (seasonType == SimulatorPresenter.SEASON_TYPE_CURRENT) {
@@ -142,13 +139,13 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             team.setPlayoffEligible(0);
         }
         int i = 0;
-        while (i < 6) {
-            afcPlayoffTeams.get(i).setPlayoffEligible(i + 1);
+        while (i < 8) {
+            westernConferencePlayoffTeams.get(i).setPlayoffEligible(i + 1);
             i++;
         }
         i = 0;
-        while (i < 6) {
-            nfcPlayoffTeams.get(i).setPlayoffEligible(i + 1);
+        while (i < 8) {
+            easternConferencePlayoffTeams.get(i).setPlayoffEligible(i + 1);
             i++;
         }
 
@@ -321,78 +318,23 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         }
 
         if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_WILDCARD) {
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_WILDCARD, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_FIRST_ROUND, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
 
         if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_DIVISIONAL) {
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_DIVISIONAL, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
         if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_CHAMPIONSHIP) {
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CHAMPIONSHIP, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
         if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_SUPERBOWL) {
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_SUPERBOWL, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_NBA_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
     }
 
     private void updateSimulatorCompletedGameScores() {
         //Update the scores for games that have already occurred
-        Week weekOne = mModel.getSimulatorSchedule().getWeek(1);
-        ArrayList<Match> weekOneMatches = weekOne.getMatches();
-        Week weekTwo = mModel.getSimulatorSchedule().getWeek(2);
-        ArrayList<Match> weekTwoMatches = weekTwo.getMatches();
-        Week weekThree = mModel.getSimulatorSchedule().getWeek(3);
-        ArrayList<Match> weekThreeMatches = weekThree.getMatches();
-        weekOneMatches.get(0).complete(12, 18);
-        weekOneMatches.get(1).complete(34, 23);
-        weekOneMatches.get(2).complete(3, 47);
-        weekOneMatches.get(3).complete(48, 40);
-        weekOneMatches.get(4).complete(20, 27);
-        weekOneMatches.get(5).complete(16, 24);
-        weekOneMatches.get(6).complete(20, 27);
-        weekOneMatches.get(7).complete(20, 15);
-        weekOneMatches.get(8).complete(21, 21);
-        weekOneMatches.get(9).complete(38, 28);
-        weekOneMatches.get(10).complete(8, 16);
-        weekOneMatches.get(11).complete(24, 6);
-        weekOneMatches.get(12).complete(24, 27);
-        weekOneMatches.get(13).complete(23, 24);
-        weekOneMatches.get(14).complete(48, 17);
-        weekOneMatches.get(15).complete(33, 13);
-        weekTwoMatches.get(0).complete(23, 34);
-        weekTwoMatches.get(1).complete(42, 37);
-        weekTwoMatches.get(2).complete(20, 12);
-        weekTwoMatches.get(3).complete(21, 27);
-        weekTwoMatches.get(4).complete(18, 21);
-        weekTwoMatches.get(5).complete(21, 9);
-        weekTwoMatches.get(6).complete(31, 20);
-        weekTwoMatches.get(7).complete(29, 29);
-        weekTwoMatches.get(8).complete(24, 31);
-        weekTwoMatches.get(9).complete(17, 20);
-        weekTwoMatches.get(10).complete(0, 34);
-        weekTwoMatches.get(11).complete(27, 30);
-        weekTwoMatches.get(12).complete(19, 20);
-        weekTwoMatches.get(13).complete(20, 31);
-        weekTwoMatches.get(14).complete(13, 20);
-        weekTwoMatches.get(15).complete(17, 24);
-        weekThreeMatches.get(0).complete(17, 21);
-        weekThreeMatches.get(1).complete(27, 6);
-        weekThreeMatches.get(2).complete(27, 22);
-        weekThreeMatches.get(3).complete(17, 31);
-        weekThreeMatches.get(4).complete(27, 38);
-        weekThreeMatches.get(5).complete(20, 28);
-        weekThreeMatches.get(6).complete(16, 20);
-        weekThreeMatches.get(7).complete(9, 6);
-        weekThreeMatches.get(8).complete(21, 31);
-        weekThreeMatches.get(9).complete(14, 27);
-        weekThreeMatches.get(10).complete(43, 37);
-        weekThreeMatches.get(11).complete(23, 35);
-        weekThreeMatches.get(12).complete(16, 14);
-        weekThreeMatches.get(13).complete(13, 24);
-        weekThreeMatches.get(14).complete(10, 26);
-
-
-        mCurrentSimulatorWeek = 2;
+        mCurrentSimulatorWeek = 0;
         mCurrentSimulatorWeek++;
         //Set current week preference when week is updated
         SharedPreferences.Editor prefs = mSharedPreferences.edit();
@@ -442,17 +384,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             String scoreWeekNumberHeader;
 
             scoreWeekNumberHeader = "Week " + weekNumber;
-            if (queryType == MatchEntry.MATCH_WEEK_WILDCARD) {
-                scoreWeekNumberHeader = "Wildcard Playoffs";
+            if (queryType == MatchEntry.MATCH_WEEK_FIRST_ROUND) {
+                scoreWeekNumberHeader = "Playoffs First Round";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_DIVISIONAL) {
-                scoreWeekNumberHeader = "Divisional Playoffs";
+            if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS) {
+                scoreWeekNumberHeader = "Playoffs Conference Semi-Finals";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_CHAMPIONSHIP) {
-                scoreWeekNumberHeader = "Conference Championships";
+            if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_FINALS) {
+                scoreWeekNumberHeader = "Playoffs Conference Finals";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_SUPERBOWL) {
-                scoreWeekNumberHeader = "Superbowl";
+            if (queryType == MatchEntry.MATCH_WEEK_NBA_FINALS) {
+                scoreWeekNumberHeader = "Playoffs NBA Finals";
             }
 
             matchesCursor.moveToPosition(0);
@@ -485,10 +427,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             Week weekFifteen = new Week(15);
             Week weekSixteen = new Week(16);
             Week weekSeventeen = new Week(17);
-            Week wildCard = new Week(MatchEntry.MATCH_WEEK_WILDCARD);
-            Week divisional = new Week(MatchEntry.MATCH_WEEK_DIVISIONAL);
-            Week championship = new Week(MatchEntry.MATCH_WEEK_CHAMPIONSHIP);
-            Week superbowl = new Week(MatchEntry.MATCH_WEEK_SUPERBOWL);
+            Week weekEighteen = new Week(18);
+            Week weekNineteen = new Week(19);
+            Week weekTwenty = new Week(20);
+            Week weekTwentyOne = new Week(21);
+            Week weekTwentyTwo = new Week(22);
+            Week weekTwentyThree = new Week(23);
+            Week weekTwentyFour = new Week(24);
+            Week firstRound = new Week(MatchEntry.MATCH_WEEK_FIRST_ROUND);
+            Week confSemifinals = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS);
+            Week confFinals = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS);
+            Week nbaFinals = new Week(MatchEntry.MATCH_WEEK_NBA_FINALS);
 
 
             //Get matches from database cursor and add them to the schedule
@@ -562,16 +511,37 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
                             weekSeventeen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 17, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
                             break;
                         case 18:
-                            wildCard.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 18, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            weekEighteen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 18, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
                             break;
                         case 19:
-                            divisional.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 19, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            weekNineteen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 19, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
                             break;
                         case 20:
-                            championship.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 20, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            weekTwenty.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 20, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
                             break;
                         case 21:
-                            superbowl.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 21, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            weekTwentyOne.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 21, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 22:
+                            weekTwentyTwo.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 22, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 23:
+                            weekTwentyThree.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 23, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 24:
+                            weekTwentyFour.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 24, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 25:
+                            firstRound.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 25, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 26:
+                            confSemifinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 26, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 27:
+                            confFinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 27, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
+                            break;
+                        case 28:
+                            nbaFinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 28, this, matchUri, teamTwoOdds, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, matchComplete));
                             break;
 
                     }
@@ -598,18 +568,25 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             seasonSchedule.addWeek(weekFifteen);
             seasonSchedule.addWeek(weekSixteen);
             seasonSchedule.addWeek(weekSeventeen);
+            seasonSchedule.addWeek(weekEighteen);
+            seasonSchedule.addWeek(weekNineteen);
+            seasonSchedule.addWeek(weekTwenty);
+            seasonSchedule.addWeek(weekTwentyOne);
+            seasonSchedule.addWeek(weekTwentyTwo);
+            seasonSchedule.addWeek(weekTwentyThree);
+            seasonSchedule.addWeek(weekTwentyFour);
 
-            if (mCurrentSimulatorWeek >= 18 && mSimulatorPlayoffsStarted) {
-                seasonSchedule.addWeek(wildCard);
+            if (mCurrentSimulatorWeek >= 25 && mSimulatorPlayoffsStarted) {
+                seasonSchedule.addWeek(firstRound);
             }
-            if (mCurrentSimulatorWeek >= 19 && mSimulatorPlayoffsStarted) {
-                seasonSchedule.addWeek(divisional);
+            if (mCurrentSimulatorWeek >= 26 && mSimulatorPlayoffsStarted) {
+                seasonSchedule.addWeek(confSemifinals);
             }
-            if (mCurrentSimulatorWeek >= 20 && mSimulatorPlayoffsStarted) {
-                seasonSchedule.addWeek(championship);
+            if (mCurrentSimulatorWeek >= 27 && mSimulatorPlayoffsStarted) {
+                seasonSchedule.addWeek(confFinals);
             }
-            if (mCurrentSimulatorWeek >= 21 && mSimulatorPlayoffsStarted) {
-                seasonSchedule.addWeek(superbowl);
+            if (mCurrentSimulatorWeek >= 28 && mSimulatorPlayoffsStarted) {
+                seasonSchedule.addWeek(nbaFinals);
             }
 
 
@@ -640,17 +617,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             String scoreWeekNumberHeader;
 
             scoreWeekNumberHeader = "Week " + weekNumber;
-            if (queryType == MatchEntry.MATCH_WEEK_WILDCARD) {
-                scoreWeekNumberHeader = "Wildcard Playoffs";
+            if (queryType == MatchEntry.MATCH_WEEK_FIRST_ROUND) {
+                scoreWeekNumberHeader = "Playoffs First Round";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_DIVISIONAL) {
-                scoreWeekNumberHeader = "Divisional Playoffs";
+            if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS) {
+                scoreWeekNumberHeader = "Playoffs Conference Semi-Finals";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_CHAMPIONSHIP) {
-                scoreWeekNumberHeader = "Conference Championships";
+            if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_FINALS) {
+                scoreWeekNumberHeader = "Playoffs Conference Finals";
             }
-            if (queryType == MatchEntry.MATCH_WEEK_SUPERBOWL) {
-                scoreWeekNumberHeader = "Superbowl";
+            if (queryType == MatchEntry.MATCH_WEEK_NBA_FINALS) {
+                scoreWeekNumberHeader = "Playoffs NBA Finals";
             }
 
             matchesCursor.moveToPosition(0);
@@ -683,10 +660,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             Week weekFifteen = new Week(15);
             Week weekSixteen = new Week(16);
             Week weekSeventeen = new Week(17);
-            Week wildCard = new Week(MatchEntry.MATCH_WEEK_WILDCARD);
-            Week divisional = new Week(MatchEntry.MATCH_WEEK_DIVISIONAL);
-            Week championship = new Week(MatchEntry.MATCH_WEEK_CHAMPIONSHIP);
-            Week superbowl = new Week(MatchEntry.MATCH_WEEK_SUPERBOWL);
+            Week weekEighteen = new Week(18);
+            Week weekNineteen = new Week(19);
+            Week weekTwenty = new Week(20);
+            Week weekTwentyOne = new Week(21);
+            Week weekTwentyTwo = new Week(22);
+            Week weekTwentyThree = new Week(23);
+            Week weekTwentyFour = new Week(24);
+            Week firstRound = new Week(MatchEntry.MATCH_WEEK_FIRST_ROUND);
+            Week confSemifinals = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS);
+            Week confFinals = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS);
+            Week nbaFinals = new Week(MatchEntry.MATCH_WEEK_NBA_FINALS);
 
 
             //Get matches from database cursor and add them to the schedule
@@ -761,16 +745,37 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
                             weekSeventeen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 17, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
                             break;
                         case 18:
-                            wildCard.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 18, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            weekEighteen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 18, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
                             break;
                         case 19:
-                            divisional.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 19, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            weekNineteen.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 19, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
                             break;
                         case 20:
-                            championship.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 20, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            weekTwenty.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 20, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
                             break;
                         case 21:
-                            superbowl.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 21, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            weekTwentyOne.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 21, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 22:
+                            weekTwentyTwo.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 22, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 23:
+                            weekTwentyThree.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 23, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 24:
+                            weekTwentyFour.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 24, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 25:
+                            firstRound.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 25, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 26:
+                            confSemifinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 26, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 27:
+                            confFinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 27, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
+                            break;
+                        case 28:
+                            nbaFinals.addMatch(new Match(teamList.get(teamOne), teamList.get(teamTwo), teamOneWon, 28, this, matchUri, teamTwoOdds, currentSeason, matchComplete));
                             break;
 
                     }
@@ -797,18 +802,25 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             seasonSchedule.addWeek(weekFifteen);
             seasonSchedule.addWeek(weekSixteen);
             seasonSchedule.addWeek(weekSeventeen);
+            seasonSchedule.addWeek(weekEighteen);
+            seasonSchedule.addWeek(weekNineteen);
+            seasonSchedule.addWeek(weekTwenty);
+            seasonSchedule.addWeek(weekTwentyOne);
+            seasonSchedule.addWeek(weekTwentyTwo);
+            seasonSchedule.addWeek(weekTwentyThree);
+            seasonSchedule.addWeek(weekTwentyFour);
 
-            if (mCurrentSimulatorWeek >= 18 && mCurrentSeasonPlayoffsStarted) {
-                seasonSchedule.addWeek(wildCard);
+            if (mCurrentSimulatorWeek >= 25 && mCurrentSeasonPlayoffsStarted) {
+                seasonSchedule.addWeek(firstRound);
             }
-            if (mCurrentSimulatorWeek >= 19 && mCurrentSeasonPlayoffsStarted) {
-                seasonSchedule.addWeek(divisional);
+            if (mCurrentSimulatorWeek >= 26 && mCurrentSeasonPlayoffsStarted) {
+                seasonSchedule.addWeek(confSemifinals);
             }
-            if (mCurrentSimulatorWeek >= 20 && mCurrentSeasonPlayoffsStarted) {
-                seasonSchedule.addWeek(championship);
+            if (mCurrentSimulatorWeek >= 27 && mCurrentSeasonPlayoffsStarted) {
+                seasonSchedule.addWeek(confFinals);
             }
-            if (mCurrentSimulatorWeek >= 21 && mCurrentSeasonPlayoffsStarted) {
-                seasonSchedule.addWeek(superbowl);
+            if (mCurrentSimulatorWeek >= 28 && mCurrentSeasonPlayoffsStarted) {
+                seasonSchedule.addWeek(nbaFinals);
             }
 
 
@@ -3974,22 +3986,11 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
     private ArrayList<ArrayList<Team>> generateSimulatorPlayoffTeams(int seasonType) {
 
-        //Create two ArrayList<Team>'s... one with afcPlayoffTeams and one with nfcPlayoffTeams
-        //These ArrayLists will be created using current list of simulator teams
-        //Both of these arraylists will contain the playoff teams sorted by seed
+        //Generate playoff teams
 
-        Team afcNorthDivLeader = null;
-        Team afcSouthDivLeader = null;
-        Team afcWestDivLeader = null;
-        Team afcEastDivLeader = null;
-        Team nfcNorthDivLeader = null;
-        Team nfcSouthDivLeader = null;
-        Team nfcWestDivLeader = null;
-        Team nfcEastDivLeader = null;
-        ArrayList<Team> afcPotentialWildCardTeams = new ArrayList<>();
-        ArrayList<Team> nfcPotentialWildCardTeams = new ArrayList<>();
-        ArrayList<Team> afcDivisonWinners = new ArrayList<>();
-        ArrayList<Team> nfcDivisionWinners = new ArrayList<>();
+        ArrayList<Team> westernConferencePotentialPlayoffTeams = new ArrayList<>();
+        ArrayList<Team> easternConferencePotentialPlayoffTeams = new ArrayList<>();
+
 
         ArrayList<Team> allTeams;
         if (seasonType == SimulatorPresenter.SEASON_TYPE_SIMULATOR) {
@@ -3999,240 +4000,46 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         }
 
         for (Team team : allTeams) {
-            if (team.getDivision() == TeamEntry.DIVISION_AFC_NORTH) {
-                if (afcNorthDivLeader == null) {
-                    afcNorthDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > afcNorthDivLeader.getWinLossPct()) {
-                        afcPotentialWildCardTeams.add(afcNorthDivLeader);
-                        afcNorthDivLeader = team;
-                    } else if (team.getWinLossPct() == afcNorthDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > afcNorthDivLeader.getDivisionWinLossPct()) {
-                            afcPotentialWildCardTeams.add(afcNorthDivLeader);
-                            afcNorthDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == afcNorthDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                afcPotentialWildCardTeams.add(afcNorthDivLeader);
-                                afcNorthDivLeader = team;
-                            } else {
-                                afcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            afcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        afcPotentialWildCardTeams.add(team);
-                    }
-                }
-            } else if (team.getDivision() == TeamEntry.DIVISION_AFC_SOUTH) {
-                if (afcSouthDivLeader == null) {
-                    afcSouthDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > afcSouthDivLeader.getWinLossPct()) {
-                        afcPotentialWildCardTeams.add(afcSouthDivLeader);
-                        afcSouthDivLeader = team;
-                    } else if (team.getWinLossPct() == afcSouthDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > afcSouthDivLeader.getDivisionWinLossPct()) {
-                            afcPotentialWildCardTeams.add(afcSouthDivLeader);
-                            afcSouthDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == afcSouthDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                afcPotentialWildCardTeams.add(afcSouthDivLeader);
-                                afcSouthDivLeader = team;
-                            } else {
-                                afcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            afcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        afcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_AFC_WEST) {
-                if (afcWestDivLeader == null) {
-                    afcWestDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > afcWestDivLeader.getWinLossPct()) {
-                        afcPotentialWildCardTeams.add(afcWestDivLeader);
-                        afcWestDivLeader = team;
-                    } else if (team.getWinLossPct() == afcWestDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > afcWestDivLeader.getDivisionWinLossPct()) {
-                            afcPotentialWildCardTeams.add(afcWestDivLeader);
-                            afcWestDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == afcWestDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                afcPotentialWildCardTeams.add(afcWestDivLeader);
-                                afcWestDivLeader = team;
-                            } else {
-                                afcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            afcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        afcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_AFC_EAST) {
-                if (afcEastDivLeader == null) {
-                    afcEastDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > afcEastDivLeader.getWinLossPct()) {
-                        afcPotentialWildCardTeams.add(afcEastDivLeader);
-                        afcEastDivLeader = team;
-                    } else if (team.getWinLossPct() == afcEastDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > afcEastDivLeader.getDivisionWinLossPct()) {
-                            afcPotentialWildCardTeams.add(afcEastDivLeader);
-                            afcEastDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == afcEastDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                afcPotentialWildCardTeams.add(afcEastDivLeader);
-                                afcEastDivLeader = team;
-                            } else {
-                                afcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            afcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        afcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_NFC_NORTH) {
-                if (nfcNorthDivLeader == null) {
-                    nfcNorthDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > nfcNorthDivLeader.getWinLossPct()) {
-                        nfcPotentialWildCardTeams.add(nfcNorthDivLeader);
-                        nfcNorthDivLeader = team;
-                    } else if (team.getWinLossPct() == nfcNorthDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > nfcNorthDivLeader.getDivisionWinLossPct()) {
-                            nfcPotentialWildCardTeams.add(nfcNorthDivLeader);
-                            nfcNorthDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == nfcNorthDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                nfcPotentialWildCardTeams.add(nfcNorthDivLeader);
-                                nfcNorthDivLeader = team;
-                            } else {
-                                nfcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            nfcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        nfcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_NFC_SOUTH) {
-                if (nfcSouthDivLeader == null) {
-                    nfcSouthDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > nfcSouthDivLeader.getWinLossPct()) {
-                        nfcPotentialWildCardTeams.add(nfcSouthDivLeader);
-                        nfcSouthDivLeader = team;
-                    } else if (team.getWinLossPct() == nfcSouthDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > nfcSouthDivLeader.getDivisionWinLossPct()) {
-                            nfcPotentialWildCardTeams.add(nfcSouthDivLeader);
-                            nfcSouthDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == nfcSouthDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                nfcPotentialWildCardTeams.add(nfcSouthDivLeader);
-                                nfcSouthDivLeader = team;
-                            } else {
-                                nfcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            nfcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        nfcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_NFC_EAST) {
-                if (nfcEastDivLeader == null) {
-                    nfcEastDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > nfcEastDivLeader.getWinLossPct()) {
-                        nfcPotentialWildCardTeams.add(nfcEastDivLeader);
-                        nfcEastDivLeader = team;
-                    } else if (team.getWinLossPct() == nfcEastDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > nfcEastDivLeader.getDivisionWinLossPct()) {
-                            nfcPotentialWildCardTeams.add(nfcEastDivLeader);
-                            nfcEastDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == nfcEastDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                nfcPotentialWildCardTeams.add(nfcEastDivLeader);
-                                nfcEastDivLeader = team;
-                            } else {
-                                nfcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            nfcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        nfcPotentialWildCardTeams.add(team);
-                    }
-                }
-
-            } else if (team.getDivision() == TeamEntry.DIVISION_NFC_WEST) {
-                if (nfcWestDivLeader == null) {
-                    nfcWestDivLeader = team;
-                } else {
-                    if (team.getWinLossPct() > nfcWestDivLeader.getWinLossPct()) {
-                        nfcPotentialWildCardTeams.add(nfcWestDivLeader);
-                        nfcWestDivLeader = team;
-                    } else if (team.getWinLossPct() == nfcWestDivLeader.getWinLossPct()) {
-                        if (team.getDivisionWinLossPct() > nfcWestDivLeader.getDivisionWinLossPct()) {
-                            nfcPotentialWildCardTeams.add(nfcWestDivLeader);
-                            nfcWestDivLeader = team;
-                        } else if (team.getDivisionWinLossPct() == nfcWestDivLeader.getDivisionWinLossPct()) {
-                            if (Math.random() > 0.5) {
-                                nfcPotentialWildCardTeams.add(nfcWestDivLeader);
-                                nfcWestDivLeader = team;
-                            } else {
-                                nfcPotentialWildCardTeams.add(team);
-                            }
-                        } else {
-                            nfcPotentialWildCardTeams.add(team);
-                        }
-                    } else {
-                        nfcPotentialWildCardTeams.add(team);
-                    }
-                }
+            if (team.getDivision() == TeamEntry.DIVISION_WESTERN_CONFERENCE){
+                westernConferencePotentialPlayoffTeams.add(team);
+            } else {
+                easternConferencePotentialPlayoffTeams.add(team);
             }
-
         }
 
-        afcDivisonWinners.add(afcNorthDivLeader);
-        afcNorthDivLeader.wonDivision();
-        afcDivisonWinners.add(afcSouthDivLeader);
-        afcSouthDivLeader.wonDivision();
-        afcDivisonWinners.add(afcWestDivLeader);
-        afcWestDivLeader.wonDivision();
-        afcDivisonWinners.add(afcEastDivLeader);
-        afcEastDivLeader.wonDivision();
-        nfcDivisionWinners.add(nfcNorthDivLeader);
-        nfcNorthDivLeader.wonDivision();
-        nfcDivisionWinners.add(nfcSouthDivLeader);
-        nfcSouthDivLeader.wonDivision();
-        nfcDivisionWinners.add(nfcWestDivLeader);
-        nfcWestDivLeader.wonDivision();
-        nfcDivisionWinners.add(nfcEastDivLeader);
-        nfcEastDivLeader.wonDivision();
+        Log.d("WC", "size" + westernConferencePotentialPlayoffTeams.size());
+        Log.d("EC", "size" + easternConferencePotentialPlayoffTeams.size());
 
-        Log.d("AFCWC", "size" + afcPotentialWildCardTeams.size());
-        Log.d("NFCWC", "size" + nfcPotentialWildCardTeams.size());
+        ArrayList<Team> westernConferencePlayoffTeams = generateNBAPlayoffTeamsFromPotentialTeams(westernConferencePotentialPlayoffTeams);
+        ArrayList<Team> easternConferencePlayoffTeams = generateNBAPlayoffTeamsFromPotentialTeams(easternConferencePotentialPlayoffTeams);
 
-        ArrayList<ArrayList<Team>> allPlayoffTeams =
-                Standings.generateTestPlayoffTeams(afcDivisonWinners, nfcDivisionWinners, afcPotentialWildCardTeams, nfcPotentialWildCardTeams);
+        ArrayList<ArrayList<Team>> allPlayoffTeams = new ArrayList<>();
+        allPlayoffTeams.add(westernConferencePlayoffTeams);
+        allPlayoffTeams.add(easternConferencePlayoffTeams);
 
         return allPlayoffTeams;
+    }
+
+    private ArrayList<Team> generateNBAPlayoffTeamsFromPotentialTeams(ArrayList<Team> potentialConferenceTeams){
+
+        //Sort the teams by win loss percentage in descending order
+        Collections.sort(potentialConferenceTeams, new Comparator<Team>() {
+            @Override
+            public int compare(Team teamOne, Team teamTwo) {
+                return teamOne.getWinLossPct() > teamTwo.getWinLossPct() ? -1 : (teamOne.getWinLossPct() < teamTwo.getWinLossPct()) ? 1 : 0;
+            }
+        });
+
+        //Set each playoff team's seed and return a list of playoff teams
+        ArrayList<Team> playoffTeams = new ArrayList<>();
+        int i = 0;
+        while(i <= 7){
+            playoffTeams.add(potentialConferenceTeams.get(i));
+            i++;
+        }
+
+        return playoffTeams;
+
     }
 
     private void simulateTestPlayoffs(ArrayList<ArrayList<Team>> allPlayoffTeams) {
@@ -4451,15 +4258,15 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (remainingPlayoffTeams == 12) {
 
             //Initialize all playoffs schedule
-            Week wildCard = new Week(MatchEntry.MATCH_WEEK_WILDCARD);
+            Week wildCard = new Week(MatchEntry.MATCH_WEEK_FIRST_ROUND);
 
             //Initialize wildcard matchups from cursor
             //The better seed is always the home team, so they are added as team two (home team)
             // Seed 3 plays 6, 5 plays 4 for both conferences
-            wildCard.addMatch(new Match(afcTeams.get(5), afcTeams.get(2), MatchEntry.MATCH_WEEK_WILDCARD, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(afcTeams.get(4), afcTeams.get(3), MatchEntry.MATCH_WEEK_WILDCARD, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(nfcTeams.get(5), nfcTeams.get(2), MatchEntry.MATCH_WEEK_WILDCARD, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(nfcTeams.get(4), nfcTeams.get(3), MatchEntry.MATCH_WEEK_WILDCARD, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            wildCard.addMatch(new Match(afcTeams.get(5), afcTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            wildCard.addMatch(new Match(afcTeams.get(4), afcTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            wildCard.addMatch(new Match(nfcTeams.get(5), nfcTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            wildCard.addMatch(new Match(nfcTeams.get(4), nfcTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
 
             //Add the week to the schedule and insert the matches in the database
             mModel.getSimulatorSchedule().addWeek(wildCard);
@@ -4469,17 +4276,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (remainingPlayoffTeams == 8) {
 
             //Query the wildcard match scores
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_WILDCARD, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_FIRST_ROUND, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week divisional = new Week(MatchEntry.MATCH_WEEK_DIVISIONAL);
+            Week divisional = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS);
 
             //Initialize divisional matchups from cursor
             //The better seed is always the home team, so they are added as team two (home team)
             // Highest remaining seed plays lowest and the two middle seeds play
-            divisional.addMatch(new Match(afcTeams.get(3), afcTeams.get(0), MatchEntry.MATCH_WEEK_DIVISIONAL, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(afcTeams.get(2), afcTeams.get(1), MatchEntry.MATCH_WEEK_DIVISIONAL, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(nfcTeams.get(3), nfcTeams.get(0), MatchEntry.MATCH_WEEK_DIVISIONAL, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(nfcTeams.get(2), nfcTeams.get(1), MatchEntry.MATCH_WEEK_DIVISIONAL, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            divisional.addMatch(new Match(afcTeams.get(3), afcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            divisional.addMatch(new Match(afcTeams.get(2), afcTeams.get(1), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            divisional.addMatch(new Match(nfcTeams.get(3), nfcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            divisional.addMatch(new Match(nfcTeams.get(2), nfcTeams.get(1), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
 
             //Add the week to the schedule and  insert the matches in the database
             mModel.getSimulatorSchedule().addWeek(divisional);
@@ -4490,15 +4297,15 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (remainingPlayoffTeams == 4) {
 
             //Query the divisional match scores
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_DIVISIONAL, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week championship = new Week(MatchEntry.MATCH_WEEK_CHAMPIONSHIP);
+            Week championship = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS);
 
             //Initialize conference championship matchups from cursor
             //The better seed is always the home team, so they are added as team two (home team)
             // Highest remaining seed plays lowest
-            championship.addMatch(new Match(afcTeams.get(1), afcTeams.get(0), MatchEntry.MATCH_WEEK_CHAMPIONSHIP, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            championship.addMatch(new Match(nfcTeams.get(1), nfcTeams.get(0), MatchEntry.MATCH_WEEK_CHAMPIONSHIP, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            championship.addMatch(new Match(afcTeams.get(1), afcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            championship.addMatch(new Match(nfcTeams.get(1), nfcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
 
             //Add the week to the schedule and insert the matches in the database
             mModel.getSimulatorSchedule().addWeek(championship);
@@ -4508,13 +4315,13 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (remainingPlayoffTeams == 2) {
 
             //Query the championship match scores
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CHAMPIONSHIP, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week superbowl = new Week(MatchEntry.MATCH_WEEK_SUPERBOWL);
+            Week superbowl = new Week(MatchEntry.MATCH_WEEK_NBA_FINALS);
 
             //Initialize superbowl
             // Highest remaining seed plays lowest
-            superbowl.addMatch(new Match(afcTeams.get(0), nfcTeams.get(0), MatchEntry.MATCH_WEEK_SUPERBOWL, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            superbowl.addMatch(new Match(afcTeams.get(0), nfcTeams.get(0), MatchEntry.MATCH_WEEK_NBA_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
 
             //Add the week to the schedule and insert the matches in the database
             mModel.getSimulatorSchedule().addWeek(superbowl);
@@ -4525,7 +4332,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (remainingPlayoffTeams == 1) {
 
             //Query the superbowl match scores
-            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_SUPERBOWL, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
+            mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_NBA_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
         }
 

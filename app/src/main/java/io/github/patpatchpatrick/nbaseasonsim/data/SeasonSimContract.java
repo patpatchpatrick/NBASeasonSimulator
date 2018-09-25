@@ -61,30 +61,12 @@ public class SeasonSimContract {
         public static final int DIVISION_EASTERN_CONFERENCE = 2;
 
         public static final String getDivisionString(int divisionInt){
-            if (divisionInt == DIVISION_AFC_NORTH){
-                return "AFC North";
+            if (divisionInt == DIVISION_WESTERN_CONFERENCE){
+                return "Western Conference";
             }
-            if (divisionInt == DIVISION_AFC_EAST){
-                return "AFC East";
+            if (divisionInt == DIVISION_EASTERN_CONFERENCE){
+                return "Eastern Conference";
             }
-            if (divisionInt == DIVISION_AFC_SOUTH){
-                return "AFC South";
-            }
-            if (divisionInt == DIVISION_AFC_WEST){
-                return "AFC West";
-            }
-            if (divisionInt == DIVISION_NFC_NORTH){
-                return "NFC North";
-            }
-            if (divisionInt == DIVISION_NFC_EAST){
-                return "NFC East";
-            }
-            if (divisionInt == DIVISION_NFC_SOUTH){
-                return "NFC South";
-            }
-            if (divisionInt == DIVISION_NFC_WEST){
-                return "NFC West";
-                }
                 return null;
         }
 
@@ -144,10 +126,10 @@ public class SeasonSimContract {
         public static final int MATCH_TEAM_ONE_WON_DRAW = 2;
 
         //Define input variables for match playoff weeks
-        public static final int MATCH_WEEK_WILDCARD = 18;
-        public static final int MATCH_WEEK_DIVISIONAL = 19;
-        public static final int MATCH_WEEK_CHAMPIONSHIP = 20;
-        public static final int MATCH_WEEK_SUPERBOWL = 21;
+        public static final int MATCH_WEEK_FIRST_ROUND = 25;
+        public static final int MATCH_WEEK_CONFERENCE_SEMIFINALS = 26;
+        public static final int MATCH_WEEK_CONFERENCE_FINALS = 27;
+        public static final int MATCH_WEEK_NBA_FINALS = 28;
 
         //Define input variables for no odds set
         public static final double MATCH_NO_ODDS_SET = 50.0;

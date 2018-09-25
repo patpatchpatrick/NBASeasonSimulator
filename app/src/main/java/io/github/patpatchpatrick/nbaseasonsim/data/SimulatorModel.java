@@ -987,7 +987,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
     }
 
     @Override
-    public void querySimulatorMatches(final int weekNumber, final boolean singleMatch, final int queryFrom) {
+    public void querySimulatorMatches(final int weekNumber, final boolean singleWeek, final int queryFrom) {
 
         //Query the matches/schedule from the database for simulator
 
@@ -1023,38 +1023,38 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             null);
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_DIVISIONAL) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS) {
 
                     //Query divisional playoff matches (include both division games and completed wildcard games)
 
                     String selection = "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )" ;
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             MatchEntry.COLUMN_MATCH_WEEK + " DESC");
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_CHAMPIONSHIP) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_CONFERENCE_FINALS) {
 
                     //Query conference playoff matches (include conferences matches and completed division and wilcard matches)
 
                     String selection = "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )";
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_DIVISIONAL), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             MatchEntry.COLUMN_MATCH_WEEK + " DESC");
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_SUPERBOWL) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_NBA_FINALS) {
 
                     //Query superbowl playoff matches (include superbowl matches and completed conference, division and wilcard matches)
 
                     String selection =  "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )";
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CHAMPIONSHIP), String.valueOf(MatchEntry.MATCH_WEEK_DIVISIONAL), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             MatchEntry.COLUMN_MATCH_WEEK + " DESC");
 
-                } else if (singleMatch == true) {
+                } else if (singleWeek == true) {
 
                     //Query a single week's matches
 
@@ -1146,32 +1146,32 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             null);
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_DIVISIONAL) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS) {
 
                     //Query divisional playoff matches (include both division games and completed wildcard games)
 
                     String selection = "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )" ;
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             MatchEntry.COLUMN_MATCH_WEEK + " DESC");
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_CHAMPIONSHIP) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_CONFERENCE_FINALS) {
 
                     //Query conference playoff matches (include conferences matches and completed division and wilcard matches)
 
                     String selection = "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )";
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_DIVISIONAL), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,
                             MatchEntry.COLUMN_MATCH_WEEK + " DESC");
-                } else if (weekNumber == MatchEntry.MATCH_WEEK_SUPERBOWL) {
+                } else if (weekNumber == MatchEntry.MATCH_WEEK_NBA_FINALS) {
 
                     //Query superbowl playoff matches (include superbowl matches and completed conference, division and wilcard matches)
 
                     String selection =  "(" + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? OR " + MatchEntry.COLUMN_MATCH_WEEK + "=? ) AND (" + MatchEntry.COLUMN_MATCH_CURRENT_SEASON + "=? )";
-                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CHAMPIONSHIP), String.valueOf(MatchEntry.MATCH_WEEK_DIVISIONAL), String.valueOf(MatchEntry.MATCH_WEEK_WILDCARD), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
+                    String[] selectionArgs = new String[]{String.valueOf(weekNumber), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS), String.valueOf(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS), String.valueOf(MatchEntry.MATCH_WEEK_FIRST_ROUND), String.valueOf(MatchEntry.MATCH_TEAM_CURRENT_SEASON_YES)};
 
                     matchesCursor = contentResolver.query(MatchEntry.CONTENT_URI, matchesProjection,
                             selection, selectionArgs,

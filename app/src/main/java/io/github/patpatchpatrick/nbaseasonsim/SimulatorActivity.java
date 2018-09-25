@@ -430,7 +430,7 @@ public class SimulatorActivity extends AppCompatActivity implements SimulatorMvp
     }
 
     private Boolean playoffsComplete() {
-        if (SimulatorPresenter.getCurrentWeek() > MatchEntry.MATCH_WEEK_SUPERBOWL) {
+        if (SimulatorPresenter.getCurrentWeek() > MatchEntry.MATCH_WEEK_NBA_FINALS) {
             return true;
         } else {
             return false;
