@@ -54,7 +54,7 @@ public class SeasonStandingsRecyclerViewAdapter extends RecyclerView.Adapter<Sea
             //Display regular season standings
 
             //For every 4th team, the header should show the division
-            if (position % 4 == 0) {
+            if (position % 15 == 0) {
                 int teamDivision = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DIVISION));
                 holder.standingsHeader.setVisibility(View.VISIBLE);
                 holder.playoffOddsHeaderTextView.setVisibility(View.GONE);

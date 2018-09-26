@@ -281,7 +281,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
         //After all matches are added to the db, notify the presenter via the simulatorMatchesInserted callback
         ArrayList<Match> simulatorSeasonMatches = new ArrayList<>();
         int weekNumber = 1;
-        while (weekNumber <= 17) {
+        while (weekNumber <= 24) {
             ArrayList<Match> weekMatches = mSimulatorSchedule.getWeek(weekNumber).getMatches();
             for (Match match : weekMatches) {
                 simulatorSeasonMatches.add(match);
@@ -388,7 +388,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
         //After all matches are added to the db, notify the presenter via the simulatorMatchesInserted callback
         ArrayList<Match> currentSeasonMatches = new ArrayList<>();
         int weekNumber = 1;
-        while (weekNumber <= 17) {
+        while (weekNumber <= 24) {
             ArrayList<Match> weekMatches = mSeasonSchedule.getWeek(weekNumber).getMatches();
             for (Match match : weekMatches) {
                 currentSeasonMatches.add(match);
