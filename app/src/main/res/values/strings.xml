@@ -116,10 +116,10 @@ See the License for the specific language governing permissions and\n
 limitations under the License.</string>
 
     <!-- Advertising Strings -->
-    <string name="home_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/6683750394</string>
-    <string name="simulator_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/4069883701</string>
-    <string name="standings_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/7216590090</string>
-    <string name="scores_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/3959871363</string>
-    <string name="predictor_activity_banner_ad_unit_id">ca-app-pub-9852829648923660/7707544689</string>
+    <string name="home_activity_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="simulator_activity_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="standings_activity_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="scores_activity_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="predictor_activity_banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
 </resources>

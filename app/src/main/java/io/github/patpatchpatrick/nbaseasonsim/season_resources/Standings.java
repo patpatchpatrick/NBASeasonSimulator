@@ -3,7 +3,6 @@ package io.github.patpatchpatrick.nbaseasonsim.season_resources;
 import android.database.Cursor;
 import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -160,7 +159,7 @@ public class Standings {
 
             if (i % 4 == 0) {
 
-                if (teamConference == TeamEntry.CONFERENCE_AFC){
+                if (teamConference == TeamEntry.CONFERENCE_WESTERN){
                     divisionWinnersAFC.add(team);
                 } else {
                     divisionWinnersNFC.add(team);
@@ -168,7 +167,7 @@ public class Standings {
 
                 //If team is not the division winner, update them as not playoff eligible and
                 // add them to the correct conference ArrayList of potential wildcard teams
-            } else if (teamConference == TeamEntry.CONFERENCE_AFC) {
+            } else if (teamConference == TeamEntry.CONFERENCE_WESTERN) {
                 team.setPlayoffEligible(TeamEntry.PLAYOFF_NOT_ELIGIBLE);
                 potentialAFCWildCardTeams.add(team);
             } else {

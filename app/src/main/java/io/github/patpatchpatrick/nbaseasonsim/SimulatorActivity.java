@@ -422,7 +422,7 @@ public class SimulatorActivity extends AppCompatActivity implements SimulatorMvp
     }
 
     private Boolean regularSeasonIsComplete() {
-        if (SimulatorPresenter.getCurrentWeek() > 17) {
+        if (SimulatorPresenter.getCurrentWeek() > 24) {
             return true;
         } else {
             return false;

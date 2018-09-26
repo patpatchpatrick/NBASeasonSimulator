@@ -109,33 +109,33 @@ public class StandingsRecyclerViewAdapter extends RecyclerView.Adapter<Standings
             int remainingPlayoffTeams = dataCursor.getCount();
 
             //Display the correct standings headers depending on remaining playoff teams
-            if (remainingPlayoffTeams == 12) {
+            if (remainingPlayoffTeams == 16) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("AFC Playoff Standings");
-                } else if (position == 6) {
+                    holder.standingsHeader.setText("Western Conference Standings");
+                } else if (position == 8) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("NFC Playoff Standings");
+                    holder.standingsHeader.setText("Eastern Conference Standings");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }
             } else if (remainingPlayoffTeams == 8) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("AFC Playoff Standings");
+                    holder.standingsHeader.setText("Western Conference Standings");
                 } else if (position == 4) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("NFC Playoff Standings");
+                    holder.standingsHeader.setText("Eastern Conference Standings");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }
             } else if (remainingPlayoffTeams == 4) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("AFC Playoff Standings");
+                    holder.standingsHeader.setText("Western Conference Standings");
                 } else if (position == 2) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("NFC Playoff Standingsr");
+                    holder.standingsHeader.setText("Eastern Conference Standings");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }

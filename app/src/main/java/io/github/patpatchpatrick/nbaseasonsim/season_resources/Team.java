@@ -1,11 +1,7 @@
 package io.github.patpatchpatrick.nbaseasonsim.season_resources;
 
 import android.net.Uri;
-import android.util.Log;
 
-import java.util.concurrent.TimeUnit;
-
-import io.github.patpatchpatrick.nbaseasonsim.data.SeasonSimContract;
 import io.github.patpatchpatrick.nbaseasonsim.data.SeasonSimContract.TeamEntry;
 import io.github.patpatchpatrick.nbaseasonsim.presenter.SimulatorPresenter;
 
@@ -43,6 +39,7 @@ public class Team {
     private double mWinLossPct;
     private int mDivisionStanding;
     private int mPlayoffEligible;
+    private int mPlayoffGame;
 
     //Stats
     private int mPointsFor;
@@ -85,13 +82,14 @@ public class Team {
         mPointsFor = 0;
         mPointsAllowed = 0;
         mPlayoffEligible = TeamEntry.PLAYOFF_NOT_ELIGIBLE;
+        mPlayoffGame = 0;
         mCurrentSeason = TeamEntry.CURRENT_SEASON_NO;
 
         //Set conference value based on division value (all AFC divisions are ints less than 4)
-        if (mDivision <= 4) {
-            mConference = TeamEntry.CONFERENCE_AFC;
+        if (mDivision <= 1) {
+            mConference = TeamEntry.CONFERENCE_WESTERN;
         } else {
-            mConference = TeamEntry.CONFERENCE_NFC;
+            mConference = TeamEntry.CONFERENCE_EASTERN;
         }
 
     }
@@ -121,19 +119,20 @@ public class Team {
         mDivision = division;
         mPointsFor = 0;
         mPointsAllowed = 0;
+        mPlayoffGame = 0;
         mPlayoffEligible = TeamEntry.PLAYOFF_NOT_ELIGIBLE;
         mCurrentSeason = currentSeason;
 
         //Set conference value based on division value (all AFC divisions are ints less than 4)
-        if (mDivision <= 4) {
-            mConference = TeamEntry.CONFERENCE_AFC;
+        if (mDivision <= 1) {
+            mConference = TeamEntry.CONFERENCE_WESTERN;
         } else {
-            mConference = TeamEntry.CONFERENCE_NFC;
+            mConference = TeamEntry.CONFERENCE_EASTERN;
         }
 
     }
 
-    public Team(String name, String shortName, double elo, double defaultElo, double userElo, double teamRanking, double offRating, double defRating, int division, Data data, int wins, int losses, int draws, int divWins, int divLosses, double winLossPct, double divWinLossPct, int playoffEligible, Uri uri, int currentSeason) {
+    public Team(String name, String shortName, double elo, double defaultElo, double userElo, double teamRanking, double offRating, double defRating, int division, Data data, int wins, int losses, int draws, int divWins, int divLosses, double winLossPct, double divWinLossPct, int playoffEligible, int playoffGame, Uri uri, int currentSeason) {
 
         mTeamRanking = teamRanking;
         mData = data;
@@ -155,15 +154,16 @@ public class Team {
         mDivision = division;
         mPointsFor = 0;
         mPointsAllowed = 0;
+        mPlayoffGame = playoffGame;
         mPlayoffEligible = playoffEligible;
         mUri = uri;
         mCurrentSeason = currentSeason;
 
         //Set conference value based on division value (all AFC divisions are ints less than 4)
-        if (mDivision <= 4) {
-            mConference = TeamEntry.CONFERENCE_AFC;
+        if (mDivision <= 1) {
+            mConference = TeamEntry.CONFERENCE_WESTERN;
         } else {
-            mConference = TeamEntry.CONFERENCE_NFC;
+            mConference = TeamEntry.CONFERENCE_EASTERN;
         }
 
     }
@@ -377,4 +377,8 @@ public class Team {
     public String getPlayoffOddsString(){
         return mPlayoffOddsString;
     }
+
+    public int getPlayoffGame(){return mPlayoffGame;}
+
+    public void setPlayoffGame(int  playoffGame){mPlayoffGame = playoffGame;}
 }

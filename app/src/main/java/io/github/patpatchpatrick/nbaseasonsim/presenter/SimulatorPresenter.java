@@ -101,13 +101,9 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     @Override
     public void simulatePlayoffWeek() {
         //Simulate a single playoff week
-        //If you are simulating the superbowl, don't use home field advantage in the simulation
-        //Otherwise, include home field advantage in the simulation
-        if (mCurrentSimulatorWeek == MatchEntry.MATCH_WEEK_NBA_FINALS) {
-            mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulate(false);
-        } else {
-            mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulate(true);
-        }
+
+        mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulatePlayoffSeries(true);
+
         //After the week is complete, query the standings (and display them)
         mModel.querySimulatorStandings(SimulatorModel.QUERY_STANDINGS_POSTSEASON);
         //Week is complete so increment the current week value
@@ -180,7 +176,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
     @Override
     public void initiatePlayoffs() {
-        mCurrentSimulatorWeek = 18;
+        mCurrentSimulatorWeek = 25;
         this.view.setCurrentWeekPreference(mCurrentSimulatorWeek);
         //Initiate the playoffs
         //Query the standings from the playoffs standings and the rest of the playoffs is initiated via the
@@ -317,17 +313,17 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
         }
 
-        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_WILDCARD) {
+        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_FIRSTROUND) {
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_FIRST_ROUND, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
 
-        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_DIVISIONAL) {
+        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_CONF_SEMIS) {
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
-        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_CHAMPIONSHIP) {
+        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_CONF_FINALS) {
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
-        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_SUPERBOWL) {
+        if (insertType == SimulatorModel.INSERT_MATCHES_PLAYOFFS_NBA_FINALS) {
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_NBA_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
         }
     }
@@ -907,76 +903,6 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     private void updateCurrentSeasonTeamOdds() {
         Schedule currentSchedule = mModel.getSeasonSchedule();
         Week weekOne = currentSchedule.getWeek(1);
-        ArrayList<Match> weekOneMatches = weekOne.getMatches();
-        weekOneMatches.get(0).setOdds(1.0);
-        weekOneMatches.get(1).setOdds(3.0);
-        weekOneMatches.get(2).setOdds(7.5);
-        weekOneMatches.get(3).setOdds(9.5);
-        weekOneMatches.get(4).setOdds(6.5);
-        weekOneMatches.get(5).setOdds(6.5);
-        weekOneMatches.get(6).setOdds(-1.5);
-        weekOneMatches.get(7).setOdds(-3.0);
-        weekOneMatches.get(8).setOdds(-3.5);
-        weekOneMatches.get(9).setOdds(3.5);
-        weekOneMatches.get(10).setOdds(3.0);
-        weekOneMatches.get(11).setOdds(1.0);
-        weekOneMatches.get(12).setOdds(3.0);
-        weekOneMatches.get(13).setOdds(7.5);
-        weekOneMatches.get(14).setOdds(6.5);
-        weekOneMatches.get(15).setOdds(-4.0);
-        Week weekTwo = currentSchedule.getWeek(2);
-        ArrayList<Match> weekTwoMatches = weekTwo.getMatches();
-        weekTwoMatches.get(0).setOdds(-1.0);
-        weekTwoMatches.get(1).setOdds(5.5);
-        weekTwoMatches.get(2).setOdds(2.5);
-        weekTwoMatches.get(3).setOdds(-3.5);
-        weekTwoMatches.get(4).setOdds(9.5);
-        weekTwoMatches.get(5).setOdds(6.0);
-        weekTwoMatches.get(6).setOdds(-7.5);
-        weekTwoMatches.get(7).setOdds(1.0);
-        weekTwoMatches.get(8).setOdds(6.0);
-        weekTwoMatches.get(9).setOdds(-3.0);
-        weekTwoMatches.get(10).setOdds(13.0);
-        weekTwoMatches.get(11).setOdds(6.0);
-        weekTwoMatches.get(12).setOdds(6.5);
-        weekTwoMatches.get(13).setOdds(-1.0);
-        weekTwoMatches.get(14).setOdds(3.0);
-        weekTwoMatches.get(15).setOdds(3.5);
-        Week weekThree = currentSchedule.getWeek(3);
-        ArrayList<Match> weekThreeMatches = weekThree.getMatches();
-        weekThreeMatches.get(0).setOdds(3.0);
-        weekThreeMatches.get(1).setOdds(16.5);
-        weekThreeMatches.get(2).setOdds(6.0);
-        weekThreeMatches.get(3).setOdds(-3.0);
-        weekThreeMatches.get(4).setOdds(6.0);
-        weekThreeMatches.get(5).setOdds(3.0);
-        weekThreeMatches.get(6).setOdds(6.5);
-        weekThreeMatches.get(7).setOdds(0.0);
-        weekThreeMatches.get(8).setOdds(3.0);
-        weekThreeMatches.get(9).setOdds(5.0);
-        weekThreeMatches.get(10).setOdds(3.0);
-        weekThreeMatches.get(11).setOdds(7.0);
-        weekThreeMatches.get(12).setOdds(1.0);
-        weekThreeMatches.get(13).setOdds(1.0);
-        weekThreeMatches.get(14).setOdds(-6.5);
-        weekThreeMatches.get(15).setOdds(-2.0);
-        Week weekFour = currentSchedule.getWeek(4);
-        ArrayList<Match> weekFourMatches = weekFour.getMatches();
-        weekFourMatches.get(0).setOdds(6.5);
-        weekFourMatches.get(1).setOdds(2.0);
-        weekFourMatches.get(2).setOdds(10.5);
-        weekFourMatches.get(3).setOdds(2.5);
-        weekFourMatches.get(4).setOdds(1.0);
-        weekFourMatches.get(5).setOdds(1.0);
-        weekFourMatches.get(6).setOdds(6.0);
-        weekFourMatches.get(7).setOdds(9.0);
-        weekFourMatches.get(8).setOdds(-3.0);
-        weekFourMatches.get(9).setOdds(2.5);
-        weekFourMatches.get(10).setOdds(-3.0);
-        weekFourMatches.get(11).setOdds(-3.0);
-        weekFourMatches.get(12).setOdds(9.5);
-        weekFourMatches.get(13).setOdds(3.0);
-        weekFourMatches.get(14).setOdds(-4.0);
     }
 
     private void createCurrentSeasonTeamsFromDb(Cursor standingsCursor) {
@@ -1009,12 +935,13 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             Double defRating = standingsCursor.getDouble(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DEF_RATING));
             int division = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DIVISION));
             int playoffEligible = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE));
+            int playoffGame = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_GAME));
             Uri teamUri = ContentUris.withAppendedId(TeamEntry.CONTENT_URI, ID);
 
 
             teamList.put(teamName,
                     new Team(teamName, teamShortName, teamElo, teamDefaultElo, teamUserElo, teamRanking,
-                            offRating, defRating, division, this, teamWins, teamLosses, teamDraws, divisionWins, divisionLosses, winLossPct, divWinLossPct, playoffEligible, teamUri, TeamEntry.CURRENT_SEASON_YES));
+                            offRating, defRating, division, this, teamWins, teamLosses, teamDraws, divisionWins, divisionLosses, winLossPct, divWinLossPct, playoffEligible, playoffGame, teamUri, TeamEntry.CURRENT_SEASON_YES));
 
             teamUserElos.put(teamName, teamUserElo);
 
@@ -1145,12 +1072,13 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             Double defRating = standingsCursor.getDouble(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DEF_RATING));
             int division = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_DIVISION));
             int playoffEligible = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE));
+            int playoffGame = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_GAME));
             Uri teamUri = ContentUris.withAppendedId(TeamEntry.CONTENT_URI, ID);
 
 
             teamList.put(teamName,
                     new Team(teamName, teamShortName, teamElo, teamDefaultElo, teamUserElo, teamRanking,
-                            offRating, defRating, division, this, teamWins, teamLosses, teamDraws, divisionWins, divisionLosses, winLossPct, divWinLossPct, playoffEligible, teamUri, TeamEntry.CURRENT_SEASON_NO));
+                            offRating, defRating, division, this, teamWins, teamLosses, teamDraws, divisionWins, divisionLosses, winLossPct, divWinLossPct, playoffEligible, playoffGame, teamUri, TeamEntry.CURRENT_SEASON_NO));
 
             teamUserElos.put(teamName, teamUserElo);
 
@@ -3949,7 +3877,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     @Override
     public void simulateSeason() {
         //From week 1 to week 17 (full season), simulate the season
-        while (mCurrentSimulatorWeek <= 17) {
+        while (mCurrentSimulatorWeek <= 24) {
             mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulate(true);
             mCurrentSimulatorWeek++;
         }
@@ -4000,7 +3928,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         }
 
         for (Team team : allTeams) {
-            if (team.getDivision() == TeamEntry.DIVISION_WESTERN_CONFERENCE){
+            if (team.getDivision() == TeamEntry.DIVISION_WESTERN_CONFERENCE) {
                 westernConferencePotentialPlayoffTeams.add(team);
             } else {
                 easternConferencePotentialPlayoffTeams.add(team);
@@ -4020,7 +3948,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         return allPlayoffTeams;
     }
 
-    private ArrayList<Team> generateNBAPlayoffTeamsFromPotentialTeams(ArrayList<Team> potentialConferenceTeams){
+    private ArrayList<Team> generateNBAPlayoffTeamsFromPotentialTeams(ArrayList<Team> potentialConferenceTeams) {
 
         //Sort the teams by win loss percentage in descending order
         Collections.sort(potentialConferenceTeams, new Comparator<Team>() {
@@ -4033,7 +3961,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         //Set each playoff team's seed and return a list of playoff teams
         ArrayList<Team> playoffTeams = new ArrayList<>();
         int i = 0;
-        while(i <= 7){
+        while (i <= 7) {
             playoffTeams.add(potentialConferenceTeams.get(i));
             i++;
         }
@@ -4229,68 +4157,68 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
     public void createPlayoffMatchups(Cursor standingsCursor) {
 
-        //If standings cursor count is 12, the playoffs are just starting because there are still 12 teams
-        //Therefore, initialize the playoffs schedule and set the wildcard matchups
+        //If standings cursor count is 16, the playoffs are just starting because there are still 16 teams
+        //Therefore, initialize the playoffs schedule and set the first round matchups
 
-        //If the standings cursor count is 8, initialize divisional playoffs.
-        //If the standings cursor count is 4, initialize conference playoffs.
-        //If the standings cursor count is 2, initialize superbowl.
+        //If the standings cursor count is 8, initialize conference semifinal playoffs.
+        //If the standings cursor count is 4, initialize conference final playoffs.
+        //If the standings cursor count is 2, initialize nba finals.
 
         int remainingPlayoffTeams = standingsCursor.getCount();
 
-        ArrayList<Team> afcTeams = new ArrayList<>();
-        ArrayList<Team> nfcTeams = new ArrayList<>();
+        ArrayList<Team> westernConferenceTeams = new ArrayList<>();
+        ArrayList<Team> easternConferenceTeams = new ArrayList<>();
 
         //Go through the cursor and add the teams to their respective conference in order of their seed (cursor is sorted by seed)
         standingsCursor.moveToPosition(-1);
         while (standingsCursor.moveToNext()) {
-            int teamConference = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_CONFERENCE));
-            int teamPlayoffSeed = standingsCursor.getInt(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE));
             String teamName = standingsCursor.getString(standingsCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_NAME));
             Team team = mModel.getSimulatorTeamList().get(teamName);
-            if (team.getConference() == TeamEntry.CONFERENCE_AFC) {
-                afcTeams.add(team);
+            if (team.getConference() == TeamEntry.CONFERENCE_WESTERN) {
+                westernConferenceTeams.add(team);
             } else {
-                nfcTeams.add(team);
+                easternConferenceTeams.add(team);
             }
         }
 
-        if (remainingPlayoffTeams == 12) {
+        if (remainingPlayoffTeams == 16) {
 
             //Initialize all playoffs schedule
-            Week wildCard = new Week(MatchEntry.MATCH_WEEK_FIRST_ROUND);
+            Week firstRound = new Week(MatchEntry.MATCH_WEEK_FIRST_ROUND);
 
-            //Initialize wildcard matchups from cursor
+            //Initialize first round matchups from cursor
             //The better seed is always the home team, so they are added as team two (home team)
-            // Seed 3 plays 6, 5 plays 4 for both conferences
-            wildCard.addMatch(new Match(afcTeams.get(5), afcTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(afcTeams.get(4), afcTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(nfcTeams.get(5), nfcTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            wildCard.addMatch(new Match(nfcTeams.get(4), nfcTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            firstRound.addMatch(new Match(westernConferenceTeams.get(7), westernConferenceTeams.get(0), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            firstRound.addMatch(new Match(westernConferenceTeams.get(4), westernConferenceTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            firstRound.addMatch(new Match(westernConferenceTeams.get(5), westernConferenceTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 2));
+            firstRound.addMatch(new Match(westernConferenceTeams.get(6), westernConferenceTeams.get(1), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 2));
+            firstRound.addMatch(new Match(easternConferenceTeams.get(7), easternConferenceTeams.get(0), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            firstRound.addMatch(new Match(easternConferenceTeams.get(4), easternConferenceTeams.get(3), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            firstRound.addMatch(new Match(easternConferenceTeams.get(5), easternConferenceTeams.get(2), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 2));
+            firstRound.addMatch(new Match(easternConferenceTeams.get(6), easternConferenceTeams.get(1), MatchEntry.MATCH_WEEK_FIRST_ROUND, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 2));
+
 
             //Add the week to the schedule and insert the matches in the database
-            mModel.getSimulatorSchedule().addWeek(wildCard);
-            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_WILDCARD, wildCard);
+            mModel.getSimulatorSchedule().addWeek(firstRound);
+            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_FIRSTROUND, firstRound);
         }
 
         if (remainingPlayoffTeams == 8) {
 
-            //Query the wildcard match scores
+            //Query the first round match scores
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_FIRST_ROUND, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week divisional = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS);
+            Week conferenceSemifinals = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS);
 
-            //Initialize divisional matchups from cursor
-            //The better seed is always the home team, so they are added as team two (home team)
-            // Highest remaining seed plays lowest and the two middle seeds play
-            divisional.addMatch(new Match(afcTeams.get(3), afcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(afcTeams.get(2), afcTeams.get(1), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(nfcTeams.get(3), nfcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            divisional.addMatch(new Match(nfcTeams.get(2), nfcTeams.get(1), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            //Initialize conferenceSemifinals matchups from cursor
+            conferenceSemifinals.addMatch(new Match(westernConferenceTeams.get(1), westernConferenceTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            conferenceSemifinals.addMatch(new Match(westernConferenceTeams.get(3), westernConferenceTeams.get(2), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            conferenceSemifinals.addMatch(new Match(easternConferenceTeams.get(1), easternConferenceTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            conferenceSemifinals.addMatch(new Match(easternConferenceTeams.get(3), easternConferenceTeams.get(2), MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
 
             //Add the week to the schedule and  insert the matches in the database
-            mModel.getSimulatorSchedule().addWeek(divisional);
-            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_DIVISIONAL, divisional);
+            mModel.getSimulatorSchedule().addWeek(conferenceSemifinals);
+            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_CONF_SEMIS, conferenceSemifinals);
 
 
         }
@@ -4299,33 +4227,38 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
             //Query the divisional match scores
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week championship = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS);
+            Week conferenceChampionship = new Week(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS);
 
-            //Initialize conference championship matchups from cursor
+            //Initialize conference conferenceChampionship matchups from cursor
             //The better seed is always the home team, so they are added as team two (home team)
             // Highest remaining seed plays lowest
-            championship.addMatch(new Match(afcTeams.get(1), afcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
-            championship.addMatch(new Match(nfcTeams.get(1), nfcTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            conferenceChampionship.addMatch(new Match(westernConferenceTeams.get(1), westernConferenceTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO,  1));
+            conferenceChampionship.addMatch(new Match(easternConferenceTeams.get(1), easternConferenceTeams.get(0), MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
 
             //Add the week to the schedule and insert the matches in the database
-            mModel.getSimulatorSchedule().addWeek(championship);
-            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_CHAMPIONSHIP, championship);
+            mModel.getSimulatorSchedule().addWeek(conferenceChampionship);
+            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_CONF_FINALS, conferenceChampionship);
 
         }
         if (remainingPlayoffTeams == 2) {
 
-            //Query the championship match scores
+            //Query the conference championship match scores
             mModel.querySimulatorMatches(MatchEntry.MATCH_WEEK_CONFERENCE_FINALS, true, SimulatorModel.QUERY_FROM_SIMULATOR_ACTIVITY);
 
-            Week superbowl = new Week(MatchEntry.MATCH_WEEK_NBA_FINALS);
+            Week nbaFinals = new Week(MatchEntry.MATCH_WEEK_NBA_FINALS);
 
-            //Initialize superbowl
-            // Highest remaining seed plays lowest
-            superbowl.addMatch(new Match(afcTeams.get(0), nfcTeams.get(0), MatchEntry.MATCH_WEEK_NBA_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO));
+            //Initialize nbaFinals
+            //Team with better record is the home team
+            if (westernConferenceTeams.get(0).getWinLossPct() > easternConferenceTeams.get(0).getWinLossPct()) {
+                nbaFinals.addMatch(new Match(easternConferenceTeams.get(0), westernConferenceTeams.get(0), MatchEntry.MATCH_WEEK_NBA_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO, 1));
+            } else {
+                nbaFinals.addMatch(new Match(westernConferenceTeams.get(0), easternConferenceTeams.get(0), MatchEntry.MATCH_WEEK_NBA_FINALS, this, MatchEntry.MATCH_TEAM_CURRENT_SEASON_NO,  1));
+            }
+
 
             //Add the week to the schedule and insert the matches in the database
-            mModel.getSimulatorSchedule().addWeek(superbowl);
-            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_SUPERBOWL, superbowl);
+            mModel.getSimulatorSchedule().addWeek(nbaFinals);
+            mModel.insertSimulatorMatches(SimulatorModel.INSERT_MATCHES_PLAYOFFS_NBA_FINALS, nbaFinals);
 
         }
 

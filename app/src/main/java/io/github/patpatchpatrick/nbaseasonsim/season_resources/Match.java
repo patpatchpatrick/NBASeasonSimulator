@@ -28,6 +28,7 @@ public class Match {
     private int mTeam2Score;
     private Double mTeamTwoOdds;
     private Integer mTeamOneWon;
+    private Integer mPlayoffGame;
     private Boolean matchComplete;
     private Boolean divisionalMatchup;
     private Boolean playoffMatchup;
@@ -58,11 +59,43 @@ public class Match {
             divisionalMatchup = false;
         }
 
-        if (mWeek > 17) {
+        if (mWeek > 24) {
             playoffMatchup = true;
         } else {
             playoffMatchup = false;
         }
+
+    }
+
+    public Match(Team team1, Team team2, int week, Data data, int currentSeason, int playoffGame) {
+
+        //Inject match with dagger to get contentResolver
+        HomeScreen.getActivityComponent().inject(this);
+
+        mData = data;
+        mTeam1 = team1;
+        mTeam2 = team2;
+        mWeek = week;
+        matchComplete = false;
+        mTeamOneWon = SeasonSimContract.MatchEntry.MATCH_TEAM_ONE_WON_NO;
+        mTeamTwoOdds = SeasonSimContract.MatchEntry.MATCH_NO_ODDS_SET;
+        mCurrentSeason = currentSeason;
+        mPlayoffGame = playoffGame;
+
+        //Determine if match is a divisional matchup
+        if (mTeam1.getDivision() == mTeam2.getDivision()) {
+            divisionalMatchup = true;
+        } else {
+            divisionalMatchup = false;
+        }
+
+        if (mWeek > 24) {
+            playoffMatchup = true;
+        } else {
+            playoffMatchup = false;
+        }
+
+
 
     }
 
@@ -79,6 +112,7 @@ public class Match {
         mTeamOneWon = SeasonSimContract.MatchEntry.MATCH_TEAM_ONE_WON_NO;
         mTeamTwoOdds = teamTwoOdds;
         mCurrentSeason = currentSeason;
+        mPlayoffGame = 0;
 
         //Determine if match is a divisional matchup
         if (mTeam1.getDivision() == mTeam2.getDivision()) {
@@ -87,7 +121,7 @@ public class Match {
             divisionalMatchup = false;
         }
 
-        if (mWeek > 17) {
+        if (mWeek > 24) {
             playoffMatchup = true;
         } else {
             playoffMatchup = false;
@@ -112,6 +146,7 @@ public class Match {
         matchUri = uri;
         mTeamTwoOdds = teamTwoOdds;
         mCurrentSeason = currentSeason;
+        mPlayoffGame = 0;
 
         //Determine if match is a divisional matchup
         if (mTeam1.getDivision() == mTeam2.getDivision()) {
@@ -119,7 +154,7 @@ public class Match {
         } else {
             divisionalMatchup = false;
         }
-        if (mWeek > 17) {
+        if (mWeek > 24) {
             playoffMatchup = true;
         } else {
             playoffMatchup = false;
@@ -161,6 +196,56 @@ public class Match {
 
         //Update team records based on outcome and mark match as complete
         setMatchWins();
+        matchComplete = true;
+
+        //Callback to presenter to update match in database with match result
+        mData.updateMatchCallback(this, matchUri);
+
+    }
+
+    protected void simulatePlayoffSeries() {
+        //Simulate the playoff series and set the team's playoff game value to be equal to the next playoff game
+        //This is used when sorting the database and determining playoff teams and setting playoff matchups
+        int awayTeamGamesWon = 0;
+        int homeTeamGamesWon = 0;
+
+        int gameNumber = 0;
+        boolean awayTeamWon;
+
+        while (awayTeamGamesWon < 4 && homeTeamGamesWon < 4){
+             gameNumber++;
+             if (gameNumber == 1 || gameNumber == 2 || gameNumber == 5 || gameNumber == 7){
+                 awayTeamWon = ELORatingSystem.simulateTestMatch(mTeam1, mTeam2, true);
+                 if (awayTeamWon){
+                     awayTeamGamesWon++;
+                 } else {
+                     homeTeamGamesWon++;
+                 }
+             } else {
+                 awayTeamWon = !ELORatingSystem.simulateTestMatch(mTeam2, mTeam1,  true);
+                 if (awayTeamWon){
+                     awayTeamGamesWon++;
+                 } else {
+                     homeTeamGamesWon++;
+                 }
+             }
+        }
+
+        mTeam1Score = awayTeamGamesWon;
+        mTeam2Score = homeTeamGamesWon;
+
+        if (mTeam1Score > mTeam2Score){
+            mTeamOneWon = SeasonSimContract.MatchEntry.MATCH_TEAM_ONE_WON_YES;
+            mTeam2.setPlayoffGame(mPlayoffGame);
+            mTeam1.setPlayoffGame(0);
+            mTeam2.setPlayoffEligible(TeamEntry.PLAYOFF_NOT_ELIGIBLE);
+        } else  {
+            mTeamOneWon = SeasonSimContract.MatchEntry.MATCH_TEAM_ONE_WON_NO;
+            mTeam1.setPlayoffGame(mPlayoffGame);
+            mTeam2.setPlayoffGame(0);
+            mTeam1.setPlayoffEligible(TeamEntry.PLAYOFF_NOT_ELIGIBLE);
+        }
+
         matchComplete = true;
 
         //Callback to presenter to update match in database with match result

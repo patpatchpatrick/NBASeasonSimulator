@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Week {
 
     private ArrayList<Match> mMatches;
+    private ArrayList<Series> mSeries;
     private int mWeekNumber;
     private int mNumberMatchesUpdated = 0;
     private boolean mComplete;
@@ -20,6 +21,8 @@ public class Week {
         mMatches.add(match);
     }
 
+    public void addSeries(Series series) {mSeries.add(series);}
+
     public ArrayList<Match> getMatches() {
         return mMatches;
     }
@@ -28,6 +31,14 @@ public class Week {
         for (Match match : mMatches) {
             if (!match.getComplete()) {
                 match.simulate(useHomeFieldAdvantage);
+            }
+        }
+    }
+
+    public void simulatePlayoffSeries(boolean useHomeFieldAdvantage) {
+        for (Match match : mMatches) {
+            if (!match.getComplete()) {
+                match.simulatePlayoffSeries();
             }
         }
     }

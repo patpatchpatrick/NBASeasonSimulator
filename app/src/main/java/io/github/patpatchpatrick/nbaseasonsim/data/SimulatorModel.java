@@ -57,10 +57,10 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
     public static final int QUERY_FROM_SEASON_STANDINGS_ACTIVITY = 2;
 
     public static final int INSERT_MATCHES_SCHEDULE = 0;
-    public static final int INSERT_MATCHES_PLAYOFFS_WILDCARD = 1;
-    public static final int INSERT_MATCHES_PLAYOFFS_DIVISIONAL = 2;
-    public static final int INSERT_MATCHES_PLAYOFFS_CHAMPIONSHIP = 3;
-    public static final int INSERT_MATCHES_PLAYOFFS_SUPERBOWL = 4;
+    public static final int INSERT_MATCHES_PLAYOFFS_FIRSTROUND = 1;
+    public static final int INSERT_MATCHES_PLAYOFFS_CONF_SEMIS = 2;
+    public static final int INSERT_MATCHES_PLAYOFFS_CONF_FINALS = 3;
+    public static final int INSERT_MATCHES_PLAYOFFS_NBA_FINALS = 4;
 
     public static final int LOAD_SEASON_FROM_HOME_SEASON_SIM = 0;
     public static final int LOAD_SEASON_FROM_HOME_MATCH_PREDICT = 1;
@@ -776,6 +776,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                 values.put(TeamEntry.COLUMN_TEAM_DIV_LOSSES, team.getDivisionLosses());
                 values.put(TeamEntry.COLUMN_TEAM_DIV_WIN_LOSS_PCT, team.getDivisionWinLossPct());
                 values.put(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE, team.getPlayoffEligible());
+                values.put(TeamEntry.COLUMN_TEAM_PLAYOFF_GAME, team.getPlayoffGame());
                 values.put(TeamEntry.COLUMN_TEAM_ELO, team.getElo());
                 values.put(TeamEntry.COLUMN_TEAM_USER_ELO, team.getUserElo());
 
@@ -833,6 +834,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                         TeamEntry.COLUMN_TEAM_DIV_LOSSES,
                         TeamEntry.COLUMN_TEAM_DIV_WIN_LOSS_PCT,
                         TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE,
+                        TeamEntry.COLUMN_TEAM_PLAYOFF_GAME,
                         TeamEntry.COLUMN_TEAM_ELO,
                         TeamEntry.COLUMN_TEAM_DEFAULT_ELO,
                         TeamEntry.COLUMN_TEAM_USER_ELO,
@@ -856,7 +858,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
 
                     standingsCursor = contentResolver.query(TeamEntry.CONTENT_URI, standingsProjection,
                             selection, selectionArgs,
-                            TeamEntry.COLUMN_TEAM_CONFERENCE + ", " + TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE);
+                            TeamEntry.COLUMN_TEAM_CONFERENCE + ", " + TeamEntry.COLUMN_TEAM_PLAYOFF_GAME + ", " + TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE);
 
                 } else {
 
@@ -921,6 +923,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                         TeamEntry.COLUMN_TEAM_DIV_LOSSES,
                         TeamEntry.COLUMN_TEAM_DIV_WIN_LOSS_PCT,
                         TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE,
+                        TeamEntry.COLUMN_TEAM_PLAYOFF_GAME,
                         TeamEntry.COLUMN_TEAM_ELO,
                         TeamEntry.COLUMN_TEAM_DEFAULT_ELO,
                         TeamEntry.COLUMN_TEAM_USER_ELO,
