@@ -203,7 +203,7 @@ public class Match {
 
     }
 
-    protected void simulatePlayoffSeries() {
+    protected boolean simulatePlayoffSeries() {
         //Simulate the playoff series and set the team's playoff game value to be equal to the next playoff game
         //This is used when sorting the database and determining playoff teams and setting playoff matchups
         int awayTeamGamesWon = 0;
@@ -250,6 +250,12 @@ public class Match {
 
         //Callback to presenter to update match in database with match result
         mData.updateMatchCallback(this, matchUri);
+
+        if (mTeam1Score > mTeam2Score){
+            return true;
+        } else {
+            return false;
+        }
 
     }
 

@@ -261,36 +261,36 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     @Override
     public void loadCurrentSeasonPlayoffOdds() {
         HashMap<String, Team> currentSeasonTeams = mModel.getSeasonTeamList();
-        currentSeasonTeams.get(NBAConstants.TEAM_TORONTO_RAPTORS_STRING).setPlayoffOddsString("7.73-2.12-0.05-0.02");
-        currentSeasonTeams.get(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING).setPlayoffOddsString("11.01-2.97-0.19-0.07");
-        currentSeasonTeams.get(NBAConstants.TEAM_NEWYORK_KNICKS_STRING).setPlayoffOddsString("83.64-52.32-14.74-7.79");
-        currentSeasonTeams.get(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING).setPlayoffOddsString("0.36-0.03-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING).setPlayoffOddsString("98.39-97.37-30.9-16.9");
-        currentSeasonTeams.get(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING).setPlayoffOddsString("94.32-88.38-29.01-16.68");
-        currentSeasonTeams.get(NBAConstants.TEAM_ATLANTA_HAWKS_STRING).setPlayoffOddsString("0.02-0-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING).setPlayoffOddsString("3.29-0.77-0.03-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_BOSTON_CELTICS_STRING).setPlayoffOddsString("35.69-17.37-2.1-0.94");
-        currentSeasonTeams.get(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING).setPlayoffOddsString("0.64-0.22-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_MIAMI_HEAT_STRING).setPlayoffOddsString("97.32-87.03-31.26-15.46");
-        currentSeasonTeams.get(NBAConstants.TEAM_ORLANDO_MAGIC_STRING).setPlayoffOddsString("28.27-13.63-1.87-0.83");
-        currentSeasonTeams.get(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING).setPlayoffOddsString("95.58-92.48-27.35-13.53");
-        currentSeasonTeams.get(NBAConstants.TEAM_BROOKLYN_NETS_STRING).setPlayoffOddsString("65.55-47.03-6.71-2.56");
-        currentSeasonTeams.get(NBAConstants.TEAM_DETROIT_PISTONS_STRING).setPlayoffOddsString("2.14-0.73-0.02-0.01");
-        currentSeasonTeams.get(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING).setPlayoffOddsString("37.25-21.3-1.61-0.45");
-        currentSeasonTeams.get(NBAConstants.TEAM_INDIANA_PACERS_STRING).setPlayoffOddsString("76.01-39.44-9.66-4.62");
-        currentSeasonTeams.get(NBAConstants.TEAM_PHOENIX_SUNS_STRING).setPlayoffOddsString("7.3-2.02-0.05-0.03");
-        currentSeasonTeams.get(NBAConstants.TEAM_UTAH_JAZZ_STRING).setPlayoffOddsString("2.27-0.52-0.01-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_SANANTONIO_SPURS_STRING).setPlayoffOddsString("47.98-30.82-4.63-1.89");
-        currentSeasonTeams.get(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING).setPlayoffOddsString("44.58-8.69-2.2-0.66");
-        currentSeasonTeams.get(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING).setPlayoffOddsString("39.07-4.26-1.51-0.45");
-        currentSeasonTeams.get(NBAConstants.TEAM_CHICAGO_BULLS_STRING).setPlayoffOddsString("70.34-48.59-8.5-3.91");
-        currentSeasonTeams.get(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING).setPlayoffOddsString("89.48-78.49-23.12-11.88");
-        currentSeasonTeams.get(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING).setPlayoffOddsString("1.22-0.44-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING).setPlayoffOddsString("48.4-19.28-1.21-0.35");
-        currentSeasonTeams.get(NBAConstants.TEAM_DENVER_NUGGETS_STRING).setPlayoffOddsString("2.02-0.86-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING).setPlayoffOddsString("27.61-8.17-0.66-0.15");
-        currentSeasonTeams.get(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING).setPlayoffOddsString("0.37-0.08-0-0");
-        currentSeasonTeams.get(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING).setPlayoffOddsString("41.36-20.42-1.51-0.5");
+        currentSeasonTeams.get(NBAConstants.TEAM_TORONTO_RAPTORS_STRING).setPlayoffOddsString("99.9-89.75-21.06-8.09");
+        currentSeasonTeams.get(NBAConstants.TEAM_LOSANGELES_CLIPPERS_STRING).setPlayoffOddsString("19.37-1.49-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_NEWYORK_KNICKS_STRING).setPlayoffOddsString("2.82-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_PORTLAND_TRAILBLAZERS_STRING).setPlayoffOddsString("90.71-29.16-1.83-0.47");
+        currentSeasonTeams.get(NBAConstants.TEAM_MINNESOTA_TIMBERWOLVES_STRING).setPlayoffOddsString("33.8-4.1-0.12-0.02");
+        currentSeasonTeams.get(NBAConstants.TEAM_SACRAMENTO_KINGS_STRING).setPlayoffOddsString("0.37-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_ATLANTA_HAWKS_STRING).setPlayoffOddsString("0.37-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_PHILADELPHIA_76ERS_STRING).setPlayoffOddsString("99.9-93.33-27.92-11.92");
+        currentSeasonTeams.get(NBAConstants.TEAM_BOSTON_CELTICS_STRING).setPlayoffOddsString("99.9-96-46.73-23.07");
+        currentSeasonTeams.get(NBAConstants.TEAM_CHARLOTTE_HORNETS_STRING).setPlayoffOddsString("57.47-2.57-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_MIAMI_HEAT_STRING).setPlayoffOddsString("68.61-4.23-0.04-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_ORLANDO_MAGIC_STRING).setPlayoffOddsString("5.15-0.09-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_MEMPHIS_GRIZZLIES_STRING).setPlayoffOddsString("10.61-0.61-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_BROOKLYN_NETS_STRING).setPlayoffOddsString("1.47-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_DETROIT_PISTONS_STRING).setPlayoffOddsString("37.54-1.14-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_DALLAS_MAVERICKS_STRING).setPlayoffOddsString("3.98-0.13-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_INDIANA_PACERS_STRING).setPlayoffOddsString("99.93-63.31-3.23-0.57");
+        currentSeasonTeams.get(NBAConstants.TEAM_PHOENIX_SUNS_STRING).setPlayoffOddsString("0.09-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_UTAH_JAZZ_STRING).setPlayoffOddsString("98.92-56.5-6.64-2.07");
+        currentSeasonTeams.get(NBAConstants.TEAM_SANANTONIO_SPURS_STRING).setPlayoffOddsString("68.45-12.95-0.34-0.07");
+        currentSeasonTeams.get(NBAConstants.TEAM_GOLDENSTATE_WARRIORS_STRING).setPlayoffOddsString("99.9-91.13-54.3-37.03");
+        currentSeasonTeams.get(NBAConstants.TEAM_MILWAUKEE_BUCKS_STRING).setPlayoffOddsString("96.84-18.69-0.25-0.02");
+        currentSeasonTeams.get(NBAConstants.TEAM_CHICAGO_BULLS_STRING).setPlayoffOddsString("9.23-0.14-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_OKLAHOMACITY_THUNDER_STRING).setPlayoffOddsString("99.51-62.96-8.94-3.39");
+        currentSeasonTeams.get(NBAConstants.TEAM_LOSANGELES_LAKERS_STRING).setPlayoffOddsString("97.7-46.76-4.39-1.44");
+        currentSeasonTeams.get(NBAConstants.TEAM_NEWORLEANS_PELICANS_STRING).setPlayoffOddsString("76.57-16.19-0.77-0.14");
+        currentSeasonTeams.get(NBAConstants.TEAM_DENVER_NUGGETS_STRING).setPlayoffOddsString("0.34-0.01-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_CLEVELAND_CAVALIERS_STRING).setPlayoffOddsString("21.72-0.68-0.01-0.01");
+        currentSeasonTeams.get(NBAConstants.TEAM_HOUSTON_ROCKETS_STRING).setPlayoffOddsString("99.95-78.01-22.66-11.59");
+        currentSeasonTeams.get(NBAConstants.TEAM_WASHINGTON_WIZARDS_STRING).setPlayoffOddsString("98.85-30.05-0.75-0.1");
     }
 
     public void addScoreView(ScoreView scoreView) {
@@ -3898,12 +3898,12 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         }
 
         //From week 1 to week 17 (full season), simulate the season
-        while (mCurrentSimulatorWeek <= 17) {
+        while (mCurrentSimulatorWeek <= 24) {
             mModel.getSimulatorSchedule().getWeek(mCurrentSimulatorWeek).simulateTestMatches(true);
             mCurrentSimulatorWeek++;
         }
 
-        mCurrentSimulatorWeek = 18;
+        mCurrentSimulatorWeek = 25;
         this.view.setCurrentWeekPreference(mCurrentSimulatorWeek);
 
         ArrayList<ArrayList<Team>> allPlayoffTeams = generateSimulatorPlayoffTeams(SimulatorPresenter.SEASON_TYPE_SIMULATOR);
@@ -3972,112 +3972,198 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
     private void simulateTestPlayoffs(ArrayList<ArrayList<Team>> allPlayoffTeams) {
 
-        ArrayList<Team> afcPlayoffTeams = allPlayoffTeams.get(0);
-        ArrayList<Team> nfcPlayoffTeams = allPlayoffTeams.get(1);
+        ArrayList<Team> westernConferencePlayoffTeams = allPlayoffTeams.get(0);
+        ArrayList<Team> easternConferencePlayoffTeams = allPlayoffTeams.get(1);
 
-        for (Team team : afcPlayoffTeams) {
+        for (Team team : westernConferencePlayoffTeams) {
             team.madePlayoffs();
         }
-        for (Team team : nfcPlayoffTeams) {
+        for (Team team : easternConferencePlayoffTeams) {
             team.madePlayoffs();
         }
 
-        Team afcSixSeed = afcPlayoffTeams.get(5);
-        Team afcFiveSeed = afcPlayoffTeams.get(4);
-        Team afcFourSeed = afcPlayoffTeams.get(3);
-        Team afcThreeSeed = afcPlayoffTeams.get(2);
-        Team nfcSixSeed = nfcPlayoffTeams.get(5);
-        Team nfcFiveSeed = nfcPlayoffTeams.get(4);
-        Team nfcFourSeed = nfcPlayoffTeams.get(3);
-        Team nfcThreeSeed = nfcPlayoffTeams.get(2);
+        Team westernEightSeed = westernConferencePlayoffTeams.get(7);
+        Team westernSevenSeed = westernConferencePlayoffTeams.get(6);
+        Team westernSixSeed = westernConferencePlayoffTeams.get(5);
+        Team westernFiveSeed = westernConferencePlayoffTeams.get(4);
+        Team westernFourSeed = westernConferencePlayoffTeams.get(3);
+        Team westernThreeSeed = westernConferencePlayoffTeams.get(2);
+        Team westernTwoSeed = westernConferencePlayoffTeams.get(1);
+        Team westernOneSeed = westernConferencePlayoffTeams.get(0);
+        
+        Team easternEightSeed = easternConferencePlayoffTeams.get(7);
+        Team easternSevenSeed = easternConferencePlayoffTeams.get(6);
+        Team easternSixSeed = easternConferencePlayoffTeams.get(5);
+        Team easternFiveSeed = easternConferencePlayoffTeams.get(4);
+        Team easternFourSeed = easternConferencePlayoffTeams.get(3);
+        Team easternThreeSeed = easternConferencePlayoffTeams.get(2);
+        Team easternTwoSeed = easternConferencePlayoffTeams.get(1);
+        Team easternOneSeed = easternConferencePlayoffTeams.get(0);
 
-        Boolean afcWildCardSixSeedWon = ELORatingSystem.simulateTestMatch(afcSixSeed, afcThreeSeed, true);
-        Boolean afcWildCardFiveSeedWon = ELORatingSystem.simulateTestMatch(afcFiveSeed, afcFourSeed, true);
-        Boolean nfcWildCardSixSeedWon = ELORatingSystem.simulateTestMatch(nfcSixSeed, nfcThreeSeed, true);
-        Boolean nfcWildCardFiveSeedWon = ELORatingSystem.simulateTestMatch(nfcFiveSeed, nfcFourSeed, true);
-
-        if (afcWildCardSixSeedWon) {
-            afcPlayoffTeams.remove(afcThreeSeed);
+        Boolean westernEightSeedWon = ELORatingSystem.simulateTestPlayoffSeries(westernEightSeed, westernOneSeed);
+        Boolean westernFiveSeedWon = ELORatingSystem.simulateTestPlayoffSeries(westernFiveSeed, westernFourSeed);
+        Boolean westernSixSeedWon = ELORatingSystem.simulateTestPlayoffSeries(westernSixSeed, westernThreeSeed);
+        Boolean westernSevenSeedWon = ELORatingSystem.simulateTestPlayoffSeries(westernSevenSeed, westernTwoSeed);
+        
+        Boolean easternEightSeedWon = ELORatingSystem.simulateTestPlayoffSeries(easternEightSeed, easternOneSeed);
+        Boolean easternFiveSeedWon = ELORatingSystem.simulateTestPlayoffSeries(easternFiveSeed, easternFourSeed);
+        Boolean easternSixSeedWon = ELORatingSystem.simulateTestPlayoffSeries(easternSixSeed, easternThreeSeed);
+        Boolean easternSevenSeedWon = ELORatingSystem.simulateTestPlayoffSeries(easternSevenSeed, easternTwoSeed);
+        
+        Team westernConfSemiTeamOne;
+        if (westernEightSeedWon){
+            westernConfSemiTeamOne = westernEightSeed;
         } else {
-            afcPlayoffTeams.remove(afcSixSeed);
+            westernConfSemiTeamOne = westernOneSeed;
         }
-        if (afcWildCardFiveSeedWon) {
-            afcPlayoffTeams.remove(afcFourSeed);
+        Team westernConfSemiTeamTwo;
+        if (westernFiveSeedWon){
+            westernConfSemiTeamTwo = westernFiveSeed;
         } else {
-            afcPlayoffTeams.remove(afcFiveSeed);
+            westernConfSemiTeamTwo = westernFourSeed;
         }
-        if (nfcWildCardSixSeedWon) {
-            nfcPlayoffTeams.remove(nfcThreeSeed);
+        Team westernConfSemiTeamThree;
+        if (westernSixSeedWon){
+            westernConfSemiTeamThree = westernSixSeed;
         } else {
-            nfcPlayoffTeams.remove(nfcSixSeed);
+            westernConfSemiTeamThree = westernThreeSeed;
         }
-        if (nfcWildCardFiveSeedWon) {
-            nfcPlayoffTeams.remove(nfcFourSeed);
+        Team westernConfSemiTeamFour;
+        if  (westernSevenSeedWon){
+            westernConfSemiTeamFour = westernSevenSeed;
         } else {
-            nfcPlayoffTeams.remove(nfcFiveSeed);
+            westernConfSemiTeamFour = westernTwoSeed;
         }
-
-        Team afcDivFourSeed = afcPlayoffTeams.get(3);
-        Team afcDivThreeSeed = afcPlayoffTeams.get(2);
-        Team afcDivTwoSeed = afcPlayoffTeams.get(1);
-        Team afcDivOneSeed = afcPlayoffTeams.get(0);
-        Team nfcDivFourSeed = nfcPlayoffTeams.get(3);
-        Team nfcDivThreeSeed = nfcPlayoffTeams.get(2);
-        Team nfcDivTwoSeed = nfcPlayoffTeams.get(1);
-        Team nfcDivOneSeed = nfcPlayoffTeams.get(0);
-
-        Boolean afcDivisionFourSeedWon = ELORatingSystem.simulateTestMatch(afcDivFourSeed, afcDivOneSeed, true);
-        Boolean afcDivisionThreeSeedWon = ELORatingSystem.simulateTestMatch(afcDivThreeSeed, afcDivTwoSeed, true);
-        Boolean nfcDivisionFourSeedWon = ELORatingSystem.simulateTestMatch(nfcDivFourSeed, nfcDivOneSeed, true);
-        Boolean nfcDivisionThreeSeedWon = ELORatingSystem.simulateTestMatch(nfcDivThreeSeed, nfcDivTwoSeed, true);
-
-        if (afcDivisionFourSeedWon) {
-            afcPlayoffTeams.remove(afcDivOneSeed);
+        Team easternConfSemiTeamOne;
+        if (easternEightSeedWon){
+            easternConfSemiTeamOne = easternEightSeed;
         } else {
-            afcPlayoffTeams.remove(afcDivFourSeed);
+            easternConfSemiTeamOne = easternOneSeed;
         }
-        if (afcDivisionThreeSeedWon) {
-            afcPlayoffTeams.remove(afcDivTwoSeed);
+        Team easternConfSemiTeamTwo;
+        if (easternFiveSeedWon){
+            easternConfSemiTeamTwo = easternFiveSeed;
         } else {
-            afcPlayoffTeams.remove(afcDivThreeSeed);
+            easternConfSemiTeamTwo = easternFourSeed;
         }
-        if (nfcDivisionFourSeedWon) {
-            nfcPlayoffTeams.remove(nfcDivOneSeed);
+        Team easternConfSemiTeamThree;
+        if (easternSixSeedWon){
+            easternConfSemiTeamThree = easternSixSeed;
         } else {
-            nfcPlayoffTeams.remove(nfcDivFourSeed);
+            easternConfSemiTeamThree = easternThreeSeed;
         }
-        if (nfcDivisionThreeSeedWon) {
-            nfcPlayoffTeams.remove(nfcDivTwoSeed);
+        Team easternConfSemiTeamFour;
+        if  (easternSevenSeedWon){
+            easternConfSemiTeamFour = easternSevenSeed;
         } else {
-            nfcPlayoffTeams.remove(nfcDivThreeSeed);
+            easternConfSemiTeamFour = easternTwoSeed;
         }
-
-        Boolean afcConfLowSeedWon = ELORatingSystem.simulateTestMatch(afcPlayoffTeams.get(1), afcPlayoffTeams.get(0), true);
-        Boolean nfcConfLowSeedWon = ELORatingSystem.simulateTestMatch(nfcPlayoffTeams.get(1), nfcPlayoffTeams.get(0), true);
-
-        if (afcConfLowSeedWon) {
-            afcPlayoffTeams.remove(0);
+        westernConfSemiTeamOne.madeConfSemis();
+        westernConfSemiTeamTwo.madeConfSemis();
+        westernConfSemiTeamThree.madeConfSemis();
+        westernConfSemiTeamFour.madeConfSemis();
+        easternConfSemiTeamOne.madeConfSemis();
+        easternConfSemiTeamTwo.madeConfSemis();
+        easternConfSemiTeamThree.madeConfSemis();
+        easternConfSemiTeamFour.madeConfSemis();
+        
+        Boolean westernConfTeamOneWon;
+        if (westernConfSemiTeamOne.getWinLossPct() > westernConfSemiTeamTwo.getWinLossPct()){
+            westernConfTeamOneWon = !ELORatingSystem.simulateTestPlayoffSeries(westernConfSemiTeamTwo, westernConfSemiTeamOne);
         } else {
-            afcPlayoffTeams.remove(1);
+            westernConfTeamOneWon = ELORatingSystem.simulateTestPlayoffSeries(westernConfSemiTeamOne, westernConfSemiTeamTwo);
         }
-        if (nfcConfLowSeedWon) {
-            nfcPlayoffTeams.remove(0);
+        Boolean westernConfTeamThreeWon;
+        if (westernConfSemiTeamThree.getWinLossPct() > westernConfSemiTeamFour.getWinLossPct()){
+            westernConfTeamThreeWon = !ELORatingSystem.simulateTestPlayoffSeries(westernConfSemiTeamFour, westernConfSemiTeamThree);
         } else {
-            nfcPlayoffTeams.remove(1);
-        }
-
-        afcPlayoffTeams.get(0).wonConference();
-        nfcPlayoffTeams.get(0).wonConference();
-        Boolean afcWonSuperbowl = ELORatingSystem.simulateTestMatch(afcPlayoffTeams.get(0), nfcPlayoffTeams.get(0), false);
-        if (afcWonSuperbowl) {
-            afcPlayoffTeams.get(0).wonSuperBowl();
-        } else {
-            nfcPlayoffTeams.get(0).wonSuperBowl();
+            westernConfTeamThreeWon = ELORatingSystem.simulateTestPlayoffSeries(westernConfSemiTeamThree, westernConfSemiTeamFour);
         }
 
-        Log.d("AFCSB", "" + afcPlayoffTeams.get(0).getName());
-        Log.d("NFCSB", "" + nfcPlayoffTeams.get(0).getName());
-        Log.d("AFCWon", "" + afcWonSuperbowl);
+        Boolean easternConfTeamOneWon;
+        if (easternConfSemiTeamOne.getWinLossPct() > easternConfSemiTeamTwo.getWinLossPct()){
+            easternConfTeamOneWon = !ELORatingSystem.simulateTestPlayoffSeries(easternConfSemiTeamTwo, easternConfSemiTeamOne);
+        } else {
+            easternConfTeamOneWon = ELORatingSystem.simulateTestPlayoffSeries(easternConfSemiTeamOne, easternConfSemiTeamTwo);
+        }
+        Boolean easternConfTeamThreeWon;
+        if (easternConfSemiTeamThree.getWinLossPct() > easternConfSemiTeamFour.getWinLossPct()){
+            easternConfTeamThreeWon = !ELORatingSystem.simulateTestPlayoffSeries(easternConfSemiTeamFour, easternConfSemiTeamThree);
+        } else {
+            easternConfTeamThreeWon = ELORatingSystem.simulateTestPlayoffSeries(easternConfSemiTeamThree, easternConfSemiTeamFour);
+        }
+        
+        Team westernConfFinalsTeamOne;
+        if (westernConfTeamOneWon){
+            westernConfFinalsTeamOne = westernConfSemiTeamOne;
+        } else {
+            westernConfFinalsTeamOne = westernConfSemiTeamTwo;
+        }
+        Team westernConfFinalsTeamTwo;
+        if (westernConfTeamThreeWon){
+            westernConfFinalsTeamTwo = westernConfSemiTeamThree;
+        } else {
+            westernConfFinalsTeamTwo = westernConfSemiTeamFour;
+        }
+
+        Team easternConfFinalsTeamOne;
+        if (easternConfTeamOneWon){
+            easternConfFinalsTeamOne = easternConfSemiTeamOne;
+        } else {
+            easternConfFinalsTeamOne = easternConfSemiTeamTwo;
+        }
+        Team easternConfFinalsTeamTwo;
+        if (easternConfTeamThreeWon){
+            easternConfFinalsTeamTwo = easternConfSemiTeamThree;
+        } else {
+            easternConfFinalsTeamTwo = easternConfSemiTeamFour;
+        }
+        
+        Boolean westernConfFinalsTeamOneWon;
+        if (westernConfFinalsTeamOne.getWinLossPct() > westernConfFinalsTeamTwo.getWinLossPct()){
+            westernConfFinalsTeamOneWon = !ELORatingSystem.simulateTestPlayoffSeries(westernConfFinalsTeamTwo, westernConfFinalsTeamOne);
+        } else {
+            westernConfFinalsTeamOneWon = ELORatingSystem.simulateTestPlayoffSeries(westernConfFinalsTeamOne, westernConfFinalsTeamTwo);
+        }
+        Boolean easternConfFinalsTeamOneWon;
+        if (easternConfFinalsTeamOne.getWinLossPct() > easternConfFinalsTeamTwo.getWinLossPct()){
+            easternConfFinalsTeamOneWon = !ELORatingSystem.simulateTestPlayoffSeries(easternConfFinalsTeamTwo, easternConfFinalsTeamOne);
+        } else {
+            easternConfFinalsTeamOneWon = ELORatingSystem.simulateTestPlayoffSeries(easternConfFinalsTeamOne, easternConfFinalsTeamTwo);
+        }
+        Team westernNBAFinalsTeam;
+        if (westernConfFinalsTeamOneWon){
+            westernNBAFinalsTeam = westernConfFinalsTeamOne;
+        } else {
+            westernNBAFinalsTeam = westernConfFinalsTeamTwo;
+        }
+        Team easternNBAFinalsTeam;
+        if (easternConfFinalsTeamOneWon){
+            easternNBAFinalsTeam = easternConfFinalsTeamOne;
+        } else {
+            easternNBAFinalsTeam = easternConfFinalsTeamTwo;
+        }
+
+        westernNBAFinalsTeam.wonConference();
+        easternNBAFinalsTeam.wonConference();
+
+        Boolean westWonNBAFinals;
+        if (westernNBAFinalsTeam.getWinLossPct() > easternNBAFinalsTeam.getWinLossPct()){
+            westWonNBAFinals = !ELORatingSystem.simulateTestPlayoffSeries(easternNBAFinalsTeam, westernNBAFinalsTeam);
+        } else {
+            westWonNBAFinals = ELORatingSystem.simulateTestPlayoffSeries(westernNBAFinalsTeam, easternNBAFinalsTeam);
+        }
+
+        if (westWonNBAFinals){
+            westernNBAFinalsTeam.wonNBAFinals();
+        } else {
+            easternNBAFinalsTeam.wonNBAFinals();
+        }
+
+        Log.d("West", "" + westernNBAFinalsTeam.getName());
+        Log.d("East", "" + easternNBAFinalsTeam.getName());
+        Log.d("WestWon", "" + westWonNBAFinals);
+        Log.d("SimPercent", "" + mCurrentTestSimulations);
 
         this.view.simulateAnotherTestWeek();
 

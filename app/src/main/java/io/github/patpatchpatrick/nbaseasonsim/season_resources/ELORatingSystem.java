@@ -93,6 +93,44 @@ public class ELORatingSystem {
 
     }
 
+    public static boolean simulateTestPlayoffSeries(Team teamOne, Team teamTwo){
+        //Simulate the playoff series and set the team's playoff game value to be equal to the next playoff game
+        //This is used when sorting the database and determining playoff teams and setting playoff matchups
+        int awayTeamGamesWon = 0;
+        int homeTeamGamesWon = 0;
+
+        int gameNumber = 0;
+        boolean awayTeamWon;
+
+        while (awayTeamGamesWon < 4 && homeTeamGamesWon < 4){
+            gameNumber++;
+            if (gameNumber == 1 || gameNumber == 2 || gameNumber == 5 || gameNumber == 7){
+                awayTeamWon = ELORatingSystem.simulateTestMatch(teamOne, teamTwo, true);
+                if (awayTeamWon){
+                    awayTeamGamesWon++;
+                } else {
+                    homeTeamGamesWon++;
+                }
+            } else {
+                awayTeamWon = !ELORatingSystem.simulateTestMatch(teamTwo, teamOne,  true);
+                if (awayTeamWon){
+                    awayTeamGamesWon++;
+                } else {
+                    homeTeamGamesWon++;
+                }
+            }
+        }
+
+       int teamOneScore = awayTeamGamesWon;
+        int teamTwoScore = homeTeamGamesWon;
+
+        if (teamOneScore > teamTwoScore){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static int completeCurrentSeasonMatch(Match match, int teamOneScore, int teamTwoScore){
 
         Team teamOne = match.getTeam1();

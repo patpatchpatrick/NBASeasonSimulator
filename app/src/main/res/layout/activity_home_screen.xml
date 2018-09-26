@@ -12,7 +12,7 @@
         android:id="@+id/main_menu_logo"
         android:layout_width="256dp"
         android:layout_height="200dp"
-        android:src="@drawable/ic_nflvectortransparent"
+        android:src="@drawable/ic_nbavectortransparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

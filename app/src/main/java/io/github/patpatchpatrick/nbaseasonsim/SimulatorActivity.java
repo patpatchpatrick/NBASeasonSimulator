@@ -272,7 +272,7 @@ public class SimulatorActivity extends AppCompatActivity implements SimulatorMvp
             Log.d("TEST",  "SIMULATION COMPLETE!!!!");
             DecimalFormat df = new DecimalFormat("#.##");
             for (Team team : mModel.getSimulatorTeamArrayList()){
-                Log.d("DATA", team.getShortName() + df.format(team.getMadePlayoffs() * 100) + "-" + df.format(team.getWonDivision()*100) +  "-" + df.format(team.getWonConference()*100) + "-" + df.format(team.getWonSuperBowl()*100));
+                Log.d("DATA", team.getShortName() + df.format(team.getMadePlayoffs() * 100) + "-" + df.format(team.getMadeConfSemis()*100) +  "-" + df.format(team.getWonConference()*100) + "-" + df.format(team.getWonNBAFinals()*100));
             }
         }
 

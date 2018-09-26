@@ -10,7 +10,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:padding="4dp"
-        android:src="@drawable/ic_nflvectortransparent"
+        android:src="@drawable/ic_nbavectortransparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

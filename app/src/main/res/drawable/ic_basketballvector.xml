@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+    <group
+        android:name="basketball"
+        android:pivotX="50"
+        android:pivotY="50"
+        android:rotation="0">
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M15.29,19.53C23.45,10.33 35.28,4.55 47.59,4C47.59,18.54 47.59,33.07 47.59,47.6C42.96,47.6 38.33,47.6 33.71,47.59C32.92,35.85 25.73,24.95 15.29,19.53Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M51.59,3.98C63.91,4.57 75.73,10.33 83.92,19.52C73.49,24.95 66.26,35.84 65.5,47.6C60.86,47.6 56.22,47.6 51.59,47.59C51.59,33.06 51.58,18.52 51.59,3.98Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M3.98,47.6C4.44,38.66 7.51,29.95 12.73,22.7C22.27,27.31 28.9,37.02 29.72,47.59C21.14,47.61 12.56,47.6 3.98,47.6Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M69.49,47.59C70.29,37.01 76.94,27.29 86.49,22.7C91.68,29.97 94.74,38.66 95.24,47.59C86.65,47.61 78.07,47.61 69.49,47.59Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M3.97,51.61C12.55,51.6 21.13,51.59 29.71,51.61C28.9,62.18 22.26,71.89 12.73,76.51C7.52,69.25 4.45,60.54 3.97,51.61Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M15.29,79.69C25.71,74.24 32.9,63.36 33.71,51.6C38.34,51.6 42.96,51.6 47.58,51.6C47.6,66.14 47.59,80.67 47.58,95.21C35.28,94.61 23.46,88.88 15.29,79.69Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M51.59,51.6C56.23,51.6 60.86,51.6 65.5,51.6C66.27,63.36 73.49,74.25 83.92,79.69C75.73,88.88 63.91,94.61 51.6,95.22C51.58,80.68 51.59,66.14 51.59,51.6Z" />
+        <path
+            android:fillColor="?vectorLightColor"
+            android:pathData="M69.49,51.61C78.07,51.59 86.65,51.6 95.23,51.61C94.74,60.54 91.67,69.22 86.5,76.51C76.94,71.91 70.29,62.19 69.49,51.61Z" />
+    </group>
+</vector>

@@ -47,9 +47,9 @@ public class Team {
 
     //Test Data for Playoff Odds
     private int mMadePlayoffs = 0;
-    private int mWonDivision = 0;
+    private int mMadeConfSemis = 0;
     private int mWonConference = 0;
-    private int mWonSuperbowl = 0;
+    private int mWonNBAFinals = 0;
     private String mPlayoffOddsString;
 
     //Current Season
@@ -346,12 +346,12 @@ public class Team {
         return (double) mMadePlayoffs / (double) SimulatorPresenter.mTotalTestSimulations;
     }
 
-    public void wonDivision(){
-        mWonDivision++;
+    public void madeConfSemis(){
+        mMadeConfSemis++;
     }
 
-    public double getWonDivision(){
-        return (double) mWonDivision / (double) SimulatorPresenter.mTotalTestSimulations;
+    public double getMadeConfSemis(){
+        return (double) mMadeConfSemis / (double) SimulatorPresenter.mTotalTestSimulations;
     }
 
     public void wonConference(){
@@ -362,12 +362,12 @@ public class Team {
         return (double) mWonConference / (double) SimulatorPresenter.mTotalTestSimulations;
     }
 
-    public void wonSuperBowl(){
-        mWonSuperbowl++;
+    public void wonNBAFinals(){
+        mWonNBAFinals++;
     }
 
-    public double getWonSuperBowl(){
-        return (double) mWonSuperbowl / (double) SimulatorPresenter.mTotalTestSimulations;
+    public double getWonNBAFinals(){
+        return (double) mWonNBAFinals / (double) SimulatorPresenter.mTotalTestSimulations;
     }
 
     public void setPlayoffOddsString(String playoffOddsString){

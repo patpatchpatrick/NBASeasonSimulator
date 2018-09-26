@@ -92,9 +92,9 @@
     <string name="standings_header">Season Standings</string>
     <string name="standings_details_header">*Playoff odds are \ncalculated by simulating \nthe season 10,000 times</string>
     <string name="standings_playoff_odds_header">Playoff %</string>
-    <string name="standings_division_odds_header">Division %</string>
-    <string name="standings_conference_odds_header">Conf %</string>
-    <string name="standings_superbowl_odds_header">SuperBowl %</string>
+    <string name="standings_division_odds_header">Conf Semis %</string>
+    <string name="standings_conference_odds_header">Finals %</string>
+    <string name="standings_superbowl_odds_header">NBA Champion %</string>
 
     <!-- Library Activity Strings -->
     <string name="pref_libraries">Libraries/Licenses</string>
