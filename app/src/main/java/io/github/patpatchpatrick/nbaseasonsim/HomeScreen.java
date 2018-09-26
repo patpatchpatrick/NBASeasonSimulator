@@ -41,9 +41,9 @@ public class HomeScreen extends AppCompatActivity implements SharedPreferences.O
     Button mSettingsButton;
     Button mNextWeekMatchesButton;
     Button mStandingsButton;
-    ImageView mAnimatedFootball;
+    ImageView mAnimatedBasketball;
     ImageView mAnimatedLoader;
-    Animatable mAnimatedFootballAnimatable;
+    Animatable mAnimatedBasketballAnimatable;
     AnimationDrawable mAnimatedLoaderAnimation;
     TextView mLoadingText;
     static ActivityComponent mActivityComponent;
@@ -82,8 +82,8 @@ public class HomeScreen extends AppCompatActivity implements SharedPreferences.O
         mNextWeekMatchesButton = (Button) findViewById(R.id.main_menu_season_schedule_button);
         mStandingsButton = (Button) findViewById(R.id.main_menu_season_standings_button);
 
-        mAnimatedFootball = (ImageView) findViewById(R.id.football_animation);
-        mAnimatedFootballAnimatable = (Animatable) mAnimatedFootball.getDrawable();
+        mAnimatedBasketball = (ImageView) findViewById(R.id.football_animation);
+        mAnimatedBasketballAnimatable = (Animatable) mAnimatedBasketball.getDrawable();
         mAnimatedLoader = (ImageView) findViewById(R.id.main_menu_loading_animation);
         mAnimatedLoaderAnimation = (AnimationDrawable) mAnimatedLoader.getBackground();
         mLoadingText = (TextView) findViewById(R.id.main_menu_loading_text);
@@ -150,9 +150,9 @@ public class HomeScreen extends AppCompatActivity implements SharedPreferences.O
 
     private void startAnimations() {
 
-        if (!mAnimatedFootballAnimatable.isRunning()){
+        if (!mAnimatedBasketballAnimatable.isRunning()){
 
-        mAnimatedFootballAnimatable.start();
+        mAnimatedBasketballAnimatable.start();
         mAnimatedLoader.setVisibility(View.VISIBLE);
         mAnimatedLoaderAnimation.start();
         mLoadingText.setVisibility(View.VISIBLE);}
@@ -161,8 +161,8 @@ public class HomeScreen extends AppCompatActivity implements SharedPreferences.O
     private void stopAnimations() {
         //Stop all animations and set loading animations and text to invisible
 
-        if (mAnimatedFootballAnimatable.isRunning()){
-            mAnimatedFootballAnimatable.stop();
+        if (mAnimatedBasketballAnimatable.isRunning()){
+            mAnimatedBasketballAnimatable.stop();
             mAnimatedLoaderAnimation.stop();
             mAnimatedLoader.setVisibility(View.INVISIBLE);
             mLoadingText.setVisibility(View.INVISIBLE);}
@@ -171,7 +171,7 @@ public class HomeScreen extends AppCompatActivity implements SharedPreferences.O
 
     private void forceStopAnimations(){
 
-            mAnimatedFootballAnimatable.stop();
+            mAnimatedBasketballAnimatable.stop();
             mAnimatedLoaderAnimation.stop();
             mAnimatedLoader.setVisibility(View.INVISIBLE);
             mLoadingText.setVisibility(View.INVISIBLE);

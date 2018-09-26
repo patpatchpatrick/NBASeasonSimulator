@@ -91,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_football_animdrawable" />
+        app:srcCompat="@drawable/ic_basketball_animdrawable" />
 
     <TextView
         android:id="@+id/standings_header"
