@@ -63,10 +63,10 @@ public class SeasonSimContract {
 
         public static final String getDivisionString(int divisionInt){
             if (divisionInt == DIVISION_WESTERN_CONFERENCE){
-                return "Western Conference";
+                return "Western Conf";
             }
             if (divisionInt == DIVISION_EASTERN_CONFERENCE){
-                return "Eastern Conference";
+                return "Eastern Conf";
             }
                 return null;
         }

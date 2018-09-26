@@ -80,7 +80,7 @@ public class NextWeekMatchesActivity extends AppCompatActivity implements BaseVi
             @Override
             public void onClick(View view) {
                 //If the week is less than 17, increase week number and query the next week's matches
-                if (weekNumber < 17) {
+                if (weekNumber < 24) {
                     weekNumber++;
                     mPresenter.queryCurrentSeasonMatches(weekNumber, true, SimulatorModel.QUERY_FROM_NEXT_WEEK_MATCHES_ACTIVITY);
                     mWeekNumberHeader.setText("Week " + weekNumber);

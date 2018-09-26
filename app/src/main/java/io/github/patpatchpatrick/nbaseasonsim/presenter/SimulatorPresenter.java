@@ -238,7 +238,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     public void seasonTeamsInserted() {
 
         //Set current season teams to use current season elos
-        resetSimulatorTeamCurrentSeasonElos();
+        resetCurrentSeasonTeamCurrentSeasonElos();
         createSeasonSchedule();
         mModel.insertSeasonMatches(SimulatorModel.INSERT_MATCHES_SCHEDULE);
 
@@ -381,16 +381,16 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
 
             scoreWeekNumberHeader = "Week " + weekNumber;
             if (queryType == MatchEntry.MATCH_WEEK_FIRST_ROUND) {
-                scoreWeekNumberHeader = "Playoffs First Round";
+                scoreWeekNumberHeader = "1st Round";
             }
             if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_SEMIFINALS) {
-                scoreWeekNumberHeader = "Playoffs Conference Semi-Finals";
+                scoreWeekNumberHeader = "Conf Semis";
             }
             if (queryType == MatchEntry.MATCH_WEEK_CONFERENCE_FINALS) {
-                scoreWeekNumberHeader = "Playoffs Conference Finals";
+                scoreWeekNumberHeader = "Conf Finals";
             }
             if (queryType == MatchEntry.MATCH_WEEK_NBA_FINALS) {
-                scoreWeekNumberHeader = "Playoffs NBA Finals";
+                scoreWeekNumberHeader = "NBA Finals";
             }
 
             matchesCursor.moveToPosition(0);

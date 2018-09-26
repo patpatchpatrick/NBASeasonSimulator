@@ -112,30 +112,30 @@ public class StandingsRecyclerViewAdapter extends RecyclerView.Adapter<Standings
             if (remainingPlayoffTeams == 16) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Western Conference Standings");
+                    holder.standingsHeader.setText("Western Conf");
                 } else if (position == 8) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Eastern Conference Standings");
+                    holder.standingsHeader.setText("Eastern Conf");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }
             } else if (remainingPlayoffTeams == 8) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Western Conference Standings");
+                    holder.standingsHeader.setText("Western Conf");
                 } else if (position == 4) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Eastern Conference Standings");
+                    holder.standingsHeader.setText("Eastern Conf");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }
             } else if (remainingPlayoffTeams == 4) {
                 if (position == 0) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Western Conference Standings");
+                    holder.standingsHeader.setText("Western Conf");
                 } else if (position == 2) {
                     holder.standingsHeader.setVisibility(View.VISIBLE);
-                    holder.standingsHeader.setText("Eastern Conference Standings");
+                    holder.standingsHeader.setText("Eastern Conf");
                 } else {
                     holder.standingsHeader.setVisibility(View.GONE);
                 }
