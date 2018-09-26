@@ -238,7 +238,7 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
     public void seasonTeamsInserted() {
 
         //Set current season teams to use current season elos
-        resetCurrentSeasonTeamCurrentSeasonElos();
+        resetSimulatorTeamCurrentSeasonElos();
         createSeasonSchedule();
         mModel.insertSeasonMatches(SimulatorModel.INSERT_MATCHES_SCHEDULE);
 

@@ -293,11 +293,11 @@ public class Team {
 
     public void setCurrentSeasonElos() {
         //Set team elos based on future ranking
-        mElo = 1700 - (mTeamRanking * 12.5);
+        mElo = 1800 - (mTeamRanking * 12.5);
     }
 
     public double getFutureElo() {
-        double futureElo = mElo = 1700 - (mTeamRanking * 12.5);
+        double futureElo = mElo = 1800 - (mTeamRanking * 12.5);
         return futureElo;
     }
 
