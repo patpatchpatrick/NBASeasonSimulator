@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import javax.inject.Inject;
 
 import io.github.patpatchpatrick.nbaseasonsim.data.SimulatorModel;
+import io.github.patpatchpatrick.nbaseasonsim.presenter.SimulatorPresenter;
 import io.github.patpatchpatrick.nbaseasonsim.season_resources.ELORatingSystem;
 
 public class MatchPredictorActivity extends AppCompatActivity {
@@ -30,6 +31,9 @@ public class MatchPredictorActivity extends AppCompatActivity {
 
     @Inject
     SharedPreferences mSharedPrefs;
+
+    @Inject
+    SimulatorPresenter mPresenter;
 
     private AdView mAdView;
     private Button mSimulateMatchButton;
@@ -77,6 +81,8 @@ public class MatchPredictorActivity extends AppCompatActivity {
         mTeamOneScoreValue = (TextView) findViewById(R.id.match_predict_team_one_score_value);
         mTeamTwoScoreValue = (TextView) findViewById(R.id.match_predict_team_two_score_value);
 
+        //Load current season data
+        mPresenter.loadCurrentSeasonMatches();
 
         //Get resources for spinners and values
         final ArrayList<String> teamNameArrayList = mModel.getTeamNameArrayList();
