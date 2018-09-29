@@ -28,9 +28,9 @@ NBA Season Simulation App
 
 📐 Team's ELO ratings will be updated as the season progresses to keep the model as accurate and precise as possible.  Predict outcomes with maximum precision/efficiency!
 
-💥<b>NEW</b> Predict head-to-head matchups for any two teams!
+💥<b>NEW</b> Predict head-to-head matchups for any two teams!  
 💥<b>NEW</b> Compare ELO Odds with Vegas Line for all 2018 matches!
 
-![Screenshots](https://raw.githubusercontent.com/patpatchpatrick/NBASeasonSimulator/master/app/docs/images/NbaSeasonSimFeatureScreens.png)
+![Screenshots](https://raw.githubusercontent.com/patpatchpatrick/nbaseasonsim/master/app/docs/images/NbaSeasonSimFeatureScreens.png)
 
 
