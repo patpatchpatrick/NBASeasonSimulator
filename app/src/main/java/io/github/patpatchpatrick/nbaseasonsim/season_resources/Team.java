@@ -1,6 +1,7 @@
 package io.github.patpatchpatrick.nbaseasonsim.season_resources;
 
 import android.net.Uri;
+import android.util.Log;
 
 import io.github.patpatchpatrick.nbaseasonsim.data.SeasonSimContract.TeamEntry;
 import io.github.patpatchpatrick.nbaseasonsim.presenter.SimulatorPresenter;
@@ -184,7 +185,9 @@ public class Team {
         mCurrentWins++;
         mWinLossPct = (double) mCurrentWins / (double) (mCurrentWins + mCurrentLosses);
 
+        Log.d("TEAM", "WON");
         mData.updateTeamCallback(this, mUri);
+        Log.d("URI", "URI" + mUri);
     }
 
     public void draw() {

@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:text="@string/weekly_matches_vegas_odds_header"
+        android:text=""
         app:layout_constraintTop_toTopOf="@id/weekly_matches_recycler_team_one_name"
         app:layout_constraintStart_toStartOf="@id/weekly_matches_middle_divider"/>
 

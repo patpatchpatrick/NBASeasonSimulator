@@ -17,7 +17,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         ads:adSize="BANNER"
@@ -35,7 +35,7 @@
         android:padding="8dp"
         android:text="@string/simulate_activity_simulate_week"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/simActivityAdView" />
 
     <Button
         android:id="@+id/start_playoffs_button"
@@ -77,7 +77,7 @@
         android:padding="8dp"
         android:text="@string/simulate_activity_simulate_season"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/simActivityAdView" />
 
     <ImageView
         android:id="@+id/simulate_activity_football_animation"
@@ -90,7 +90,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simActivityAdView"
         app:srcCompat="@drawable/ic_basketball_animdrawable" />
 
     <TextView
@@ -122,7 +122,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/simActivityAdView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/standings_header"
         app:layout_constraintVertical_bias="0.0"
@@ -149,7 +148,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/simActivityAdView"
         app:layout_constraintStart_toEndOf="@+id/middle_divider"
         app:layout_constraintTop_toBottomOf="@+id/week_number_header"
         app:layout_constraintVertical_bias="0.050000012"

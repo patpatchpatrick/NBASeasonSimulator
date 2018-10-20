@@ -84,7 +84,7 @@ public class SeasonStandingsRecyclerViewAdapter extends RecyclerView.Adapter<Sea
             Integer teamLossesInt = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_CURRENT_LOSSES));
             String teamWins = Integer.toString(teamWinsInt);
             String teamLosses = Integer.toString(teamLossesInt);
-                Integer teamElo = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_ELO));
+            Integer teamElo = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_ELO));
             int playoffSeed = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(TeamEntry.COLUMN_TEAM_PLAYOFF_ELIGIBILE));
             String playoffSeedString = Integer.toString(playoffSeed);
 

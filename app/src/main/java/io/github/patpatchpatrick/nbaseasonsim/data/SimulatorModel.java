@@ -641,6 +641,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                 Uri uri = contentResolver.insert(TeamEntry.CONTENT_URI, values);
 
                 team.setUri(uri);
+                Log.d("SEASONTEAM", "URI" + uri);
 
             }
 
@@ -781,6 +782,7 @@ public class SimulatorModel implements SimulatorMvpContract.SimulatorModel {
                 values.put(TeamEntry.COLUMN_TEAM_USER_ELO, team.getUserElo());
 
                 int rowsUpdated = contentResolver.update(uri, values, null, null);
+                Log.d("Team", "ROWS" + rowsUpdated);
 
 
                 return rowsUpdated;

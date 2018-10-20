@@ -2,6 +2,7 @@ package io.github.patpatchpatrick.nbaseasonsim.season_resources;
 
 import android.content.ContentResolver;
 import android.net.Uri;
+import android.util.Log;
 
 import javax.inject.Inject;
 
@@ -141,6 +142,7 @@ public class Match {
         if (matchCompleteInt == SeasonSimContract.MatchEntry.MATCH_COMPLETE_NO) {
             matchComplete = false;
         } else {
+            Log.d("MATCHCOMP", "FROMMATCHCREATION");
             matchComplete = true;
         }
         matchUri = uri;
@@ -174,10 +176,12 @@ public class Match {
 
         //Update team records based on outcome and mark match as complete
         setMatchWins();
+        Log.d("MATCHCOMP", "FROMCOMPLETE");
         matchComplete = true;
 
         //Callback to presenter to update match in database with match result
         mData.updateMatchCallback(this, matchUri);
+
 
 
     }
@@ -196,6 +200,7 @@ public class Match {
 
         //Update team records based on outcome and mark match as complete
         setMatchWins();
+        Log.d("MATCHCOMP", "FROMSIMULATE");
         matchComplete = true;
 
         //Callback to presenter to update match in database with match result
@@ -246,6 +251,7 @@ public class Match {
             mTeam1.setPlayoffEligible(TeamEntry.PLAYOFF_NOT_ELIGIBLE);
         }
 
+        Log.d("MATCHCOMP",  "FROMSIMPLAYOFF");
         matchComplete = true;
 
         //Callback to presenter to update match in database with match result
@@ -272,6 +278,7 @@ public class Match {
 
         //Update team records based on outcome and mark match as complete
         setMatchWins();
+        Log.d("MATCHCOMP", "FROMSIMTESTMATCH");
         matchComplete = true;
 
     }

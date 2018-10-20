@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -94,6 +95,7 @@ public class StandingsActivity extends AppCompatActivity implements ScoreView {
 
         //Swap cursor into the standings recyclerview adapter  to display standings
         if (queriedFrom == SimulatorModel.QUERY_FROM_SEASON_STANDINGS_ACTIVITY) {
+            Log.d("ONDISPLAYSTANDINGS", "CALLED");
             mSeasonStandingsRecyclerViewAdapter.swapCursor(standingsType, cursor);
         }
     }
