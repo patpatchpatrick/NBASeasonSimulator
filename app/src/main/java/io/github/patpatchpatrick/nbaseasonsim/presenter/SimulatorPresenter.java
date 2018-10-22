@@ -304,6 +304,75 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         if (!weekOneMatches.get(15).getComplete()) {
             weekOneMatches.get(15).complete(119, 128);
         }
+        if (!weekOneMatches.get(16).getComplete()) {
+            weekOneMatches.get(16).complete(120, 88);
+        }
+        if (!weekOneMatches.get(17).getComplete()) {
+            weekOneMatches.get(17).complete(105, 107);
+        }
+        if (!weekOneMatches.get(18).getComplete()) {
+            weekOneMatches.get(18).complete(101, 113);
+        }
+        if (!weekOneMatches.get(19).getComplete()) {
+            weekOneMatches.get(19).complete(117, 131);
+        }
+        if (!weekOneMatches.get(20).getComplete()) {
+            weekOneMatches.get(20).complete(123, 131);
+        }
+        if (!weekOneMatches.get(21).getComplete()) {
+            weekOneMatches.get(21).complete(129, 149);
+        }
+        if (!weekOneMatches.get(22).getComplete()) {
+            weekOneMatches.get(22).complete(101, 118);
+        }
+        if (!weekOneMatches.get(23).getComplete()) {
+            weekOneMatches.get(23).complete(124, 123);
+        }
+        if (!weekOneMatches.get(24).getComplete()) {
+            weekOneMatches.get(24).complete(92, 108);
+        }
+        if (!weekOneMatches.get(25).getComplete()) {
+            weekOneMatches.get(25).complete(112, 132);
+        }
+        if (!weekOneMatches.get(26).getComplete()) {
+            weekOneMatches.get(26).complete(117, 113);
+        }
+        if (!weekOneMatches.get(27).getComplete()) {
+            weekOneMatches.get(27).complete(103, 101);
+        }
+        if (!weekOneMatches.get(28).getComplete()) {
+            weekOneMatches.get(28).complete(115, 116);
+        }
+        if (!weekOneMatches.get(29).getComplete()) {
+            weekOneMatches.get(29).complete(113, 112);
+        }
+        if (!weekOneMatches.get(30).getComplete()) {
+            weekOneMatches.get(30).complete(118, 116);
+        }
+        if (!weekOneMatches.get(31).getComplete()) {
+            weekOneMatches.get(31).complete(136, 140);
+        }
+        if (!weekOneMatches.get(32).getComplete()) {
+            weekOneMatches.get(32).complete(91, 119);
+        }
+        if (!weekOneMatches.get(33).getComplete()) {
+            weekOneMatches.get(33).complete(108, 121);
+        }
+        if (!weekOneMatches.get(34).getComplete()) {
+            weekOneMatches.get(34).complete(124, 115);
+        }
+        if (!weekOneMatches.get(35).getComplete()) {
+            weekOneMatches.get(35).complete(133, 111);
+        }
+        if (!weekOneMatches.get(36).getComplete()) {
+            weekOneMatches.get(36).complete(131, 120);
+        }
+        if (!weekOneMatches.get(37).getComplete()) {
+            weekOneMatches.get(37).complete(98, 100);
+        }
+        if (!weekOneMatches.get(38).getComplete()) {
+            weekOneMatches.get(38).complete(112, 115);
+        }
 
     }
 
@@ -399,6 +468,29 @@ public class SimulatorPresenter extends BasePresenter<SimulatorMvpContract.Simul
         weekOneMatches.get(13).complete(108, 127);
         weekOneMatches.get(14).complete(113, 112);
         weekOneMatches.get(15).complete(119, 128);
+            weekOneMatches.get(16).complete(120, 88);
+            weekOneMatches.get(17).complete(105, 107);
+            weekOneMatches.get(18).complete(101, 113);
+            weekOneMatches.get(19).complete(117, 131);
+            weekOneMatches.get(20).complete(123, 131);
+            weekOneMatches.get(21).complete(129, 149);
+            weekOneMatches.get(22).complete(101, 118);
+            weekOneMatches.get(23).complete(124, 123);
+            weekOneMatches.get(24).complete(92, 108);
+            weekOneMatches.get(25).complete(112, 132);
+            weekOneMatches.get(26).complete(117, 113);
+            weekOneMatches.get(27).complete(103, 101);
+            weekOneMatches.get(28).complete(115, 116);
+            weekOneMatches.get(29).complete(113, 112);
+            weekOneMatches.get(30).complete(118, 116);
+            weekOneMatches.get(31).complete(136, 140);
+            weekOneMatches.get(32).complete(91, 119);
+            weekOneMatches.get(33).complete(108, 121);
+            weekOneMatches.get(34).complete(124, 115);
+            weekOneMatches.get(35).complete(133, 111);
+            weekOneMatches.get(36).complete(131, 120);
+            weekOneMatches.get(37).complete(98, 100);
+            weekOneMatches.get(38).complete(112, 115);
 
         //Update the scores for games that have already occurred
         mCurrentSimulatorWeek = 0;

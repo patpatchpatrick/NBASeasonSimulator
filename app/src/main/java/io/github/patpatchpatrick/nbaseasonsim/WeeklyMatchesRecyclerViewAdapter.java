@@ -71,11 +71,16 @@ public class WeeklyMatchesRecyclerViewAdapter extends RecyclerView.Adapter<Weekl
         int matchComplete = dataCursor.getInt(dataCursor.getColumnIndexOrThrow(MatchEntry.COLUMN_MATCH_COMPLETE));
         Double teamTwoVegasOdds = dataCursor.getDouble(dataCursor.getColumnIndexOrThrow(MatchEntry.COLUMN_MATCH_TEAM_TWO_ODDS));
 
+        Team teamOne = mModel.getSimulatorTeam(teamOneString);
+        Team teamTwo = mModel.getSimulatorTeam(teamTwoString);
+        String teamTwoShortName = teamTwo.getShortName();
+        String teamOneShortName = teamOne.getShortName();
+
 
         //If the match is complete, set the text appropriately
         if (matchComplete == MatchEntry.MATCH_COMPLETE_YES) {
-            holder.teamOneName.setText(teamOneString + " " + scoreOne);
-            holder.teamTwoName.setText(teamTwoString + " " + scoreTwo);
+            holder.teamOneName.setText(teamOneShortName + " " + scoreOne);
+            holder.teamTwoName.setText(teamTwoShortName + " " + scoreTwo);
             //Bold the winning team
             if (teamOneWonInt == MatchEntry.MATCH_TEAM_ONE_WON_YES) {
                 holder.teamOneName.setTypeface(tfBold);
@@ -88,8 +93,8 @@ public class WeeklyMatchesRecyclerViewAdapter extends RecyclerView.Adapter<Weekl
                 holder.teamTwoName.setTypeface(tf);
             }
         } else {
-            holder.teamOneName.setText(teamOneString);
-            holder.teamTwoName.setText(teamTwoString);
+            holder.teamOneName.setText(teamOneShortName);
+            holder.teamTwoName.setText(teamTwoShortName);
             holder.teamOneName.setTypeface(tf);
             holder.teamTwoName.setTypeface(tf);
         }
@@ -100,8 +105,6 @@ public class WeeklyMatchesRecyclerViewAdapter extends RecyclerView.Adapter<Weekl
 
         //Set string for ELO odds to win. This string is the short name of the home team (team two)
         //combined with the ELO odds of team two winning
-        Team teamOne = mModel.getSimulatorTeam(teamOneString);
-        Team teamTwo = mModel.getSimulatorTeam(teamTwoString);
         Double teamOneElo;
         Double teamTwoElo;
         //Set elo value based on user selected elo preference
@@ -125,8 +128,6 @@ public class WeeklyMatchesRecyclerViewAdapter extends RecyclerView.Adapter<Weekl
         Double teamOneOddsToWinPercent = teamOneOddsToWin * 100;
         Double teamTwoOddsToWinPercent = teamTwoOddsToWin * 100;
 
-        String teamTwoShortName = teamTwo.getShortName();
-        String teamOneShortName = teamOne.getShortName();
         DecimalFormat df = new DecimalFormat("#.##");
         if (teamTwoOddsToWinPercent >= 50) {
             holder.teamTwoEloOdds.setText(teamTwoShortName + " " + df.format(teamTwoOddsToWinPercent) + "%");
