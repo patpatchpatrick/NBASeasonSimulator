@@ -2,8 +2,6 @@
 # NBA Season Sim
 NBA Season Simulation App 
 
-[View on Google Play Store](https://play.google.com/store/apps/details?id=io.github.patpatchpatrick.nbaseasonsim)
-
 <b>NBA Season Simulator allows you to accurately simulate and predict the upcoming National Basketball Association season using data science.  The simulator uses team's elo ratings to predict the outcome of each match of the 2018 season and determine which team will ultimately win the NBA Finals!
 
  Compare team's ELO odds of winning a match versus the Vegas odds to find likely upsets.  </b>
