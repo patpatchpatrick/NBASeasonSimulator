@@ -42,7 +42,7 @@ public class NextWeekMatchesActivity extends AppCompatActivity implements BaseVi
         getWindow().setBackgroundDrawable(null);
         getSupportActionBar().hide();
 
-        weekNumber = 1;
+        weekNumber = 2;
 
         //Inject with dagger
         HomeScreen.getActivityComponent().inject(this);

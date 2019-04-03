@@ -142,7 +142,6 @@ public class Match {
         if (matchCompleteInt == SeasonSimContract.MatchEntry.MATCH_COMPLETE_NO) {
             matchComplete = false;
         } else {
-            Log.d("MATCHCOMP", "FROMMATCHCREATION");
             matchComplete = true;
         }
         matchUri = uri;

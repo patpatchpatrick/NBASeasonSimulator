@@ -138,7 +138,7 @@ public class SimulatorActivity extends AppCompatActivity implements SimulatorMvp
         }
 
 
-        //simulateSeasonXTimes(10000);
+        //simulateSeasonXTimes(5000);
 
         mSimulateSeason.setOnClickListener(new View.OnClickListener() {
             @Override

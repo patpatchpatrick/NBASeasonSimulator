@@ -185,9 +185,7 @@ public class Team {
         mCurrentWins++;
         mWinLossPct = (double) mCurrentWins / (double) (mCurrentWins + mCurrentLosses);
 
-        Log.d("TEAM", "WON");
         mData.updateTeamCallback(this, mUri);
-        Log.d("URI", "URI" + mUri);
     }
 
     public void draw() {
