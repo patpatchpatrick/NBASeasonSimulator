@@ -2,6 +2,10 @@
 # NBA Season Sim
 NBA Season Simulation App 
 
+### Simulate Each Week of the Season Based on a Team's ELO Rating (see NFLSeasonSimulator repository for more details.  This app is essentially a clone of that app.)
+
+![Screenshots](https://raw.githubusercontent.com/patpatchpatrick/nbaseasonsim/master/app/docs/images/gif1.gif)
+
 <b>NBA Season Simulator allows you to accurately simulate and predict the upcoming National Basketball Association season using data science.  The simulator uses team's elo ratings to predict the outcome of each match of the 2018 season and determine which team will ultimately win the NBA Finals!
 
  Compare team's ELO odds of winning a match versus the Vegas odds to find likely upsets.  </b>
